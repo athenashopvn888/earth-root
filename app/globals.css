@@ -1,20 +1,20 @@
-﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   ALWAYS LIT CANNABIS â€” DESIGN SYSTEM
-   Clean White Theme Â· Cannabis Green Accents
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ================================================================
+   ALWAYS LIT CANNABIS - DESIGN SYSTEM
+   Clean White Theme - Cannabis Green Accents
+   ================================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* â”€â”€ CSS Variables â”€â”€ */
+/* -- CSS Variables -- */
 :root {
-  /* Core palette â€” clean white */
+  /* Core palette - clean white */
   --bg-primary: #ffffff;
   --bg-secondary: #f8faf9;
   --bg-card: #ffffff;
   --bg-card-hover: #f0f5f2;
   --bg-glass: rgba(255, 255, 255, 0.85);
 
-  /* Brand colors â€” cannabis green */
+  /* Brand colors - cannabis green */
   --green-deep: #1B4332;
   --green-dark: #2D6A4F;
   --green-mid: #40916C;
@@ -27,7 +27,7 @@
   --green-gradient: linear-gradient(135deg, #2D6A4F, #40916C, #52B788);
   --accent-gradient: linear-gradient(135deg, #40916C, #2D6A4F);
 
-  /* Tier colors â€” earthy / organic tones */
+  /* Tier colors */
   --tier-exotic: #B45309;
   --tier-premium: #7C3AED;
   --tier-aaa: #2D6A4F;
@@ -71,7 +71,7 @@
   --font-body: 'Space Grotesk', 'Outfit', system-ui, sans-serif;
 }
 
-/* â”€â”€ Global Reset â”€â”€ */
+/* -- Global Reset -- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -93,7 +93,7 @@ body {
   min-height: 100vh;
 }
 
-/* Subtle organic background pattern */
+/* Subtle organic background */
 body::before {
   content: '';
   position: fixed;
@@ -101,7 +101,7 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: 
+  background:
     radial-gradient(circle at 20% 30%, rgba(45, 106, 79, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(82, 183, 136, 0.03) 0%, transparent 50%);
   pointer-events: none;
@@ -112,7 +112,7 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 button { cursor: pointer; font-family: inherit; }
 
-/* â”€â”€ Container â”€â”€ */
+/* -- Container -- */
 .container {
   width: min(100% - 2rem, var(--container-max));
   margin-inline: auto;
@@ -123,7 +123,7 @@ button { cursor: pointer; font-family: inherit; }
   margin-inline: auto;
 }
 
-/* â”€â”€ Typography â”€â”€ */
+/* -- Typography -- */
 .display-xl {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
@@ -168,7 +168,7 @@ button { cursor: pointer; font-family: inherit; }
   background-clip: text;
 }
 
-/* â”€â”€ Buttons â”€â”€ */
+/* -- Buttons -- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -202,7 +202,6 @@ button { cursor: pointer; font-family: inherit; }
   background: transparent;
   color: var(--green-dark);
   border: 1px solid var(--green-dark);
-  box-shadow: 0 0 15px rgba(45, 106, 79, 0.05);
 }
 
 .btn-neon:hover {
@@ -223,7 +222,7 @@ button { cursor: pointer; font-family: inherit; }
   border-color: var(--green-mid);
 }
 
-/* â”€â”€ Cards â”€â”€ */
+/* -- Cards -- */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -257,7 +256,7 @@ button { cursor: pointer; font-family: inherit; }
 
 .card:hover::before { opacity: 1; }
 
-/* â”€â”€ Pill Navigation â”€â”€ */
+/* -- Pill Navigation -- */
 .pill-nav {
   display: flex;
   flex-wrap: wrap;
@@ -288,7 +287,7 @@ button { cursor: pointer; font-family: inherit; }
   box-shadow: 0 4px 20px rgba(45, 106, 79, 0.2);
 }
 
-/* â”€â”€ Badges â”€â”€ */
+/* -- Badges -- */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -326,7 +325,7 @@ button { cursor: pointer; font-family: inherit; }
   50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
 }
 
-/* â”€â”€ Product Grid â”€â”€ */
+/* -- Product Grid -- */
 .product-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -338,7 +337,7 @@ button { cursor: pointer; font-family: inherit; }
 @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; } }
 @media (min-width: 1440px) { .product-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; } }
 
-/* â”€â”€ Tier Grid (Homepage) â”€â”€ */
+/* -- Tier Grid (Homepage) -- */
 .tier-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -348,7 +347,7 @@ button { cursor: pointer; font-family: inherit; }
 @media (min-width: 640px) { .tier-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .tier-grid { grid-template-columns: repeat(3, 1fr); } }
 
-/* â”€â”€ Animations â”€â”€ */
+/* -- Animations -- */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
@@ -396,19 +395,19 @@ button { cursor: pointer; font-family: inherit; }
 .animate-delay-4 { animation-delay: 0.4s; }
 .animate-delay-5 { animation-delay: 0.5s; }
 
-/* â”€â”€ Scrollbar â”€â”€ */
+/* -- Scrollbar -- */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f5f4; }
 ::-webkit-scrollbar-thumb { background: rgba(45, 106, 79, 0.25); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(45, 106, 79, 0.4); }
 
-/* â”€â”€ Selection â”€â”€ */
+/* -- Selection -- */
 ::selection {
   background: rgba(45, 106, 79, 0.15);
   color: var(--green-deep);
 }
 
-/* â”€â”€ Utilities â”€â”€ */
+/* -- Utilities -- */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -425,4 +424,3 @@ button { cursor: pointer; font-family: inherit; }
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
 }
-
