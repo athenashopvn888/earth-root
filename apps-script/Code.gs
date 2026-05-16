@@ -26,11 +26,11 @@
 function setupConfig() {
   var props = PropertiesService.getScriptProperties();
   props.setProperties({
-    // Vercel deploy hook URL (from Vercel project settings)
-    'VERCEL_DEPLOY_HOOK': '',  // <-- Paste your deploy hook URL here
+    // Vercel deploy hook URL
+    'VERCEL_DEPLOY_HOOK': 'https://api.vercel.com/v1/integrations/deploy/prj_mVxp7aFTbBT16mZXwRvirHdaIcZq/6296xxq4Uj',
     
-    // Google Sheet ID for master catalog (FLOWERS_LIVE + ITEMS_LIVE)
-    'MASTER_SHEET_ID': '',     // <-- Paste your Sheet ID here
+    // AthenaWebsiteMaster Google Sheet ID
+    'MASTER_SHEET_ID': '1ECyzLymF6-aZn30Lt_BTzvXvXZr6LlEPHVixiv3McbQ',
     
     // Store code
     'STORE_CODE': 'ALC01'
