@@ -6,11 +6,11 @@ import styles from "./contact.module.css";
 export const metadata: Metadata = {
   title: "Contact Us — Spirit Corner Cannabis | 251 Dalhousie St, Ottawa",
   description:
-    "Visit Spirit Corner Cannabis at 251 Dalhousie St, Ottawa, ON K1N 1E7. Open 7 days a week, 10AM–3AM. Walk-ins welcome. ByWard Market & Bathurst area.",
+    "Visit Spirit Corner Cannabis at 251 Dalhousie St, Ottawa, ON K1N 1E7. Open 24 hours, 7 days a week. Walk-ins welcome. ByWard Market.",
   openGraph: {
     title: "Contact Spirit Corner Cannabis — Ottawa Dispensary",
     description:
-      "251 Dalhousie St, Ottawa. Open daily 10AM–3AM. Premium cannabis, always fire.",
+      "251 Dalhousie St, Ottawa. Open 24 hours, 7 days a week. Premium cannabis, always fire.",
   },
 };
 
@@ -63,36 +63,36 @@ export default function ContactPage() {
               <div className={styles.hoursTable}>
                 <div className={styles.hoursRow}>
                   <span>Monday</span>
-                  <span className={styles.hoursTime}>10 AM – 3 AM</span>
+                  <span className={styles.hoursTime}>24 Hours</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Tuesday</span>
-                  <span className={styles.hoursTime}>10 AM – 3 AM</span>
+                  <span className={styles.hoursTime}>24 Hours</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Wednesday</span>
-                  <span className={styles.hoursTime}>10 AM – 3 AM</span>
+                  <span className={styles.hoursTime}>24 Hours</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Thursday</span>
-                  <span className={styles.hoursTime}>10 AM – 3 AM</span>
+                  <span className={styles.hoursTime}>24 Hours</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Friday</span>
-                  <span className={styles.hoursTime}>10 AM – 3 AM</span>
+                  <span className={styles.hoursTime}>24 Hours</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Saturday</span>
-                  <span className={styles.hoursTime}>10 AM – 3 AM</span>
+                  <span className={styles.hoursTime}>24 Hours</span>
                 </div>
                 <div className={styles.hoursRow}>
                   <span>Sunday</span>
-                  <span className={styles.hoursTime}>10 AM – 3 AM</span>
+                  <span className={styles.hoursTime}>24 Hours</span>
                 </div>
               </div>
               <div className={styles.openBadge}>
                 <span className={styles.openDot}></span>
-                Open 7 Days a Week
+                Open 24/7 — Never Closed
               </div>
             </div>
 
@@ -131,7 +131,7 @@ export default function ContactPage() {
           {/* Map */}
           <div className={styles.mapSection}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.0!2d-79.4028!3d43.6483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34de48e69e9d%3A0x0!2s644+Queen+St+W%2C+Ottawa%2C+ON+M6J+1E4!5e0!3m2!1sen!2sca!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0!2d-75.6928!3d45.4292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04c8524ed59b%3A0x5836a82438336497!2s251+Dalhousie+St%2C+Ottawa%2C+ON+K1N+1E7!5e0!3m2!1sen!2sca!4v1"
               width="100%"
               height="400"
               style={{ border: 0 }}
