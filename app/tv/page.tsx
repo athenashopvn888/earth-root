@@ -33,6 +33,7 @@ const TIER_DEAL: Record<string,string> = {
   "AAA+":"Buy 3g Get 3 FREE", BUDGET:"Buy 2g Get 1g FREE"
 };
 
+
 /* ── Helpers ── */
 function fmtTHC(v: string): string {
   const s = String(v||"").trim(); if (!s) return "";
@@ -256,6 +257,7 @@ function FlowerCard({
               </div>
             </div>
           )}
+
 
           {/* Column headers */}
           {isTop3 ? (
@@ -555,11 +557,9 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
 const TICKER_SLIDES = [
   "🔥 Spirit Corner Cannabis — 251 Dalhousie St, Ottawa",
   "200+ Strains In Stock",
-  "Open 10AM – 3AM Daily",
+  "Open 24hrs !!",
   "Exotic $20/g  •  Premium $15/g  •  AAA+ $10/g",
   "AA $4/g  •  Budget $3.33/g",
-  "Buy 2g Get 1g FREE on all tiers!",
-  "Buy 3g Get 3g FREE!",
   "ALL SALES ARE FINAL",
   "🎮 Play Games at spiritcornercannabis.com/games",
 ];
