@@ -57,7 +57,7 @@ export default function BlogPostPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${APPS_SCRIPT_URL}?action=blog&store=SCC01`)
+    fetch(`${APPS_SCRIPT_URL}?action=blog&store=ERC01`)
       .then((r) => r.json())
       .then((data) => {
         const found = (data.posts || []).find((p: BlogPost) => p.slug === slug);
@@ -128,7 +128,7 @@ export default function BlogPostPage() {
 
         <div className={styles.cta}>
           <p>
-            <strong>Spirit Corner Cannabis</strong> — 251 Dalhousie St, Ottawa · Open 24 Hours · (613) 612-2107
+            <strong>EarthRoot Cannabis</strong> — 5120 Dundas St W, Etobicoke · Open 24 Hours · (647) 382-5122
           </p>
           <Link href="/exotic" className={styles.ctaBtn}>Browse Our Menu</Link>
         </div>

@@ -147,27 +147,23 @@ export default function HomePage() {
       {/* ── HERO BANNER ── */}
       <section className={styles.hero} id="hero">
         <div className={styles.heroBanner}>
-          <img
-            src="/banners/spirit_corner_cannabis_showcase.webp"
-            alt="Spirit Corner Cannabis — Premium Ottawa Cannabis Dispensary"
-            className={styles.heroBannerImg}
-          />
+          {/* Hero Banner Removed for Minimal Layout */}
           <div className={styles.heroBannerOverlay}></div>
         </div>
         <div className={styles.heroContent}>
           <div className={styles.heroBadge}>
             <span className={styles.heroBadgeDot}></span>
-            OTTAWA&apos;S UPLIFTING DISPENSARY
+            ETOBICOKE&apos;S UPLIFTING DISPENSARY
           </div>
           <h1 className={styles.heroTitle}>
             Premium Cannabis.
             <br />
             <span className={styles.heroFire}>Elevate Your Spirit.</span>{" "}
-            <span className={styles.heroLit}>Spirit Corner.</span>
+            <span className={styles.heroLit}>EarthRoot Cannabis.</span>
           </h1>
           <p className={styles.heroSubtitle}>
             200+ hand-picked strains · Exotic to Budget · THC up to 39% ·
-            Real-time inventory · 251 Dalhousie St, Ottawa
+            Real-time inventory · 5120 Dundas St W, Etobicoke
           </p>
           <div className={styles.heroButtons}>
             <a href="#menu" className={styles.heroBtn}>
@@ -363,7 +359,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              Visit <span className="text-gradient-neon">Spirit Corner</span>
+              Visit <span className="text-gradient-neon">EarthRoot Cannabis</span>
             </h2>
           </div>
           <div className={styles.storeGrid}>
@@ -371,9 +367,9 @@ export default function HomePage() {
               <div className={styles.storeIcon}>📍</div>
               <h3 className={styles.storeCardTitle}>Location</h3>
               <p className={styles.storeCardText}>
-                251 Dalhousie St
+                5120 Dundas St W
                 <br />
-                Ottawa, ON K1N 1E7
+                Etobicoke, ON M9B 1B9
                 <br />
                 <a
                   href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"
@@ -401,7 +397,7 @@ export default function HomePage() {
                 No appointment needed
                 <br />
                 <span className={styles.storeHighlight}>
-                  Dalhousie St, Ottawa
+                  Dalhousie St, Etobicoke
                 </span>
               </p>
             </div>
@@ -410,14 +406,14 @@ export default function HomePage() {
           {/* Embedded map */}
           <div className={styles.mapWrap}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0!2d-75.6928!3d45.4292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04c8524ed59b%3A0x5836a82438336497!2s251+Dalhousie+St%2C+Ottawa%2C+ON+K1N+1E7!5e0!3m2!1sen!2sca!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0!2d-75.6928!3d45.4292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04c8524ed59b%3A0x5836a82438336497!2s251+Dalhousie+St%2C+Etobicoke%2C+ON+K1N+1E7!5e0!3m2!1sen!2sca!4v1"
               width="100%"
               height="300"
               style={{ border: 0, borderRadius: "var(--radius-lg)" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Spirit Corner Cannabis — 251 Dalhousie St, Ottawa"
+              title="EarthRoot Cannabis — 5120 Dundas St W, Etobicoke"
             ></iframe>
           </div>
         </div>

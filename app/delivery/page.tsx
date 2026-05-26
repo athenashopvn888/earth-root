@@ -18,7 +18,7 @@ export default function DeliveryPage() {
     try {
       // Save to Google Sheets via Apps Script
       const res = await fetch(
-        `https://script.google.com/macros/s/AKfycbx09_sDal1eMVF1r-hUck4e7oq_XBHEWhGvA79JuhZNQ6P4CdhCas0xE3FfexWQ3hq4/exec?action=delivery_email&email=${encodeURIComponent(email)}&store=SCC01`,
+        `https://script.google.com/macros/s/AKfycbx09_sDal1eMVF1r-hUck4e7oq_XBHEWhGvA79JuhZNQ6P4CdhCas0xE3FfexWQ3hq4/exec?action=delivery_email&email=${encodeURIComponent(email)}&store=ERC01`,
         { method: "GET", mode: "no-cors" }
       );
       setStatus("success");
@@ -37,7 +37,7 @@ export default function DeliveryPage() {
           Delivery <span className={styles.highlight}>Coming Soon</span>
         </h1>
         <p className={styles.pageSubtitle}>
-          Spirit Corner Cannabis is launching delivery across Ottawa &amp; Gatineau.
+          EarthRoot Cannabis is launching delivery across Etobicoke &amp; Gatineau.
           Sign up below to be the first to know when we go live — and get an exclusive launch-day deal.
         </p>
 
@@ -84,11 +84,11 @@ export default function DeliveryPage() {
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>📦</span>
             <h3 className={styles.infoTitle}>Same-Day Delivery</h3>
-            <p className={styles.infoDesc}>Order before 6 PM, delivered same day across Ottawa.</p>
+            <p className={styles.infoDesc}>Order before 6 PM, delivered same day across Etobicoke.</p>
           </div>
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>🌉</span>
-            <h3 className={styles.infoTitle}>Ottawa & Gatineau</h3>
+            <h3 className={styles.infoTitle}>Etobicoke & Gatineau</h3>
             <p className={styles.infoDesc}>Serving the entire National Capital Region.</p>
           </div>
           <div className={styles.infoCard}>
@@ -101,8 +101,8 @@ export default function DeliveryPage() {
         {/* CTA */}
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
-            Can&apos;t wait? Visit us in-store at <strong>251 Dalhousie St, Ottawa</strong> —
-            open <strong>24 hours</strong>. Call <strong>(613) 612-2107</strong>.
+            Can&apos;t wait? Visit us in-store at <strong>5120 Dundas St W, Etobicoke</strong> —
+            open <strong>24 hours</strong>. Call <strong>(647) 382-5122</strong>.
           </p>
         </div>
       </div>

@@ -80,7 +80,7 @@ export default function GamesPage() {
             }}
           >
             Kill time while your order&apos;s ready. Beat the high score. No
-            dispensary in Ottawa has this.
+            dispensary in Etobicoke has this.
           </p>
         </div>
 

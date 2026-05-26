@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   return {
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
-    description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at Spirit Corner Cannabis.`,
+    description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at EarthRoot Cannabis.`,
   };
 }
 
@@ -105,9 +105,9 @@ export default async function ItemsCategoryPage({
 
           {/* Visit CTA */}
           <div className={styles.visitCta}>
-            <h3 className={styles.visitTitle}>Visit Spirit Corner Cannabis</h3>
+            <h3 className={styles.visitTitle}>Visit EarthRoot Cannabis</h3>
             <p className={styles.visitText}>
-              251 Dalhousie St, Ottawa, ON K1N 1E7 · Open 24 Hours
+              5120 Dundas St W, Etobicoke, ON M9B 1B9 · Open 24 Hours
             </p>
             <a
               href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"

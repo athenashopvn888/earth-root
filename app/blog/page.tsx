@@ -49,7 +49,7 @@ const STATIC_POSTS = [
   },
   {
     slug: "best-dispensary-byward-market",
-    title: "Why Spirit Corner is ByWard Market's Best Dispensary",
+    title: "Why EarthRoot Cannabis is ByWard Market's Best Dispensary",
     excerpt: "200+ strains, transparent pricing from $3/g, lab-tested products, and open 24 hours. Here's what makes us different.",
     date: "2026-05-03",
     category: "News",
@@ -67,8 +67,8 @@ const STATIC_POSTS = [
   },
   {
     slug: "ottawa-cannabis-laws-2026",
-    title: "Ottawa Cannabis Laws in 2026 — What You Need to Know",
-    excerpt: "Age limits, public consumption rules, possession limits, and where you can legally smoke in Ottawa. Stay informed.",
+    title: "Etobicoke Cannabis Laws in 2026 — What You Need to Know",
+    excerpt: "Age limits, public consumption rules, possession limits, and where you can legally smoke in Etobicoke. Stay informed.",
     date: "2026-04-25",
     category: "News",
     emoji: "⚖️",
@@ -94,7 +94,7 @@ export default function BlogPage() {
   const [dynamicPosts, setDynamicPosts] = useState<BlogPost[]>([]);
 
   useEffect(() => {
-    fetch(`${APPS_SCRIPT_URL}?action=blog&store=SCC01`)
+    fetch(`${APPS_SCRIPT_URL}?action=blog&store=ERC01`)
       .then((r) => r.json())
       .then((data) => setDynamicPosts(data.posts || []))
       .catch(() => {});
@@ -108,10 +108,10 @@ export default function BlogPage() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <h1 className={styles.heroH1}>
-            📝 Spirit Corner <span className={styles.heroAccent}>Blog</span>
+            📝 EarthRoot Cannabis <span className={styles.heroAccent}>Blog</span>
           </h1>
           <p className={styles.heroSub}>
-            Cannabis guides, strain reviews, and dispensary news from Ottawa&apos;s
+            Cannabis guides, strain reviews, and dispensary news from Etobicoke&apos;s
             24-hour dispensary.
           </p>
         </div>

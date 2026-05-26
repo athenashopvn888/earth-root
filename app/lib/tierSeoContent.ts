@@ -9,20 +9,20 @@ export interface TierSeoData {
 
 export const TIER_SEO: Record<string, TierSeoData> = {
   EXOTIC: {
-    seoTitle: "Exotic Cannabis Flower Ottawa — Ultra-Rare, Top-Shelf Genetics",
-    seoIntro: "Explore the Exotic tier at Spirit Corner Cannabis — our most exclusive cannabis flower selection. Hand-picked strains with THC levels up to 39%, stunning bag appeal, and unique terpene profiles you won't find anywhere else in Ottawa.",
+    seoTitle: "Exotic Cannabis Flower Etobicoke — Ultra-Rare, Top-Shelf Genetics",
+    seoIntro: "Explore the Exotic tier at EarthRoot Cannabis — our most exclusive cannabis flower selection. Hand-picked strains with THC levels up to 39%, stunning bag appeal, and unique terpene profiles you won't find anywhere else in Etobicoke.",
     sections: [
       {
         heading: "What Makes Exotic Flower Special?",
-        body: "Exotic cannabis flower represents the absolute pinnacle of cannabis cultivation. These strains are grown by elite craft cultivators, hand-trimmed to perfection, and selected for their exceptional terpene profiles, bag appeal, and potency. At Spirit Corner Cannabis, our Exotic tier features strains with THC levels ranging from 35% to 39% — the highest potency flower available in Ottawa.",
+        body: "Exotic cannabis flower represents the absolute pinnacle of cannabis cultivation. These strains are grown by elite craft cultivators, hand-trimmed to perfection, and selected for their exceptional terpene profiles, bag appeal, and potency. At EarthRoot Cannabis, our Exotic tier features strains with THC levels ranging from 35% to 39% — the highest potency flower available in Etobicoke.",
       },
       {
         heading: "Exotic Pricing — $20/g with Buy 2g Get 1g FREE",
         body: "Our Exotic flower starts at $20 per gram. With our Buy 2g Get 1g FREE promotion, you get 3 grams for just $40 — that's $13.33/g. For even better value, our Buy 3g Get 3g FREE deal gives you 6 grams for $60 — just $10.00/g. 14g is available for $140 ($10/g) and full ounces (28g) for $250 ($8.93/g).",
       },
       {
-        heading: "Why Shop Exotic at Spirit Corner?",
-        body: "Spirit Corner Cannabis is located at 251 Dalhousie St in the heart of Ottawa's ByWard Market neighbourhood. Our live digital menu is updated in real time, so you can check exactly what Exotic strains are in stock before you visit. Our knowledgeable budtenders can help you find the perfect strain based on your preferred effects, aroma, and potency level.",
+        heading: "Why Shop Exotic at EarthRoot Cannabis?",
+        body: "EarthRoot Cannabis is located at 5120 Dundas St W in the heart of Etobicoke's ByWard Market neighbourhood. Our live digital menu is updated in real time, so you can check exactly what Exotic strains are in stock before you visit. Our knowledgeable budtenders can help you find the perfect strain based on your preferred effects, aroma, and potency level.",
       },
     ],
     faqs: [
@@ -34,8 +34,8 @@ export const TIER_SEO: Record<string, TierSeoData> = {
   },
 
   PREMIUM: {
-    seoTitle: "Premium Cannabis Flower Ottawa — Hand-Picked Connoisseur Grade",
-    seoIntro: "Shop Premium cannabis flower at Spirit Corner Cannabis, Ottawa. Connoisseur-grade strains with THC 32-34%, exceptional flavour, and smooth smoke. Starting at $15/g.",
+    seoTitle: "Premium Cannabis Flower Etobicoke — Hand-Picked Connoisseur Grade",
+    seoIntro: "Shop Premium cannabis flower at EarthRoot Cannabis, Etobicoke. Connoisseur-grade strains with THC 32-34%, exceptional flavour, and smooth smoke. Starting at $15/g.",
     sections: [
       {
         heading: "What is Premium Cannabis Flower?",
@@ -47,7 +47,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         heading: "Best Value in ByWard Market",
-        body: "At Spirit Corner Cannabis on Dalhousie St, our Premium tier offers the best quality-to-price ratio in the neighbourhood. Every strain in this tier has been personally vetted by our team for potency, flavour, and bag appeal.",
+        body: "At EarthRoot Cannabis on Dalhousie St, our Premium tier offers the best quality-to-price ratio in the neighbourhood. Every strain in this tier has been personally vetted by our team for potency, flavour, and bag appeal.",
       },
     ],
     faqs: [
@@ -58,12 +58,12 @@ export const TIER_SEO: Record<string, TierSeoData> = {
   },
 
   "AAA+": {
-    seoTitle: "AAA+ Cannabis Flower Ottawa — Heavy Hitters at Great Prices",
-    seoIntro: "Shop AAA+ cannabis flower at Spirit Corner Cannabis, Ottawa. Strong, reliable strains with THC 30-32% starting at just $10/g. The best value for experienced smokers.",
+    seoTitle: "AAA+ Cannabis Flower Etobicoke — Heavy Hitters at Great Prices",
+    seoIntro: "Shop AAA+ cannabis flower at EarthRoot Cannabis, Etobicoke. Strong, reliable strains with THC 30-32% starting at just $10/g. The best value for experienced smokers.",
     sections: [
       {
         heading: "What is AAA+ Cannabis Flower?",
-        body: "AAA+ is where potency meets value. These heavy-hitting strains deliver THC levels from 30% to 32%, making them perfect for daily smokers who want solid potency without paying the premium markup. AAA+ flower at Spirit Corner Cannabis is sourced from trusted Canadian craft growers.",
+        body: "AAA+ is where potency meets value. These heavy-hitting strains deliver THC levels from 30% to 32%, making them perfect for daily smokers who want solid potency without paying the premium markup. AAA+ flower at EarthRoot Cannabis is sourced from trusted Canadian craft growers.",
       },
       {
         heading: "AAA+ Pricing — $10/g with Massive Promos",
@@ -78,8 +78,8 @@ export const TIER_SEO: Record<string, TierSeoData> = {
   },
 
   AA: {
-    seoTitle: "AA Cannabis Flower Ottawa — Quality Daily Drivers",
-    seoIntro: "Shop AA cannabis flower at Spirit Corner Cannabis, Ottawa. Solid everyday strains with THC 27-29% at just $5/g. Perfect for regular smokers on a budget.",
+    seoTitle: "AA Cannabis Flower Etobicoke — Quality Daily Drivers",
+    seoIntro: "Shop AA cannabis flower at EarthRoot Cannabis, Etobicoke. Solid everyday strains with THC 27-29% at just $5/g. Perfect for regular smokers on a budget.",
     sections: [
       {
         heading: "What is AA Cannabis Flower?",
@@ -97,20 +97,20 @@ export const TIER_SEO: Record<string, TierSeoData> = {
   },
 
   BUDGET: {
-    seoTitle: "Budget Cannabis Ottawa — Cheap Weed From $3/g",
-    seoIntro: "Cheap weed in Ottawa starting at $3/g. Spirit Corner Cannabis Budget tier features shreds and value ounces for cost-conscious smokers. Open daily on Dalhousie St.",
+    seoTitle: "Budget Cannabis Etobicoke — Cheap Weed From $3/g",
+    seoIntro: "Cheap weed in Etobicoke starting at $3/g. EarthRoot Cannabis Budget tier features shreds and value ounces for cost-conscious smokers. Open daily on Dalhousie St.",
     sections: [
       {
         heading: "Affordable Cannabis Without Compromise",
-        body: "Our Budget tier proves that affordable cannabis doesn't mean low quality. With THC levels from 24% to 27%, these value strains deliver solid effects at rock-bottom prices. Whether you're looking for shreds or value ounces, Spirit Corner Cannabis has the cheapest weed in Ottawa's ByWard Market neighbourhood.",
+        body: "Our Budget tier proves that affordable cannabis doesn't mean low quality. With THC levels from 24% to 27%, these value strains deliver solid effects at rock-bottom prices. Whether you're looking for shreds or value ounces, EarthRoot Cannabis has the cheapest weed in Etobicoke's ByWard Market neighbourhood.",
       },
       {
         heading: "Budget Pricing — From $3/g, OZs from $40",
-        body: "Budget flower starts at just $3 per gram. Value ounces start from $40 — some of the best prices you'll find in Ottawa. Our Buy 2g Get 1g FREE promo applies here too, giving you even more savings.",
+        body: "Budget flower starts at just $3 per gram. Value ounces start from $40 — some of the best prices you'll find in Etobicoke. Our Buy 2g Get 1g FREE promo applies here too, giving you even more savings.",
       },
     ],
     faqs: [
-      { q: "What is the cheapest weed at Spirit Corner?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality strains at the lowest possible price." },
+      { q: "What is the cheapest weed at EarthRoot Cannabis?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality strains at the lowest possible price." },
       { q: "Is budget flower still good quality?", a: "Yes! Budget strains still deliver THC 24-27%. They're perfect for daily smokers who want value without sacrificing potency." },
       { q: "Do you have shreds?", a: "Yes, our Budget tier includes shredded flower options — great for rolling and value pricing." },
     ],
