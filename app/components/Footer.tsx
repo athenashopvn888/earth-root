@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Column 1 — Store Description */}
           <div className={styles.col}>
             <div className={styles.brand}>
-              SPIRIT<span className={styles.fire}>✨</span>CORNER
+              EARTHROOT CANNABIS
             </div>
             <p className={styles.desc}>
               Your Local Cannabis Dispensary At 5120 Dundas St W, Etobicoke. Visit
@@ -24,7 +24,7 @@ export default function Footer() {
                 Call Now
               </a>
               <a
-                href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"
+                href="https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.btnSecondary}
@@ -40,7 +40,7 @@ export default function Footer() {
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Address:</span>
               <span>5120 Dundas St W</span>
-              <span>Etobicoke, ON M9B 1B9</span>
+              <span>Etobicoke, ON M9A 1C2</span>
               <span>Canada</span>
             </div>
             <div className={styles.infoBlock}>
@@ -70,13 +70,13 @@ export default function Footer() {
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
               <Link href="/games">Games Arcade</Link>
-              <Link href="/info/ottawa-weed-dispensary">Etobicoke Dispensary</Link>
-              <Link href="/info/cheap-weed-ottawa">Cheap Weed Etobicoke</Link>
-              <Link href="/info/native-cigarettes-ottawa">Native Cigarettes</Link>
-              <Link href="/info/weed-store-near-gatineau">Weed Store Near Gatineau</Link>
+              <Link href="/info/york-weed-dispensary">Etobicoke Dispensary</Link>
+              <Link href="/info/cheap-weed-york">Cheap Weed Etobicoke</Link>
+              <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
+              <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
               <Link href="/contact">Contact Us</Link>
               <a
-                href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"
+                href="https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2"
                 target="_blank"
                 rel="noopener noreferrer"
               >

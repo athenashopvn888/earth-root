@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AgeGate from "./components/AgeGate";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://spiritcornercannabis.com"),
+  metadataBase: new URL("https://earthrootcannabis.ca"),
   title: {
     default: "EarthRoot Cannabis — Premium Cannabis Dispensary, Etobicoke",
     template: "%s | EarthRoot Cannabis",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     "Shop 200+ premium cannabis strains at EarthRoot Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Etobicoke's uplifting dispensary at 5120 Dundas St W. Open 24 Hours.",
   keywords: [
     "cannabis dispensary Etobicoke",
-    "weed store Dalhousie",
+    "weed store Etobicoke",
     "exotic flower Etobicoke",
     "premium cannabis",
     "EarthRoot Cannabis",
@@ -23,19 +24,19 @@ export const metadata: Metadata = {
     "vapes",
     "pre-rolls",
     "native cigarettes Etobicoke",
-    "weed store Gatineau",
+    "weed store Mississauga",
   ],
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://spiritcornercannabis.com",
+    url: "https://earthrootcannabis.ca",
     siteName: "EarthRoot Cannabis",
     title: "EarthRoot Cannabis — Premium Etobicoke Cannabis Dispensary",
     description:
       "200+ strains from $3/g. Exotic to Budget. Etobicoke's uplifting dispensary at 5120 Dundas St W. Open 24 Hours.",
     images: [
       {
-        url: "/banners/spirit_corner_cannabis_showcase.webp",
+        url: "https://earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
         alt: "EarthRoot Cannabis — Premium Cannabis Dispensary Etobicoke",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "EarthRoot Cannabis — Etobicoke's Uplifting Dispensary",
     description: "200+ strains from $3/g. Open 24 Hours at 5120 Dundas St W, Etobicoke.",
-    images: ["/banners/spirit_corner_cannabis_showcase.webp"],
+    images: ["https://earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
     index: true,
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://spiritcornercannabis.com",
+    canonical: "https://earthrootcannabis.ca",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -72,25 +73,25 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://spiritcornercannabis.com",
+  "@id": "https://earthrootcannabis.ca",
   name: "EarthRoot Cannabis",
   description: "Cannabis dispensary at 5120 Dundas St W in Etobicoke, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://spiritcornercannabis.com",
+  url: "https://earthrootcannabis.ca",
   telephone: "+16473825122",
-  image: "https://spiritcornercannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
+  image: "https://earthrootcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
     streetAddress: "5120 Dundas St W",
     addressLocality: "Etobicoke",
     addressRegion: "ON",
-    postalCode: "M9B 1B9",
+    postalCode: "M9A 1C2",
     addressCountry: "CA",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 45.4292,
-    longitude: -75.6928,
+    latitude: 43.6393,
+    longitude: -79.5372,
   },
   openingHoursSpecification: [
     {
@@ -101,10 +102,10 @@ const jsonLd = {
     },
   ],
   sameAs: [
-    "https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6",
-    "https://www.google.com/maps/place/?q=place_id:ChIJm9VGUowFzkwRl2QzOCSoNlg",
+    "https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2",
+    "https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2",
   ],
-  hasMap: "https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6",
+  hasMap: "https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2",
   areaServed: {
     "@type": "City",
     name: "Etobicoke",
@@ -125,6 +126,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="geo.region" content="CA-ON" />
+        <meta name="geo.placename" content="Etobicoke" />
+        <meta name="geo.position" content="43.6393;-79.5372" />
+        <meta name="ICBM" content="43.6393, -79.5372" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -136,7 +141,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <AgeGate />
+      </body>
     </html>
   );
 }

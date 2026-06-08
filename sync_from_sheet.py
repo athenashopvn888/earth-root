@@ -1,9 +1,9 @@
 """
-Always Lit - Auto Sync from Google Sheets
+EarthRoot Cannabis - Auto Sync from Google Sheets
 ==========================================
 Reads master product data (FLOWERS_LIVE, ITEMS_LIVE) and cross-references
 with store-specific flags (FlowersFlags_POS, ItemsFlags_POS) to generate
-a filtered menu for Always Lit (ALC01).
+a filtered menu for EarthRoot Cannabis (ALC01).
 
 Two Google Sheets:
   1. MENU sheet  - contains FLOWERS_LIVE, ITEMS_LIVE (master product catalog)
@@ -33,11 +33,11 @@ ITEMS_OUT = os.path.join(SCRIPT_DIR, "app", "lib", "items.json")
 # ============================================================
 #   CONFIGURATION - Set these values
 # ============================================================
-STORE_CODE = "ALC01"  # Always Lit Cannabis store code
+STORE_CODE = "ERC01"  # Store code
 
 # Google Sheet IDs (the long string in the URL)
 # https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
-MENU_SHEET_ID = ""   # SETB Anti v2.3 6G MENU (FLOWERS_LIVE, ITEMS_LIVE)
+MENU_SHEET_ID = "1ECyzLymF6-aZn30Lt_BTzvXvXZr6LlEPHVixiv3McbQ"   # SETB Anti v2.3 6G MENU (FLOWERS_LIVE, ITEMS_LIVE)
 POS_SHEET_ID = ""    # POS sheet (FlowersFlags_POS, ItemsFlags_POS)
 # ============================================================
 
@@ -104,14 +104,36 @@ def slugify(name: str) -> str:
     return s.strip("-")
 
 
-def parse_price_cell(val: str):
+def parse_single_price(val: str):
     if not val or val.strip() in ("", "-", "N/A", "None"):
         return None
-    cleaned = val.strip().replace("$", "").replace(",", "")
     try:
-        return int(float(cleaned))
+        return int(float(val.strip()))
     except ValueError:
         return None
+
+def parse_price_point(val: str):
+    if not val or val.strip() in ("", "-", "N/A", "None"):
+        return None
+    val_str = str(val).strip().replace("$", "").replace(",", "")
+    if "|" in val_str:
+        parts = val_str.split("|")
+        reg_val = parse_single_price(parts[0])
+        sale_val = parse_single_price(parts[1])
+        if reg_val is not None:
+            return {"regular": reg_val, "sale": sale_val}
+        return None
+    else:
+        reg_val = parse_single_price(val_str)
+        if reg_val is not None:
+            return {"regular": reg_val, "sale": None}
+        return None
+
+def parse_price_cell(val: str):
+    pp = parse_price_point(val)
+    if pp:
+        return pp.get("regular")
+    return None
 
 
 def parse_thc(val: str) -> str:
@@ -188,8 +210,8 @@ def parse_item_flags(flag_rows: list[dict], store_code: str) -> dict:
             continue
 
         # Items can have multi-SKU keys like "800, 801, 802"
-        key = row.get("Key", "").strip()
-        sku = row.get("SKU", key).strip()
+        key = normalize_sku(row.get("Key", ""))
+        sku = normalize_sku(row.get("SKU", key))
         show = row.get("Show", "SHOW").strip().upper()
 
         # Use the Key field as identifier (matches ITEMS_LIVE SKU column)
@@ -220,24 +242,70 @@ def build_flowers(product_rows: list[dict], flag_lookup: dict) -> list[dict]:
 
         # Check store-specific flags
         flags = flag_lookup.get(sku)
-        if flags and not flags["show"]:
+        if not flags:
             skipped += 1
             continue
 
-        # Parse prices
-        price3g = parse_price_cell(row.get("Price_3G", ""))
-        price5g = parse_price_cell(row.get("Price_5G", ""))
-        price14g = parse_price_cell(row.get("Price_14G", ""))
-        price28g = parse_price_cell(row.get("Price_28G", ""))
+        # Item is shown if either main catalog show is True OR show28g is True (original TVMenu.html rule)
+        show_main = flags.get("show", False)
+        show_28g = flags.get("show28g", False)
+        if not show_main and not show_28g:
+            skipped += 1
+            continue
+
+        # Parse prices using parse_price_point
+        price3g = parse_price_point(row.get("Price_3G", ""))
+        price5g = parse_price_point(row.get("Price_5G", ""))
+        price14g = parse_price_point(row.get("Price_14G", ""))
+        price28g = parse_price_point(row.get("Price_28G", ""))
 
         # Apply weight visibility flags
-        if flags:
+        if not show_main and show_28g:
+            # If hidden from main catalog but shown for 28g (e.g. shreds), nullify smaller weights
+            price3g = None
+            price5g = None
+            price14g = None
+        else:
+            # Otherwise, apply standard weight visibility flags
             if not flags.get("show5g", True):
                 price5g = None
             if not flags.get("show14g", True):
                 price14g = None
-            if not flags.get("show28g", True):
-                price28g = None
+            # Note: We do NOT nullify price28g if the item is generally visible (show_main=True)
+            # and carries a valid 28g price in the spreadsheet. This ensures Sativas with 28g pricing
+            # (like Daydream Diesel) populate their OZ prices and display on the OZ Card/Menu correctly!
+
+        # Fallback to standard tier pricing if completely missing/null in sheet
+        if price3g is None and price5g is None and price14g is None and price28g is None:
+            if tier == "EXOTIC":
+                price3g = {"regular": 40, "sale": None}
+                price5g = {"regular": 60, "sale": None}
+                price14g = {"regular": 140, "sale": None}
+            elif tier == "PREMIUM":
+                price3g = {"regular": 30, "sale": None}
+                price5g = {"regular": 45, "sale": None}
+                price14g = {"regular": 95, "sale": None}
+            elif tier == "AAA+":
+                price3g = {"regular": 20, "sale": None}
+                price5g = {"regular": 30, "sale": None}
+                price14g = {"regular": 70, "sale": None}
+            elif tier == "AA":
+                price5g = {"regular": 20, "sale": None}
+                price14g = {"regular": 40, "sale": None}
+            elif tier == "BUDGET":
+                price3g = {"regular": 10, "sale": None}
+                price28g = {"regular": 55, "sale": None}
+
+        # Determine isSale from any price point having a sale price
+        is_sale_detected = False
+        for pp in (price3g, price5g, price14g, price28g):
+            if pp and pp.get("sale") is not None:
+                is_sale_detected = True
+                break
+
+        # Also check if name or Type contains "SALE"
+        if not is_sale_detected:
+            is_sale_detected = "SALE" in name.upper() or "SALE" in row.get("Type", "").upper()
 
         flower = {
             "sku": sku,
@@ -245,13 +313,13 @@ def build_flowers(product_rows: list[dict], flag_lookup: dict) -> list[dict]:
             "slug": slugify(name),
             "tier": tier,
             "type": detect_type(row.get("Type", "hybrid")),
-            "isHot": False,
-            "isSale": False,
+            "isHot": "HOT" in row.get("Type", "").upper() or "HOT" in name.upper(),
+            "isSale": is_sale_detected,
             "thc": parse_thc(row.get("THC", "")),
-            "price3g": {"regular": price3g, "sale": None} if price3g else None,
-            "price5g": {"regular": price5g, "sale": None} if price5g else None,
-            "price14g": {"regular": price14g, "sale": None} if price14g else None,
-            "price28g": {"regular": price28g, "sale": None} if price28g else None,
+            "price3g": price3g,
+            "price5g": price5g,
+            "price14g": price14g,
+            "price28g": price28g,
             "image": row.get("ImageURL", "").strip(),
             "promoImage": row.get("PPromo", "").strip() or None,
         }
@@ -277,7 +345,7 @@ def build_items(product_rows: list[dict], flag_lookup: dict) -> list[dict]:
         # Check store-specific flags (match on SKU key)
         sku_normalized = normalize_sku(sku)
         flags = flag_lookup.get(sku) or flag_lookup.get(sku_normalized)
-        if flags and not flags["show"]:
+        if not flags or not flags["show"]:
             skipped += 1
             continue
 
@@ -314,8 +382,28 @@ def load_from_google_sheets():
     """Fetch all data from Google Sheets."""
     flower_products = fetch_sheet_csv(MENU_SHEET_ID, FLOWERS_SHEET)
     item_products = fetch_sheet_csv(MENU_SHEET_ID, ITEMS_SHEET)
-    flower_flags = fetch_sheet_csv(POS_SHEET_ID, FLOWER_FLAGS_SHEET) if POS_SHEET_ID else []
-    item_flags = fetch_sheet_csv(POS_SHEET_ID, ITEM_FLAGS_SHEET) if POS_SHEET_ID else []
+    
+    if POS_SHEET_ID:
+        flower_flags = fetch_sheet_csv(POS_SHEET_ID, FLOWER_FLAGS_SHEET)
+        item_flags = fetch_sheet_csv(POS_SHEET_ID, ITEM_FLAGS_SHEET)
+    else:
+        # Fall back to reading POS flags from local XLSX
+        print("  Source (Flags): Local XLSX (POS_SHEET_ID not set)")
+        import openpyxl
+        menu_path = os.path.join(SCRIPT_DIR, "SETB Anti v2.3 6G MENU.xlsx")
+        wb_menu = openpyxl.load_workbook(menu_path, data_only=True)
+        flower_flags = []
+        item_flags = []
+        if FLOWER_FLAGS_SHEET in wb_menu.sheetnames:
+            flower_flags = read_xlsx_sheet(wb_menu, FLOWER_FLAGS_SHEET)
+        elif "WeightFlags" in wb_menu.sheetnames:
+            flower_flags = read_xlsx_sheet(wb_menu, "WeightFlags")
+
+        if ITEM_FLAGS_SHEET in wb_menu.sheetnames:
+            item_flags = read_xlsx_sheet(wb_menu, ITEM_FLAGS_SHEET)
+        elif "ItemsFlags" in wb_menu.sheetnames:
+            item_flags = read_xlsx_sheet(wb_menu, "ItemsFlags")
+            
     return flower_products, item_products, flower_flags, item_flags
 
 
@@ -372,7 +460,7 @@ def load_from_xlsx():
 
 def main():
     print("=" * 60)
-    print(f"  Always Lit - Product Sync (Store: {STORE_CODE})")
+    print(f"  EarthRoot Cannabis - Product Sync (Store: {STORE_CODE})")
     print("=" * 60)
     print()
 
@@ -441,7 +529,7 @@ def main():
             capture_output=True, text=True
         )
         if result.returncode == 0:
-            print("  [OK] Live at https://always-lit.vercel.app")
+            print("  [OK] Live at https://earthrootcannabis.ca")
         else:
             print(f"  Output:\n{result.stdout[-500:]}")
     else:

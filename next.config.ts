@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "afterdarkcannabis.com" },
+      { protocol: "https", hostname: "earthrootcannabis.ca" },
       { protocol: "https", hostname: "kennedyloudcannabis.com" },
       { protocol: "https", hostname: "stclaircannabis.com" },
     ],

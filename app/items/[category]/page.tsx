@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import {
@@ -29,6 +30,9 @@ export async function generateMetadata({
   return {
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at EarthRoot Cannabis.`,
+    alternates: {
+      canonical: `https://earthrootcannabis.ca/items/${catSlug}`,
+    },
   };
 }
 
@@ -45,7 +49,9 @@ export default async function ItemsCategoryPage({
   let items = getItemsByCategory(catInfo.key);
   if (catInfo.key === "PREROLLS") {
     const accessories = getItemsByCategory("ADD ONS");
-    items = [...items, ...accessories];
+    const existingIds = new Set(items.map(i => i.sku));
+    const uniqueAccessories = accessories.filter(a => !existingIds.has(a.sku));
+    items = [...items, ...uniqueAccessories];
   }
   const { config } = catInfo;
 
@@ -53,16 +59,23 @@ export default async function ItemsCategoryPage({
     <main className={styles.main}>
       <Navbar />
 
-      {/* Hero */}
-      <section className={styles.hero} style={{ "--cat-color": config.color } as React.CSSProperties}>
-        <div className={styles.heroContent}>
-          <span className={styles.heroIcon}>{config.icon}</span>
-          <h1 className={styles.heroTitle}>
-            <span style={{ color: config.color }}>{config.name}</span>
-          </h1>
-          <p className={styles.heroSub}>{items.length} products available</p>
-          <p className={styles.heroIntro}>{config.seoIntro}</p>
-        </div>
+      {/* Hero Banner */}
+      <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
+        {config.banner ? (
+          <img
+            src={config.banner}
+            alt={config.name}
+            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+          />
+        ) : (
+          <div className={styles.heroContent} style={{ background: config.color, padding: "60px 24px", textAlign: "center" }}>
+            <span className={styles.heroIcon}>{config.icon}</span>
+            <h1 className={styles.heroTitle}>
+              <span style={{ color: "#fff" }}>{config.name}</span>
+            </h1>
+            <p className={styles.heroSub} style={{ color: "rgba(255,255,255,0.8)" }}>{items.length} products available</p>
+          </div>
+        )}
       </section>
 
       {/* Product Grid */}
@@ -107,10 +120,10 @@ export default async function ItemsCategoryPage({
           <div className={styles.visitCta}>
             <h3 className={styles.visitTitle}>Visit EarthRoot Cannabis</h3>
             <p className={styles.visitText}>
-              5120 Dundas St W, Etobicoke, ON M9B 1B9 · Open 24 Hours
+              5120 Dundas St W, Etobicoke, ON M9A 1C2 · Open 24 Hours
             </p>
             <a
-              href="https://maps.app.goo.gl/yVDY1PZ8qSwAjQ6s6"
+              href="https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.visitBtn}
@@ -128,7 +141,7 @@ export default async function ItemsCategoryPage({
 
 function ItemCard({ item, catColor }: { item: ItemProduct; catColor: string }) {
   return (
-    <div className={styles.card} style={{ "--cat-color": catColor } as React.CSSProperties}>
+    <Link href={`/item/${item.slug}`} className={styles.card} style={{ "--cat-color": catColor } as React.CSSProperties}>
       <div className={styles.cardMedia}>
         {item.image ? (
           <img src={item.image} alt={item.name} loading="lazy" className={styles.cardImg} />
@@ -153,6 +166,6 @@ function ItemCard({ item, catColor }: { item: ItemProduct; catColor: string }) {
         )}
         <span className={styles.skuTag}>SKU {item.sku}</span>
       </div>
-    </div>
+    </Link>
   );
 }

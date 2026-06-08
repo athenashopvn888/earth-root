@@ -7,24 +7,27 @@ export const metadata: Metadata = {
   title: "FAQ — EarthRoot Cannabis | Etobicoke Dispensary Questions",
   description:
     "Frequently asked questions about EarthRoot Cannabis in Etobicoke. Hours, location, products, pricing, promotions, and everything you need to know before visiting.",
+  alternates: {
+    canonical: "https://earthrootcannabis.ca/faq",
+  },
 };
 
 const FAQ_CATEGORIES = [
   {
     title: "📍 Location & Hours",
     faqs: [
-      { q: "Where is EarthRoot Cannabis located?", a: "We are located at 5120 Dundas St W, Etobicoke, ON M9B 1B9 — in the heart of ByWard Market. We're near the Rideau Centre, Parliament Hill, and major OC Transpo bus routes." },
-      { q: "What are your hours?", a: "We are open 24 hours a day, 7 days a week, 365 days a year. Walk in anytime — no appointment needed." },
-      { q: "Is there parking nearby?", a: "Yes. Free street parking is available on Dalhousie St and surrounding streets in the evenings. Paid parking lots are available nearby during the day. We're also accessible by OC Transpo and STO buses." },
-      { q: "How far are you from Gatineau?", a: "We're just 5 minutes from the Portage Bridge and 7 minutes from the Macdonald-Cartier Bridge. We're one of the closest dispensaries to the Quebec border." },
-      { q: "What's the best way to get to EarthRoot Cannabis?", a: "We're easily accessible by car, bus, or foot. From Rideau Centre, walk north on Dalhousie St — we're a 5-minute walk. By bus, several OC Transpo routes stop within walking distance. Free evening parking is available on surrounding streets." },
+      { q: "Where is EarthRoot Cannabis located?", a: "We are located at 5120 Dundas St W, Etobicoke, ON M9A 1C2. We're easily accessible by TTC bus routes and close to major highways like the 401." },
+      { q: "What are your hours?", a: "We are open Open 24 Hours a day, 7 days a week, 365 days a year. Walk in anytime — no appointment needed." },
+      { q: "Is there parking nearby?", a: "Yes. Free street parking is available nearby on surrounding streets in the evenings. We're also easily accessible by local transit." },
+      { q: "How far are you from Mississauga?", a: "We're just 5 minutes from the highways and central transit routes. We are centrally located and easy to reach." },
+      { q: "What's the best way to get to EarthRoot Cannabis?", a: "We're easily accessible by car, bus, or foot. We are easily accessible by car, local transit, or bus routes. Free parking is available on surrounding streets." },
     ],
   },
   {
     title: "🌿 Products & Menu",
     faqs: [
       { q: "What products do you carry?", a: "We carry over 200 strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles (gummies, chocolates, baked goods), vape pens, disposable vapes, concentrates (shatter, wax, hash, diamonds, live resin), pre-rolled joints, magic mushrooms, native cigarettes, and accessories." },
-      { q: "Do you have a live menu?", a: "Yes! Our online menu at spiritcornercannabis.com updates in real time with current stock, prices, THC levels, and availability. You can check what's in stock before you visit." },
+      { q: "Do you have a live menu?", a: "Yes! Our online menu at earthrootcannabis.ca updates in real time with current stock, prices, THC levels, and availability. You can check what's in stock before you visit." },
       { q: "What are your flower tiers?", a: "Exotic ($10-$12/g, THC 35-39%) — ultra-rare top-shelf genetics. Premium ($7-$10/g, THC 32-34%) — connoisseur-grade. AAA+ ($5-$6/g, THC 30-32%) — heavy hitters, our most popular tier. AA ($4/g, THC 27-29%) — quality daily drivers. Budget ($3/g, THC 24-27%) — reliable value flower." },
       { q: "Do you sell edibles?", a: "Yes! We carry a variety of edibles including gummies, chocolates, baked goods, and more. THC content varies. Check our live menu for current availability." },
       { q: "Do you sell vapes?", a: "Yes — both disposable vapes and refillable vape pens. We carry both nicotine vapes and THC vapes from top brands." },
@@ -45,7 +48,7 @@ const FAQ_CATEGORIES = [
   {
     title: "🛒 Shopping & Experience",
     faqs: [
-      { q: "Do I need an appointment?", a: "No! EarthRoot Cannabis is walk-in only. Just show up anytime — we're open 24 hours." },
+      { q: "Do I need an appointment?", a: "No! EarthRoot Cannabis is walk-in only. Just show up anytime — we're open Open 24 Hours." },
       { q: "Can I order online?", a: "Currently, EarthRoot Cannabis is an in-store shopping experience only. You can browse our live menu online to see what's in stock before visiting." },
       { q: "Do you offer delivery?", a: "Delivery is coming soon! Visit our delivery page to sign up for email notifications when we launch our delivery service." },
       { q: "What payment methods do you accept?", a: "We accept cash and debit. No credit cards at this time." },
@@ -80,10 +83,20 @@ export default function FAQPage() {
       />
       <main className={styles.main}>
         <Navbar />
+
+        {/* FAQ Banner */}
+        <section style={{ width: "100%", overflow: "hidden", marginTop: "92px" }}>
+          <img
+            src="/banners/07_FAQ.webp"
+            alt="EarthRoot Cannabis FAQ — Your Questions Answered"
+            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+          />
+        </section>
+
         <div className={styles.content}>
           <h1 className={styles.pageTitle}>Frequently Asked Questions</h1>
           <p className={styles.pageSubtitle}>
-            Everything you need to know about EarthRoot Cannabis — Etobicoke&apos;s 24-hour dispensary at 5120 Dundas St W in ByWard Market.
+            Everything you need to know about EarthRoot Cannabis — Etobicoke&apos;s premium dispensary at 5120 Dundas St W in Etobicoke.
           </p>
 
           {FAQ_CATEGORIES.map((cat) => (
@@ -104,7 +117,7 @@ export default function FAQPage() {
               Call us at <strong>(647) 382-5122</strong> or visit us at 5120 Dundas St W, Etobicoke.
             </p>
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=251+Dalhousie+St+Etobicoke+ON"
+              href="https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ctaLink}

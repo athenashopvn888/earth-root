@@ -14,7 +14,7 @@ const ALL_LINKS = [
   { href: "/items/prerolls", label: "Pre-Rolls" },
   { href: "/items/vapes", label: "Nic Vape" },
   { href: "/items/vape-disposables", label: "THC Vape" },
-  { href: "/items/concentrates", label: "Extracts" },
+  { href: "/items/concentrates", label: "Concentrates" },
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
@@ -31,12 +31,18 @@ export default function Navbar() {
     <nav className={styles.navbar} id="main-nav">
       {/* Top bar — logo + open now */}
       <div className={styles.topBar}>
-        <Link href="/" className={styles.logo}>
-          <img
-            src="/banners/logo.png"
-            alt="EarthRoot Cannabis — Etobicoke Dispensary"
-            className={styles.logoImg}
-          />
+        <Link href="/" className={styles.logo} style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
+          <img src="/storeFavicon.webp" alt="EarthRoot Cannabis Logo" style={{ height: "30px", width: "30px", objectFit: "contain", borderRadius: "4px" }} />
+          <span style={{
+            fontFamily: "var(--font-display)",
+            fontWeight: 900,
+            fontSize: "18px",
+            letterSpacing: "0.04em",
+            color: "white",
+            textShadow: "0 0 12px rgba(255,255,255,0.2)"
+          }}>
+            EARTHROOT CANNABIS
+          </span>
         </Link>
         <div className={styles.topBarRight}>
           <Link href="/games" className={styles.gamesBtn}>

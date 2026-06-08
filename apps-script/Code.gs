@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *   Always Lit — Email-to-Website Product Sync
+ *   Storefront — Email-to-Website Product Sync
  *   Google Apps Script (Code.gs)
  * ============================================================
  * 
@@ -27,13 +27,13 @@ function setupConfig() {
   var props = PropertiesService.getScriptProperties();
   props.setProperties({
     // Vercel deploy hook URL
-    'VERCEL_DEPLOY_HOOK': 'https://api.vercel.com/v1/integrations/deploy/prj_mVxp7aFTbBT16mZXwRvirHdaIcZq/6296xxq4Uj',
+    'VERCEL_DEPLOY_HOOK': 'https://api.vercel.com/v1/integrations/deploy/YOUR_VERCEL_DEPLOY_HOOK_HERE',
     
     // AthenaWebsiteMaster Google Sheet ID
     'MASTER_SHEET_ID': '1ECyzLymF6-aZn30Lt_BTzvXvXZr6LlEPHVixiv3McbQ',
     
     // Store code
-    'STORE_CODE': 'ALC01'
+    'STORE_CODE': 'YOUR_STORE_CODE_HERE'
   });
   
   Logger.log('Config saved! Now deploy as Web App and set up daily trigger.');

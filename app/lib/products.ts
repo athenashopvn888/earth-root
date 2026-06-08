@@ -66,7 +66,7 @@ export async function fetchLiveProducts(): Promise<{
   }
 
   try {
-    const res = await fetch(`${APPS_SCRIPT_URL}?store=ALC01`, {
+    const res = await fetch(`${APPS_SCRIPT_URL}?store=ERC01`, {
       next: { revalidate: 300 }, // Cache for 5 min during build
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -98,10 +98,10 @@ export const TIER_CONFIG: Record<
     color: "#f59e0b",
     icon: "\uD83D\uDD25",
     tagline: "Ultra-rare, top-shelf genetics \u00B7 THC 35-39%",
-    banner: "/banners/exotic_premium_cannabis_with_glowing_accents.webp",
+    banner: "/banners/exotics_banner.webp",
     unitPrice: 20,
-    deal3g: { label: "Buy 2g Get 1g FREE", total: "3G", price: 40 },
-    deal6g: { label: "Buy 3g Get 3g FREE", total: "6G", price: 60 },
+    deal3g: { label: "Buy 2g Get 1g FREE = 3g", total: "3G", price: 40 },
+    deal6g: { label: "Buy 3g Get 3g FREE = 6g", total: "6G", price: 60 },
   },
   PREMIUM: {
     name: "Premium",
@@ -109,10 +109,10 @@ export const TIER_CONFIG: Record<
     color: "#a78bfa",
     icon: "\uD83D\uDC8E",
     tagline: "Hand-picked connoisseur grade \u00B7 THC 32-34%",
-    banner: "/banners/premium_cannabis_with_glowing_accents.webp",
+    banner: "/banners/premium_banner.webp",
     unitPrice: 15,
-    deal3g: { label: "Buy 2g Get 1g FREE", total: "3G", price: 30 },
-    deal6g: { label: "Buy 3g Get 3g FREE", total: "6G", price: 45 },
+    deal3g: { label: "Buy 2g Get 1g FREE = 3g", total: "3G", price: 30 },
+    deal6g: { label: "Buy 3g Get 3g FREE = 6g", total: "6G", price: 45 },
   },
   "AAA+": {
     name: "AAA+",
@@ -120,10 +120,10 @@ export const TIER_CONFIG: Record<
     color: "#22d3ee",
     icon: "\u26A1",
     tagline: "Heavy hitters, proven strains \u00B7 THC 30-32%",
-    banner: "/banners/electric_neon_cannabis_ad_banner.webp",
+    banner: "/banners/aaa_plus_banner.webp",
     unitPrice: 10,
-    deal3g: { label: "Buy 2g Get 1g FREE", total: "3G", price: 20 },
-    deal6g: { label: "Buy 3g Get 3g FREE", total: "6G", price: 30 },
+    deal3g: { label: "Buy 2g Get 1g FREE = 3g", total: "3G", price: 20 },
+    deal6g: { label: "Buy 3g Get 3g FREE = 6g", total: "6G", price: 30 },
   },
   AA: {
     name: "AA",
@@ -131,7 +131,7 @@ export const TIER_CONFIG: Record<
     color: "#34d399",
     icon: "\u2726",
     tagline: "Quality daily drivers \u00B7 THC 27-29%",
-    banner: "/banners/neon_cannabis_product_showcase.webp",
+    banner: "/banners/aa_banner.webp",
     unitPrice: 4,
     deal3g: null,
     deal6g: null,
@@ -142,25 +142,26 @@ export const TIER_CONFIG: Record<
     color: "#94a3b8",
     icon: "\uD83D\uDCB0",
     tagline: "Shreds & value OZs \u00B7 From $40/oz",
-    banner: "/banners/premium_budget_cannabis_deal_showcase.webp",
+    banner: "/banners/budget_banner.webp",
     unitPrice: 3,
-    deal3g: { label: "Buy 2g Get 1g FREE", total: "3G", price: 10 },
+    deal3g: { label: "$10 / 3g Special", total: "3G", price: 10 },
     deal6g: null,
   },
 };
 
 /* ── Item category config ── */
 export interface CategoryInfo {
-  name: string; slug: string; color: string; icon: string;
+  name: string; slug: string; color: string; icon: string; banner?: string;
   seoTitle: string; seoIntro: string; seoDescription: string;
   faqs: { q: string; a: string }[];
 }
 
 export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   EDIBLES: {
+    banner: "/banners/edibles_prerolls_more_banner.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "🍬",
     seoTitle: "Cannabis Edibles Etobicoke — Gummies, Chocolates & Drinks",
-    seoIntro: "Browse the full cannabis edibles menu at EarthRoot Cannabis on Dalhousie St, Etobicoke. We carry THC gummies, chocolates, drinks, and more from top Canadian brands.",
+    seoIntro: "Browse the full cannabis edibles menu at EarthRoot Cannabis on Etobicoke St, Etobicoke. We carry THC gummies, chocolates, drinks, and more from top Canadian brands.",
     seoDescription: "Looking for cannabis edibles in Etobicoke? EarthRoot Cannabis stocks a wide range of THC-infused gummies, chocolates, beverages, and baked goods. Our edibles range from micro-dose options for beginners to high-potency products for experienced consumers. All products are lab-tested and sourced from licensed Canadian producers. Visit us at 5120 Dundas St W — open daily 24 hours.",
     faqs: [
       { q: "What cannabis edibles do you carry?", a: "We stock THC gummies, chocolates, beverages, capsules, and baked goods from top Canadian brands. Potencies range from 10mg to 1000mg+ THC." },
@@ -169,7 +170,8 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "VAPE PENS": {
-    name: "Vape Pens", slug: "vapes", color: "#8b5cf6", icon: "💨",
+    banner: "/banners/01_Vape_Pens.webp",
+    name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "💨",
     seoTitle: "Vape Pens Etobicoke — THC & Nicotine Cartridges",
     seoIntro: "Shop THC and nicotine vape pens at EarthRoot Cannabis, Etobicoke. Cartridges, 510-thread batteries, and premium vape brands — all in stock.",
     seoDescription: "EarthRoot Cannabis carries a curated selection of vape pens and cartridges in Etobicoke. From 510-thread THC cartridges to nicotine vape pods, we stock the most popular brands and flavours. Our knowledgeable budtenders can help you choose the right cartridge and battery setup. Visit us at 5120 Dundas St W for the best vape selection in ByWard Market.",
@@ -179,7 +181,8 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "VAPE DISPOSABLE": {
-    name: "Vape Disposables", slug: "vape-disposables", color: "#a78bfa", icon: "💨",
+    banner: "/banners/02_Vape_Disposable.webp",
+    name: "Nic Vape", slug: "vape-disposables", color: "#a78bfa", icon: "💨",
     seoTitle: "Disposable Vapes Etobicoke — THC Disposable Pens",
     seoIntro: "THC disposable vapes available at EarthRoot Cannabis, Etobicoke. No charging, no refilling — just open and enjoy.",
     seoDescription: "Disposable THC vapes are the easiest way to enjoy cannabis on the go. EarthRoot Cannabis stocks a wide selection of pre-charged, pre-filled disposable vape pens with various strain profiles and potencies. Perfect for beginners and experienced users alike. Visit us at 5120 Dundas St W, Etobicoke.",
@@ -189,6 +192,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CONCENTRATES: {
+    banner: "/banners/03_Concentrates.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "💎",
     seoTitle: "Cannabis Concentrates Etobicoke — Shatter, Wax, Hash & Live Resin",
     seoIntro: "Premium cannabis concentrates at EarthRoot Cannabis, Etobicoke. Shatter, wax, hash, live resin, and diamonds — all in stock.",
@@ -199,7 +203,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   PREROLLS: {
-    name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "🚬",
+    banner: "/banners/04_Pre_Rolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "🚬",
     seoTitle: "Pre-Rolls Etobicoke — Ready-to-Smoke Cannabis Joints",
     seoIntro: "Pre-rolled cannabis joints at EarthRoot Cannabis, Etobicoke. Singles, multi-packs, and infused pre-rolls — ready to light up.",
     seoDescription: "Skip the rolling and grab a pre-roll from EarthRoot Cannabis in Etobicoke. We carry singles, multi-packs, and infused pre-rolls from premium flower. Whether you want a quick smoke or a party pack, our pre-roll selection has something for everyone. Visit us at 5120 Dundas St W — open daily 24 hours.",
@@ -209,6 +213,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "ADD ONS": {
+    banner: "/banners/05_Accessories.webp",
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "➕",
     seoTitle: "Cannabis Accessories Etobicoke — Grinders, Papers, Lighters & More",
     seoIntro: "Essential cannabis accessories at EarthRoot Cannabis, Etobicoke. Grinders, rolling papers, lighters, trays, and more.",
@@ -218,9 +223,10 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CIGARETTES: {
+    banner: "/banners/06_Cigarettes.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "🏷️",
     seoTitle: "Native Cigarettes Etobicoke — Discount Tobacco at EarthRoot Cannabis",
-    seoIntro: "Discount native cigarettes at EarthRoot Cannabis, Etobicoke. Premium and value brands at the best prices on Dalhousie St.",
+    seoIntro: "Discount native cigarettes at EarthRoot Cannabis, Etobicoke. Premium and value brands at the best prices on Etobicoke St.",
     seoDescription: "EarthRoot Cannabis is your go-to source for affordable native cigarettes in Etobicoke. We carry a wide selection of premium and value tobacco brands at competitive prices. Located at 5120 Dundas St W in the heart of ByWard Market, we're open daily 24 hours. Stop by for the best cigarette prices in the neighbourhood.",
     faqs: [
       { q: "Do you sell cigarettes at EarthRoot Cannabis?", a: "Yes! We carry a wide selection of native cigarette brands at competitive prices." },
@@ -229,6 +235,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   "MAGIC & OTHERS": {
+    banner: "/banners/09_Magic_Stuff.webp",
     name: "Magic & Others", slug: "magic", color: "#ec4899", icon: "🍄",
     seoTitle: "Magic Mushrooms & More — Etobicoke",
     seoIntro: "Magic mushrooms, psilocybin products, and specialty items at EarthRoot Cannabis, Etobicoke.",

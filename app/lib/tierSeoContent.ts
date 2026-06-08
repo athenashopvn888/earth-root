@@ -47,7 +47,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
       },
       {
         heading: "Best Value in ByWard Market",
-        body: "At EarthRoot Cannabis on Dalhousie St, our Premium tier offers the best quality-to-price ratio in the neighbourhood. Every strain in this tier has been personally vetted by our team for potency, flavour, and bag appeal.",
+        body: "At EarthRoot Cannabis on Etobicoke St, our Premium tier offers the best quality-to-price ratio in the neighbourhood. Every strain in this tier has been personally vetted by our team for potency, flavour, and bag appeal.",
       },
     ],
     faqs: [
@@ -98,7 +98,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
 
   BUDGET: {
     seoTitle: "Budget Cannabis Etobicoke — Cheap Weed From $3/g",
-    seoIntro: "Cheap weed in Etobicoke starting at $3/g. EarthRoot Cannabis Budget tier features shreds and value ounces for cost-conscious smokers. Open daily on Dalhousie St.",
+    seoIntro: "Cheap weed in Etobicoke starting at $3/g. EarthRoot Cannabis Budget tier features shreds and value ounces for cost-conscious smokers. Open daily on Etobicoke St.",
     sections: [
       {
         heading: "Affordable Cannabis Without Compromise",

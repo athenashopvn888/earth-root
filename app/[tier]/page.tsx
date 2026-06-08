@@ -31,6 +31,9 @@ export async function generateMetadata({
   return {
     title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
     description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at EarthRoot Cannabis.`,
+    alternates: {
+      canonical: `https://earthrootcannabis.ca/${tierSlug}`,
+    },
     openGraph: {
       title: `${tierInfo.config.name} Flower | EarthRoot Cannabis`,
       description: `${flowers.length} curated ${tierInfo.config.name.toLowerCase()} strains in stock now. From $${tierInfo.config.unitPrice}/g.`,

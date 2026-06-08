@@ -1,4 +1,4 @@
-/* ── Tier Page Styles — Always Lit Master Template ── */
+/* ── Tier Page Styles — EarthRoot Cannabis Master Template ── */
 
 .main {
   min-height: 100vh;
@@ -304,7 +304,7 @@
   }
 
   .bannerSection {
-    max-height: 220px;
+    max-height: none;
   }
 
   .grid {

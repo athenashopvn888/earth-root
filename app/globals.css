@@ -1,9 +1,9 @@
 /* ================================================================
-   ALWAYS LIT CANNABIS - DESIGN SYSTEM
+   EARTHROOT CANNABIS - DESIGN SYSTEM
    Clean White Theme - Cannabis Green Accents
    ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Cinzel:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;1,400&family=Quicksand:wght@500;700&family=Montserrat:wght@400;700;900&family=Inter:wght@400;600;800&family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
 /* -- CSS Variables -- */
 :root {
@@ -14,18 +14,18 @@
   --bg-card-hover: #f0f5f2;
   --bg-glass: rgba(255, 255, 255, 0.85);
 
-    /* Brand colors - earthy green */
-  --green-deep: #143601;
-  --green-dark: #1a4301;
-  --green-mid: #245501;
-  --green-light: #538d22;
-  --green-pale: #aad576;
-  --green-mist: #e2f1d4;
-  --sale-red: #d90429;
-  --hot-orange: #fca311;
-  --hot-gradient: linear-gradient(135deg, #fca311, #d90429);
-  --green-gradient: linear-gradient(135deg, #1a4301, #245501, #538d22);
-  --accent-gradient: linear-gradient(135deg, #245501, #1a4301);
+    /* Brand colors - bold urban */
+  --green-deep: #0B2D1B;
+  --green-dark: #1C7F4C;
+  --green-mid: #2DB872;
+  --green-light: #5EE89F;
+  --green-pale: #A3F7C7;
+  --green-mist: #E2FFF0;
+  --sale-red: #E5383B;
+  --hot-orange: #FF5400;
+  --hot-gradient: linear-gradient(135deg, #FF5400, #E5383B);
+  --green-gradient: linear-gradient(135deg, #1C7F4C, #2DB872, #5EE89F);
+  --accent-gradient: linear-gradient(135deg, #2DB872, #1C7F4C);
 
   /* Tier colors */
   --tier-exotic: #B45309;
@@ -67,8 +67,8 @@
   --transition-slow: 0.5s var(--ease-smooth);
 
   /* Typography */
-  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
-  --font-body: 'Space Grotesk', 'Outfit', system-ui, sans-serif;
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Lora', serif;
 }
 
 /* -- Global Reset -- */

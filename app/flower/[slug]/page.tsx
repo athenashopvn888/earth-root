@@ -30,6 +30,9 @@ export async function generateMetadata({
   return {
     title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | EarthRoot Cannabis Etobicoke`,
     description: strainData.metaDescription,
+    alternates: {
+      canonical: `https://earthrootcannabis.ca/flower/${slug}`,
+    },
     openGraph: {
       title: `${flower.name} | EarthRoot Cannabis`,
       description: strainData.metaDescription,
@@ -62,6 +65,37 @@ function getJsonLd(flower: FlowerProduct) {
       availability: "https://schema.org/InStock",
       seller: { "@type": "Organization", name: "EarthRoot Cannabis" },
     },
+  };
+}
+
+/* -- Breadcrumb JSON-LD -- */
+function getBreadcrumbJsonLd(flower: FlowerProduct) {
+  const tierConfig = TIER_CONFIG[flower.tier];
+  const tierSlug = tierConfig?.slug || "exotic";
+  const tierName = tierConfig?.name || flower.tier;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://earthrootcannabis.ca"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": tierName,
+        "item": `https://earthrootcannabis.ca/${tierSlug}`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": flower.name,
+        "item": `https://earthrootcannabis.ca/flower/${flower.slug}`
+      }
+    ]
   };
 }
 
@@ -114,6 +148,10 @@ export default async function FlowerPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(flower)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd(flower)) }}
       />
 
       <main className={styles.main}>
