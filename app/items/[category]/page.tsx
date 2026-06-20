@@ -123,14 +123,6 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               5120 Dundas St W, Etobicoke, ON M9A 1C2 · Open 24 Hours
             </p>
-            <a
-              href="https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.visitBtn}
-            >
-              📍 Get Directions
-            </a>
           </div>
         </div>
       </section>

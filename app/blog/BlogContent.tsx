@@ -191,14 +191,6 @@ export default function BlogContent() {
             ))}
           </div>
           <div className={styles.reviewsCta}>
-            <a
-              href="https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.reviewsBtn}
-            >
-              📍 See All Reviews on Google
-            </a>
           </div>
         </div>
       </section>

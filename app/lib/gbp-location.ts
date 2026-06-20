@@ -24,8 +24,8 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2",
-  mapEmbedUrl: "https://maps.google.com/maps?q=EarthRoot%20Cannabis%205120%20Dundas%20St%20W%2C%20Etobicoke%2C%20ON%20M9A%201C2&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  directionsUrl: "",
+  mapEmbedUrl: "",
   latitude: "43.6393",
   longitude: "-79.5372",
   hours: ["Open 24 Hours"],

@@ -101,20 +101,9 @@ const jsonLd = {
       closes: "23:59",
     },
   ],
-  sameAs: [
-    "https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2",
-    "https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2",
-  ],
-  hasMap: "https://maps.google.com/?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2",
   areaServed: {
     "@type": "City",
     name: "Etobicoke",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "15",
-    bestRating: "5",
   },
 };
 
