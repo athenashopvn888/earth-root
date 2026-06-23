@@ -195,12 +195,12 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   CONCENTRATES: {
     banner: "/banners/03_Concentrates.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "💎",
-    seoTitle: "Cannabis Concentrates Etobicoke — Shatter, Wax, Hash & Live Resin",
-    seoIntro: "Premium cannabis concentrates at EarthRoot Cannabis, Etobicoke. Shatter, wax, hash, live resin, and diamonds — all in stock.",
-    seoDescription: "EarthRoot Cannabis offers a premium selection of cannabis concentrates in Etobicoke. From traditional hash and kief to modern extracts like shatter, wax, live resin, and THC diamonds, we carry products for every preference and potency level. Our concentrates are sourced from trusted extractors and tested for purity. Visit us at 5120 Dundas St W.",
+    seoTitle: "Cannabis Concentrates in Etobicoke | EarthRoot Cannabis",
+    seoIntro: "Browse concentrates category information at EarthRoot Cannabis in Etobicoke. Review concentrate-related menu details and confirm current store information before visiting.",
+    seoDescription: "EarthRoot Cannabis provides a concentrates category page for adult shoppers reviewing concentrate-related menu information in Etobicoke. Use this page to review current menu details, then confirm store information before visiting EarthRoot Cannabis at 5120 Dundas St W in Etobicoke.",
     faqs: [
-      { q: "What types of concentrates do you carry?", a: "We stock shatter, wax, budder, live resin, rosin, hash, kief, and THC diamonds from top Canadian extractors." },
-      { q: "How do I consume concentrates?", a: "Concentrates can be dabbed with a rig, vaped with a concentrate pen, or added to flower in a joint or bowl for extra potency." },
+      { q: "What concentrate-related information can shoppers review?", a: "This category page helps adult shoppers review concentrate-related menu information when it is listed on the current menu." },
+      { q: "How should customers confirm current concentrate menu details?", a: "Review the current menu information on this page and confirm store details before visiting EarthRoot Cannabis." },
     ],
   },
   PREROLLS: {
