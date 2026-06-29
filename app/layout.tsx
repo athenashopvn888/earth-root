@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://earthrootcannabis.ca"),
   title: {
-    default: "EarthRoot Cannabis — Premium Cannabis Dispensary, Etobicoke",
+    default: "24 Hour Etobicoke Dispensary | EarthRoot Cannabis",
     template: "%s | EarthRoot Cannabis",
   },
   description:
-    "Shop 200+ premium cannabis strains at EarthRoot Cannabis. Exotic, Premium, AAA+, AA & Budget flower from $3/g. Etobicoke's uplifting dispensary at 5120 Dundas St W. Open 24 Hours.",
+    "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
   keywords: [
     "cannabis dispensary Etobicoke",
     "weed store Etobicoke",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://earthrootcannabis.ca",
     siteName: "EarthRoot Cannabis",
-    title: "EarthRoot Cannabis — Premium Etobicoke Cannabis Dispensary",
+    title: "24 Hour Etobicoke Dispensary | EarthRoot Cannabis",
     description:
-      "200+ strains from $3/g. Exotic to Budget. Etobicoke's uplifting dispensary at 5120 Dundas St W. Open 24 Hours.",
+      "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: [
       {
         url: "https://earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EarthRoot Cannabis — Etobicoke's Uplifting Dispensary",
-    description: "200+ strains from $3/g. Open 24 Hours at 5120 Dundas St W, Etobicoke.",
+    title: "24 Hour Etobicoke Dispensary | EarthRoot Cannabis",
+    description: "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
     images: ["https://earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
