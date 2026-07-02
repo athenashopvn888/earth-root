@@ -25,7 +25,7 @@ export const STORE_BLOG_CONFIG = {
   storeCode: "ERC01",
   storeName: "EarthRoot Cannabis",
   city: "Etobicoke",
-  domain: "earthrootcannabis.ca",
+  domain: "www.earthrootcannabis.ca",
   storePath: "/weed-dispensary-etobicoke",
 };
 

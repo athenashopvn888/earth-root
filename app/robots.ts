@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://earthrootcannabis.ca/sitemap.xml",
+    sitemap: "https://www.earthrootcannabis.ca/sitemap.xml",
   };
 }
