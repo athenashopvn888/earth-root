@@ -39,7 +39,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     meta_description: "Adult 19+ guide to EarthRoot Cannabis around Dundas St W / Islington / Etobicoke, with local store-page checks, menu-category context, and safe visit planning.",
     h1: "How Adults 19+ Can Read EarthRoot Cannabis Menu Categories Safely",
     excerpt: "EarthRoot Cannabis guide for adults 19+ reviewing store information around Dundas St W / Islington / Etobicoke.",
-    author: "Athena SEO Team",
+    author: "The EarthRoot Cannabis Team",
     date: "2026-07-02",
     category: "Store Guide",
     readTime: "4 min",
