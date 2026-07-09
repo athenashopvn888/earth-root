@@ -225,6 +225,93 @@ Use the live menu for current store-specific selection, then use the store page 
       }
     ]
   },
+  {
+    slug: "earthroot-cannabis-local-visit-guide-2026",
+    title: "EarthRoot Cannabis Local Visit Guide for Adults 19+",
+    seoTitle: "EarthRoot Cannabis Local Visit Guide | Etobicoke",
+    seo_title: "EarthRoot Cannabis Local Visit Guide | Etobicoke",
+    metaDescription: "Plan a visit to EarthRoot Cannabis around Dundas St W, Islington, and Six Points with adult 19+ store-page checks, menu-category paths, and local directions context.",
+    meta_description: "Plan a visit to EarthRoot Cannabis around Dundas St W, Islington, and Six Points with adult 19+ store-page checks, menu-category paths, and local directions context.",
+    h1: "EarthRoot Cannabis Local Visit Guide for Adults 19+",
+    excerpt: "EarthRoot Cannabis local visit guide for adults 19+ around Dundas St W, Islington, and Six Points.",
+    author: "The EarthRoot Cannabis Team",
+    date: "2026-07-09",
+    category: "Local Guide",
+    readTime: "4 min",
+    content: `## EarthRoot Cannabis Local Visit Guide For Adults 19+
+
+When adults 19+ search for a cannabis store around Dundas St W, Islington, and Six Points, the most useful page should make three things easy: confirm the right storefront, understand the nearby street context, and move quickly to the store page or menu categories before visiting.
+
+This guide is for shoppers researching EarthRoot Cannabis in Etobicoke. It does not replace current store details, current hours, or live menu information. Use the official store page or contact staff before leaving.
+
+## Confirm The Right Storefront
+
+EarthRoot Cannabis is tied to Dundas St W, Islington, Six Points, and Kipling. Local shoppers often compare several map results and store pages at once, so matching the store name, city, and nearby street language matters before making the trip.
+
+If you are checking directions, start with the official store page and confirm the destination there. That keeps the visit focused on the right storefront instead of relying on a copied listing or an old search result.
+
+## Browse The Useful Menu Paths
+
+Start with the menu category that matches what you want to compare. Most shoppers move fastest when they check flower tiers, pre-rolls, vapes, edibles, concentrates, and accessories first, then ask staff if they need help choosing between options.
+
+The live menu is the best place for current product details. This guide gives local context and points you toward the pages that are most useful before visiting.
+
+## What To Check Before You Go
+
+- The exact store page and map destination.
+- Current hours, directions, and contact options.
+- Menu categories you want to compare before asking staff.
+- Valid adult 19+ identification for the visit.
+
+## Why Local Context Helps
+
+Good local store pages should answer real visit-planning questions instead of repeating a city name. Clear store identity, nearby street context, and helpful internal links make it easier for adults 19+ to decide whether they are looking at the right store.
+
+For EarthRoot Cannabis, that means keeping the page focused on Dundas St W, Islington, and Six Points, practical category browsing, and direct next steps for shoppers who are ready to plan a visit.
+
+## Helpful Next Steps
+
+- Open the EarthRoot Cannabis store page for directions and contact details.
+- Use the homepage if you want the broadest store navigation.
+- Browse the blog for more adult 19+ store guides.
+
+## FAQ
+
+### Is this guide only for EarthRoot Cannabis?
+
+Yes. It is written for EarthRoot Cannabis and its Etobicoke local context.
+
+### Does this page confirm current product availability?
+
+No. Use the live menu or contact staff for current store-specific details before visiting.
+
+### What should shoppers check first?
+
+Confirm the store page, then use menu categories and directions to plan the visit.
+
+### Why mention nearby streets and areas?
+
+Nearby street and neighbourhood context helps shoppers confirm they are looking at the right storefront before they leave.`,
+    faq: "",
+    internal_links_used: "[EarthRoot Cannabis store page](/weed-dispensary-etobicoke)\\n[EarthRoot Cannabis homepage](/)\\n[More EarthRoot Cannabis guides](/blog)",
+    relatedLinks: [
+      {
+        title: "EarthRoot Cannabis store page",
+        url: "https://www.earthrootcannabis.ca/weed-dispensary-etobicoke",
+        description: "Primary store-specific page for directions, contact details, and visit planning."
+      },
+      {
+        title: "EarthRoot Cannabis homepage",
+        url: "https://www.earthrootcannabis.ca/",
+        description: "Store-scoped navigation for adults 19+."
+      },
+      {
+        title: "More EarthRoot Cannabis guides",
+        url: "https://www.earthrootcannabis.ca/blog",
+        description: "Store-scoped blog index for additional visit-planning guides."
+      }
+    ],
+  },
 ];
 export function getStaticPost(slug: string) {
   return STATIC_POSTS.find((post) => post.slug === slug);
