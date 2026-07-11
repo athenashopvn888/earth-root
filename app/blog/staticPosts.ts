@@ -1,4 +1,4 @@
-export interface StaticBlogPost {
+﻿export interface StaticBlogPost {
   slug: string;
   title: string;
   seoTitle: string;
@@ -7,310 +7,207 @@ export interface StaticBlogPost {
   meta_description: string;
   h1: string;
   excerpt: string;
+  authorName: string;
+  authorHandle: string;
+  authorRole: string;
   author: string;
+  structuredAuthorName: string;
   date: string;
+  modifiedDate: string;
   category: string;
   readTime: string;
   content: string;
   faq: string;
-  internal_links_used: string;
-  relatedLinks: Array<{
-    title: string;
-    url: string;
-    description: string;
-  }>;
+  relatedLinks: Array<{ title: string; url: string; description: string }>;
+  editorialRemark: { label: string; authorName: string; authorHandle: string; authorRole: string; body: string };
 }
 
 export const STORE_BLOG_CONFIG = {
-  storeCode: "ERC01",
-  storeName: "EarthRoot Cannabis",
-  city: "Etobicoke",
-  domain: "www.earthrootcannabis.ca",
-  storePath: "/weed-dispensary-etobicoke",
+  "storeCode": "ERC01",
+  "storeName": "EarthRoot Cannabis",
+  "city": "Etobicoke",
+  "domain": "www.earthrootcannabis.ca",
+  "storePath": "/weed-dispensary-etobicoke",
+  "address": "5120 Dundas St W, Etobicoke, ON M9A 1C2",
+  "phone": "(647) 382-5122",
+  "hours": "open 24 hours"
 };
+
+export const BLOG_REDIRECTS: Record<string, string> = {};
 
 export const STATIC_POSTS: StaticBlogPost[] = [
   {
-    slug: "earthroot-menu-category-guide",
-    title: "How Adults 19+ Can Read EarthRoot Cannabis Menu Categories Safely",
-    seoTitle: "EarthRoot Cannabis Guide | Etobicoke Adult 19+",
-    seo_title: "EarthRoot Cannabis Guide | Etobicoke Adult 19+",
-    metaDescription: "Adult 19+ guide to EarthRoot Cannabis around Dundas St W / Islington / Etobicoke, with local store-page checks, menu-category context, and safe visit planning.",
-    meta_description: "Adult 19+ guide to EarthRoot Cannabis around Dundas St W / Islington / Etobicoke, with local store-page checks, menu-category context, and safe visit planning.",
-    h1: "How Adults 19+ Can Read EarthRoot Cannabis Menu Categories Safely",
-    excerpt: "EarthRoot Cannabis guide for adults 19+ reviewing store information around Dundas St W / Islington / Etobicoke.",
-    author: "The EarthRoot Cannabis Team",
-    date: "2026-07-02",
-    category: "Store Guide",
-    readTime: "4 min",
-    content: `## EarthRoot Cannabis Local Store Guide for Adults 19+
-
-EarthRoot Cannabis serves adults 19+ looking for store information around Dundas St W / Islington / Etobicoke. Use this guide to get oriented, compare the store page with menu categories, and choose the most useful next step before visiting.
-
-The focus is practical and store-specific: confirm the right storefront, browse helpful category links, and use the store page for directions, contact options, and visit planning.
-
-## Why Local Context Helps
-
-EarthRoot Cannabis is tied to Dundas St W and Islington context in Etobicoke. Useful local content should make the page easier for shoppers to understand by connecting the store to nearby streets, neighbourhood language, and visit-planning details already supported by the site.
-
-Searchers often want to confirm that they are looking at the right storefront before they visit. A concise guide can support that decision by explaining the local context and the most helpful next steps.
-
-## Plan A Better Visit
-
-Start with the official EarthRoot Cannabis store page, then use the menu/category links to browse what the site makes easy to compare. Shoppers can confirm the right storefront, directions, contact options, and local visit details in one place.
-
-If you need a quick answer before heading out, check the store page first and contact the store directly for help from staff.
-
-## Browse Menu Categories With Confidence
-
-Menu category labels help adults 19+ move quickly from general store research to the product areas they care about. Use them to compare the sections already shown on the site, such as flower, pre-rolls, vapes, edibles, concentrates, accessories, or other store categories.
-
-That makes the page easier to scan and gives shoppers a cleaner path from local research to the right store page.
-
-## Adult 19+ Visit Basics
-
-Adults 19+ should bring valid government identification, confirm the store page before leaving, and use the menu/category links to narrow down what they want to ask about in-store.
-
-The goal is simple: help real shoppers feel confident they are on the right store site and know where to find the next useful page.
-
-## FAQ
-
-### Is this guide for EarthRoot Cannabis only?
-
-Yes. This guide is written for EarthRoot Cannabis and the local Etobicoke context connected to this website.
-
-### How can shoppers check current menu details?
-
-Use the store page and menu/category links before visiting, then ask staff if you need help comparing options.
-
-### Who can use this guide?
-
-This guide is for adults 19+ who want to understand the store page before visiting.
-
-### What is the best next step after reading?
-
-Open the store page, browse the available menu/category sections, and use the contact or directions options when you are ready to plan your visit.`,
-    faq: "",
-    internal_links_used: "[EarthRoot Cannabis Etobicoke store page](/weed-dispensary-etobicoke)\\n[EarthRoot Cannabis homepage](/)\\n[More EarthRoot Cannabis guides](/blog)",
-    relatedLinks: [
+    "slug": "earthroot-menu-category-guide",
+    "title": "EarthRoot Cannabis Menu Categories on Dundas St W",
+    "seoTitle": "EarthRoot Cannabis Menu Categories on Dundas St W | Etobicoke",
+    "seo_title": "EarthRoot Cannabis Menu Categories on Dundas St W | Etobicoke",
+    "metaDescription": "EarthRoot Cannabis Menu Categories on Dundas St W with address, hours, phone, menu-category checks, and practical planning notes for Etobicoke shoppers.",
+    "meta_description": "EarthRoot Cannabis Menu Categories on Dundas St W with address, hours, phone, menu-category checks, and practical planning notes for Etobicoke shoppers.",
+    "h1": "EarthRoot Cannabis Menu Categories on Dundas St W",
+    "excerpt": "A practical Etobicoke store-page and menu check for EarthRoot Cannabis, with address, hours, phone, and browsing tips.",
+    "authorName": "Ellis Root",
+    "authorHandle": "@EllisEarthRoot",
+    "authorRole": "House Writer",
+    "author": "By Ellis Root \\u00b7 @EllisEarthRoot",
+    "structuredAuthorName": "EarthRoot Cannabis Editorial Team",
+    "date": "2026-07-02",
+    "modifiedDate": "2026-07-11",
+    "category": "Menu Guide",
+    "readTime": "4 min",
+    "content": "Quick answer: EarthRoot Cannabis is listed at 5120 Dundas St W, Etobicoke, ON M9A 1C2. The listed phone number is (647) 382-5122, and the site lists the store as open 24 hours. If you are checking a weed dispensary in Etobicoke, start with the store page, then move into the menu category that matches the trip. That keeps the browse clean and keeps old screenshots from bossing you around.\n\n## Start With The Right Store Page\n\nThe local anchor is Dundas St W in Etobicoke. Use that as the first sanity check before you compare anything else. The web gets messy when store names, neighbourhood names, and old tabs start floating around. The easiest fix is not fancy: match the address, match the phone number, then browse from the current site navigation.\n\nBecause the site lists the store as open 24 hours, it can show up for people searching for a 24 hour cannabis store or weed dispensary in Etobicoke. Still, the live page is the place to confirm the details before leaving. This is especially true if you are trying to make a quick stop. A stale menu tab can make a simple cannabis store run feel like a treasure hunt, and nobody needs that extra drama.\n\n## Browse By Product Lane\n\nThe fastest path is to pick the lane first. Flower shoppers can start with Budget, AA, AAA+, Premium, or Exotic flower. People looking for something already rolled can jump into pre-rolls. Edibles, THC vapes, concentrates, accessories, and cigarettes each deserve their own check instead of being mashed into one giant scroll.\n\nIf cheap weed or affordable weed is the point, begin in Budget and AA before comparing the higher flower tiers. If premium flower or exotic flower is the mood, go straight there and compare the current listings. The point is not to memorize every page. The point is to stop wandering through pages that were never your lane.\n\n## What To Check Before Leaving\n\nBring valid government ID. Confirm the address, hours, and phone number on the store page. If you need one exact item, check the live category page and call the listed number when a yes-or-no answer matters. Menu pages can change, and that is normal; the current page beats a saved tab every time.\n\nOne extra check helps for Etobicoke: keep the store page open until the trip is actually happening, so the address, phone, hours, and category links are still the current version instead of whatever an old browser tab remembered.\n\nFor a Etobicoke cannabis dispensary search, this guide is the calm version of the checklist: verify the store, choose the lane, then use the live page for the details. A little structure makes the menu easier to use, especially when the flower tiers start to blur together.\n\n## FAQ\n\n### Where is EarthRoot Cannabis?\nEarthRoot Cannabis is listed at 5120 Dundas St W, Etobicoke, ON M9A 1C2.\n\n### What hours are listed?\nThe site lists EarthRoot Cannabis as open 24 hours.\n\n### Does this article confirm current stock?\nNo. Use the current menu and category pages for current listings before visiting.\n\n### What should shoppers bring?\nBring valid government identification and use the store page for the current visit details.",
+    "faq": "",
+    "relatedLinks": [
       {
-            "title": "EarthRoot Cannabis Etobicoke store page",
-            "url": "https://earthrootcannabis.ca/weed-dispensary-etobicoke",
-            "description": "Primary store-specific destination for current store details after reading the guide."
+        "title": "Flower menu",
+        "url": "/premium",
+        "description": "Start with a flower tier if you already know flower is the lane."
       },
       {
-            "title": "EarthRoot Cannabis homepage",
-            "url": "https://earthrootcannabis.ca/",
-            "description": "Store-scoped general navigation for adults 19+."
+        "title": "Current menu categories",
+        "url": "/",
+        "description": "Use the homepage navigation to jump into the current category pages."
       },
       {
-            "title": "More EarthRoot Cannabis guides",
-            "url": "https://earthrootcannabis.ca/blog",
-            "description": "Store-scoped blog index for future approved posts."
-      }
-],
-  },
-  {
-    slug: "earthroot-cannabis-price-flower-tier-guide",
-    title: "EarthRoot Cannabis Price and Flower Tier Guide",
-    seoTitle: "EarthRoot Cannabis Price Tier Guide",
-    seo_title: "EarthRoot Cannabis Price Tier Guide",
-    metaDescription: "EarthRoot Cannabis guide to flower tiers, weight choices, unit value, and store visit planning in Etobicoke.",
-    meta_description: "EarthRoot Cannabis guide to flower tiers, weight choices, unit value, and store visit planning in Etobicoke.",
-    h1: "EarthRoot Cannabis Price and Flower Tier Guide",
-    excerpt: "A simple guide to EarthRoot Cannabis flower tiers, weights, and unit value.",
-    author: "The EarthRoot Cannabis Team",
-    date: "2026-07-09",
-    category: "Price Guide",
-    readTime: "4 min",
-    content: `## EarthRoot Cannabis Price and Flower Tier Guide
-
-EarthRoot Cannabis makes flower shopping easier by organizing the menu into clear tiers. Start with the tier that matches the kind of flower you want, then choose the weight that fits your budget and visit.
-
-The simple idea is: pick the grade, compare the weight, and use the live menu before you head in. Larger weights usually improve unit value, so both the total price and the price per gram are worth checking.
-
-## Start With A Tier
-
-Use these tier pages when you want to compare the menu directly:
-
-- [Exotic flower](/exotic): a top-shelf lane for shoppers who want the highest tier first.
-- [Premium flower](/premium): a strong middle-to-top lane for shoppers balancing quality and value.
-- [AAA+ flower](/aaa): a simple quality lane with easy weight comparisons.
-- [AA flower](/aa): a value-focused lane for straightforward everyday browsing.
-- [Budget flower](/budget): the clearest low-cost lane when price is the main priority.
-
-Once the tier feels right, the live menu helps shoppers compare the current strains and weights inside that tier.
-
-## How The Weight Ladder Helps Value
-
-Moving up in weight usually improves the unit value. That means the shopper can look beyond the total price and see how the price per gram changes as the amount gets larger.
-
-Current tier examples commonly shown across the store menu include:
-
-- Exotic flower: 1g at $20/g; 3g at $40, about $13.33/g; 6g at $60, about $10/g.
-- Premium flower: 1g at $15/g; 3g at $30, about $10/g; 6g at $45, about $7.50/g.
-- AAA+ flower: 1g at $10/g; 3g at $20, about $6.67/g; 6g at $30, about $5/g.
-- AA flower: a simple value tier around $4/g where listed on the menu.
-- Budget flower: a low-cost lane around $3/g or $10/3g where listed on the menu.
-
-That structure keeps the buying path easy: choose the grade, choose the weight, and compare the unit value before visiting.
-
-## Match The Visit To The Budget
-
-If the goal is the smallest spend, start with the smaller weight options. If you already know the tier you like, compare the next weight step and see how much the unit value improves. If you want a stronger flower lane, stay in Premium or Exotic and compare from there.
-
-This is why a tiered menu works well for local storefront shopping. It keeps the decision organized, makes value easier to understand, and gives shoppers better questions to ask staff when they visit.
-
-## Use The Live Menu Before Visiting
-
-For the smoothest visit, open the EarthRoot Cannabis menu before heading out. The live menu is the best place to compare current flower tiers, weights, and store-specific options. The store page is also useful for directions, contact details, and visit planning.
-
-If you are comparing flower tiers in Etobicoke, use this page as the simple guide, then use the live menu for the current selection.
-
-## Helpful Next Steps
-
-- Compare [Exotic flower](/exotic), [Premium flower](/premium), [AAA+ flower](/aaa), [AA flower](/aa), and [Budget flower](/budget).
-- Open the EarthRoot Cannabis store page for directions, contact details, and visit planning.
-- Use the blog index for more store-specific guides.
-
-## FAQ
-
-### How do I choose the right flower tier?
-
-Start with the grade that fits the visit, then compare the weight options inside that tier. This makes it easier to balance quality, amount, and budget.
-
-### Why does unit value matter?
-
-Unit value shows the approximate price per gram at different weights. It helps shoppers see how value changes as they move from 1g to larger options like 3g or 6g.
-
-### Why link to each tier page?
-
-Each tier page gives shoppers a faster path to the exact flower lane they want instead of forcing everyone through the full menu first.
-
-### Where should shoppers check current strains?
-
-Use the live menu for current store-specific selection, then use the store page for directions, contact details, and visit planning.`,
-    faq: "",
-    internal_links_used: "[Exotic flower](/exotic)\\n[Premium flower](/premium)\\n[AAA+ flower](/aaa)\\n[AA flower](/aa)\\n[Budget flower](/budget)\\n[EarthRoot Cannabis store page](/weed-dispensary-etobicoke)",
-    relatedLinks: [
-      {
-        title: "Exotic flower",
-        url: "https://www.earthrootcannabis.ca/exotic",
-        description: "Top-shelf flower tier for quick comparison."
+        "title": "EarthRoot Cannabis store page",
+        "url": "/weed-dispensary-etobicoke",
+        "description": "Check the Etobicoke store page for address, phone, hours, and visit details."
       },
       {
-        title: "Premium flower",
-        url: "https://www.earthrootcannabis.ca/premium",
-        description: "Premium flower tier for quality and value comparison."
-      },
-      {
-        title: "AAA+ flower",
-        url: "https://www.earthrootcannabis.ca/aaa",
-        description: "AAA+ flower tier for easy weight comparisons."
-      },
-      {
-        title: "AA flower",
-        url: "https://www.earthrootcannabis.ca/aa",
-        description: "AA flower tier for straightforward value browsing."
-      },
-      {
-        title: "Budget flower",
-        url: "https://www.earthrootcannabis.ca/budget",
-        description: "Budget flower tier for low-cost browsing."
-      },
-      {
-        title: "EarthRoot Cannabis store page",
-        url: "https://www.earthrootcannabis.ca/weed-dispensary-etobicoke",
-        description: "Store-specific page for directions, contact details, and visit planning."
-      }
-    ]
-  },
-  {
-    slug: "earthroot-cannabis-local-visit-guide-2026",
-    title: "EarthRoot Cannabis Local Visit Guide for Adults 19+",
-    seoTitle: "EarthRoot Cannabis Local Visit Guide | Etobicoke",
-    seo_title: "EarthRoot Cannabis Local Visit Guide | Etobicoke",
-    metaDescription: "Plan a visit to EarthRoot Cannabis in Etobicoke with adult 19+ store-page checks, menu-category paths, and local directions context.",
-    meta_description: "Plan a visit to EarthRoot Cannabis in Etobicoke with adult 19+ store-page checks, menu-category paths, and local directions context.",
-    h1: "EarthRoot Cannabis Local Visit Guide for Adults 19+",
-    excerpt: "EarthRoot Cannabis local visit guide for adults 19+ around Dundas St W, Islington, and Six Points.",
-    author: "The EarthRoot Cannabis Team",
-    date: "2026-07-09",
-    category: "Local Guide",
-    readTime: "4 min",
-    content: `Use this guide to confirm the right EarthRoot Cannabis storefront around Dundas St W, Islington, and Six Points, understand nearby street context, and choose the most useful store page or menu path before visiting.
-
-For current details, start with the official store page or contact staff before leaving.
-
-## Confirm The Right Storefront
-
-EarthRoot Cannabis is tied to Dundas St W, Islington, Six Points, and Kipling. Local shoppers often compare several map results and store pages at once, so matching the store name, city, and nearby street language matters before making the trip.
-
-If you are checking directions, start with the official store page and confirm the destination there. That keeps the visit focused on the right storefront instead of relying on a copied listing or an old search result.
-
-## Use The Menu Before Visiting
-
-Start with the menu category that matches what you want to compare. Most shoppers move fastest when they check flower tiers, pre-rolls, vapes, edibles, concentrates, and accessories first, then ask staff if they need help choosing between options.
-
-The live menu is the best place for current product details. This guide gives local context and points you toward the pages that are most useful before visiting.
-
-## What To Check Before You Go
-
-- The exact store page and map destination.
-- Current hours, directions, and contact options.
-- Menu categories you want to compare before asking staff.
-- Valid adult 19+ identification for the visit.
-
-## Why The Local Context Matters
-
-Good local store pages should answer real visit-planning questions instead of repeating a city name. Clear store identity, nearby street context, and helpful internal links make it easier for adults 19+ to decide whether they are looking at the right store.
-
-For EarthRoot Cannabis, that means keeping the page focused on Dundas St W, Islington, and Six Points, practical category browsing, and direct next steps for shoppers who are ready to plan a visit.
-
-## Helpful Next Steps
-
-- Open the EarthRoot Cannabis store page for directions and contact details.
-- Use the homepage if you want the broadest store navigation.
-- Browse the blog for more adult 19+ store guides.
-
-## FAQ
-
-### Is this guide only for EarthRoot Cannabis?
-
-Yes. It is written for EarthRoot Cannabis and its Etobicoke local context.
-
-### How can shoppers check current product details?
-
-Use the live menu or contact staff for current store-specific details before visiting.
-
-### What should shoppers check first?
-
-Confirm the store page, then use menu categories and directions to plan the visit.
-
-### Why mention nearby streets and areas?
-
-Nearby street and neighbourhood context helps shoppers confirm they are looking at the right storefront before they leave.`,
-    faq: "",
-    internal_links_used: "[EarthRoot Cannabis store page](/weed-dispensary-etobicoke)\\n[EarthRoot Cannabis homepage](/)\\n[More EarthRoot Cannabis guides](/blog)",
-    relatedLinks: [
-      {
-        title: "EarthRoot Cannabis store page",
-        url: "https://www.earthrootcannabis.ca/weed-dispensary-etobicoke",
-        description: "Primary store-specific page for directions, contact details, and visit planning."
-      },
-      {
-        title: "EarthRoot Cannabis homepage",
-        url: "https://www.earthrootcannabis.ca/",
-        description: "Store-scoped navigation for adults 19+."
-      },
-      {
-        title: "More EarthRoot Cannabis guides",
-        url: "https://www.earthrootcannabis.ca/blog",
-        description: "Store-scoped blog index for additional visit-planning guides."
+        "title": "EarthRoot Cannabis blog",
+        "url": "/blog",
+        "description": "Browse the store guide archive and future menu notes."
       }
     ],
+    "editorialRemark": {
+      "label": "Another House Writer Adds",
+      "authorName": "Nora Dundas",
+      "authorHandle": "@NoraAtEarthRoot",
+      "authorRole": "House Writer",
+      "body": "The address check is not boring; it is the part that saves the trip. Store names and old tabs can blur together, so matching Dundas St W, the phone number, and the current page is worth the minute. Check the category, check the current listing, then move. Simple beats heroic scrolling."
+    },
   },
+  {
+    "slug": "earthroot-cannabis-price-flower-tier-guide",
+    "title": "How to Read the EarthRoot Cannabis Flower Menu",
+    "seoTitle": "How to Read the EarthRoot Cannabis Flower Menu | Etobicoke",
+    "seo_title": "How to Read the EarthRoot Cannabis Flower Menu | Etobicoke",
+    "metaDescription": "How to Read the EarthRoot Cannabis Flower Menu with natural notes on Budget, AA, AAA+, Premium, and Exotic flower for Etobicoke shoppers.",
+    "meta_description": "How to Read the EarthRoot Cannabis Flower Menu with natural notes on Budget, AA, AAA+, Premium, and Exotic flower for Etobicoke shoppers.",
+    "h1": "How to Read the EarthRoot Cannabis Flower Menu",
+    "excerpt": "A cleaner way to compare EarthRoot Cannabis flower tiers, from budget weed to premium and exotic flower.",
+    "authorName": "Nora Dundas",
+    "authorHandle": "@NoraAtEarthRoot",
+    "authorRole": "House Writer",
+    "author": "By Nora Dundas \\u00b7 @NoraAtEarthRoot",
+    "structuredAuthorName": "EarthRoot Cannabis Editorial Team",
+    "date": "2026-07-09",
+    "modifiedDate": "2026-07-11",
+    "category": "Flower Guide",
+    "readTime": "4 min",
+    "content": "Flower menus get easier when you stop reading them like a novel. At EarthRoot Cannabis, the useful first move is to choose the flower lane: Budget, AA, AAA+, Premium, or Exotic. Once the lane is right, compare the current strains and weights on the live page.\n\nThat is the whole advantage of a tiered cannabis menu. It lets someone looking for cheap weed in Etobicoke start low without apology, while someone chasing premium flower or exotic flower can skip straight to the higher shelves. Same menu, less wandering.\n\n## The Flower Lanes\n\nBudget is the value lane. It is the place to start when affordable weed is the main mission and the exact strain can come second. AA is still value-minded, but it gives shoppers another step above the lowest price lane. AAA+ is the middle lane for people who want stronger flower-page filtering without immediately jumping into the top tiers.\n\nPremium flower is for shoppers who want the menu to feel a little more selective. Exotic flower is the top lane and should be checked when the first question is not simply price. None of those labels replace the live product listing. They organize the browse so you know where to look first.\n\n## Read Price And Weight Together\n\nA flower price only tells half the story if you do not look at the weight beside it. The menu structure commonly shows smaller single-gram pricing and larger bundle-style weights, so compare the total spend and the approximate value per gram before deciding. That is where weed deals become clearer without turning the page into math class.\n\nBudget and AA can make sense for routine value shopping. AAA+ often works as the comparison lane when you want more strength from the menu without going straight to the top. Premium and Exotic are where quality-first shoppers usually start. If you are unsure, open two tiers side by side and compare the current listings instead of guessing from the label alone.\n\n## Local Search, Real Page\n\nEarthRoot Cannabis is listed at 5120 Dundas St W, Etobicoke, ON M9A 1C2, with the site listing the store as open 24 hours. If you are comparing a weed store in Etobicoke, use those details to confirm you are in the right place, then let the flower tiers do the sorting.\n\nThe clean move: choose Budget for cheap weed, AA or AAA+ for value-plus browsing, Premium for a stronger flower lane, and Exotic when top-tier flower is the point. Then check the live page before visiting, because cannabis menus change and pretending otherwise is how people end up annoyed at a counter. Check the category, check the current listing, then move. Simple beats heroic scrolling.\n\n## FAQ\n\n### Which flower tier should I check first?\nStart with the tier that matches the trip: Budget for value, AA or AAA+ for middle-lane browsing, Premium for higher-grade flower, and Exotic for the top lane.\n\n### Does this guide guarantee prices or stock?\nNo. It explains how to read the menu structure. Use the live category page for current listings.\n\n### Why do weights matter?\nDifferent weights can change the practical value. Compare the total price and the amount before choosing.\n\n### Is this useful for local Etobicoke shoppers?\nYes. It is written for people checking EarthRoot Cannabis and its current flower menu before visiting.",
+    "faq": "",
+    "relatedLinks": [
+      {
+        "title": "Budget flower",
+        "url": "/budget",
+        "description": "Start here when affordable weed or budget flower is the priority."
+      },
+      {
+        "title": "Premium flower",
+        "url": "/premium",
+        "description": "Compare the premium flower lane before moving up or down the menu."
+      },
+      {
+        "title": "Exotic flower",
+        "url": "/exotic",
+        "description": "Use this lane when exotic flower is the first thing you want to compare."
+      },
+      {
+        "title": "EarthRoot Cannabis store page",
+        "url": "/weed-dispensary-etobicoke",
+        "description": "Check the Etobicoke store page for address, phone, hours, and visit details."
+      },
+      {
+        "title": "EarthRoot Cannabis blog",
+        "url": "/blog",
+        "description": "Browse the store guide archive and future menu notes."
+      }
+    ],
+    "editorialRemark": {
+      "label": "Another House Writer Adds",
+      "authorName": "EarthRoot Desk",
+      "authorHandle": "@EarthRootDesk",
+      "authorRole": "Store Editorial Desk",
+      "body": "One thing I would add: the flower tier is a starting point, not the finish line. If budget is tight, compare Budget and AA first, then move up only when the current listing gives you a reason. Use the live store pages for the current information before visiting."
+    },
+  },
+  {
+    "slug": "earthroot-cannabis-local-visit-guide-2026",
+    "title": "EarthRoot Cannabis Local Menu Guide for Etobicoke",
+    "seoTitle": "EarthRoot Cannabis Local Menu Guide for Etobicoke | Etobicoke",
+    "seo_title": "EarthRoot Cannabis Local Menu Guide for Etobicoke | Etobicoke",
+    "metaDescription": "EarthRoot Cannabis Local Menu Guide for Etobicoke covering flower, edibles, pre-rolls, THC vapes, concentrates, accessories, and store-page checks.",
+    "meta_description": "EarthRoot Cannabis Local Menu Guide for Etobicoke covering flower, edibles, pre-rolls, THC vapes, concentrates, accessories, and store-page checks.",
+    "h1": "EarthRoot Cannabis Local Menu Guide for Etobicoke",
+    "excerpt": "A practical menu guide for EarthRoot Cannabis: flower, edibles, pre-rolls, THC vapes, concentrates, accessories, and cigarettes.",
+    "authorName": "EarthRoot Desk",
+    "authorHandle": "@EarthRootDesk",
+    "authorRole": "Store Editorial Desk",
+    "author": "By EarthRoot Desk \\u00b7 @EarthRootDesk",
+    "structuredAuthorName": "EarthRoot Cannabis Editorial Team",
+    "date": "2026-07-09",
+    "modifiedDate": "2026-07-11",
+    "category": "Store Guide",
+    "readTime": "4 min",
+    "content": "EarthRoot Cannabis has a menu that is easier to use when you stop treating every category like the same errand. Flower, edibles, pre-rolls, THC vapes, concentrates, accessories, and cigarettes solve different shopping problems. Pick the problem first, then pick the page.\n\nQuick summary: use flower tiers when price or grade matters, pre-rolls when convenience matters, edibles when format matters, THC vapes when device style matters, and concentrates when the category is already familiar. If you are checking delivery or cigarettes, use those pages directly instead of hoping they appear in the middle of another menu.\n\n## Flower Is The Main Map\n\nFlower has the clearest structure because the tiers give you a natural starting point. Budget and AA help shoppers looking for affordable weed. AAA+ is a strong middle lane. Premium and Exotic are the higher lanes for shoppers who want to compare quality first. It is menu navigation, not a personality test.\n\nThat matters for local cannabis dispensary searches because people are rarely searching in the abstract. Someone looking for a weed dispensary in Etobicoke usually wants to know whether the store is relevant right now: where it is, what broad categories are easy to browse, and whether the trip is worth making.\n\n## Categories That Save Time\n\nPre-rolls are the shortcut when rolling is not on the agenda. Edibles keep gummies, chocolates, drinks, and similar formats in their own lane. THC vapes separate cartridge-style shopping from flower. Concentrates get their own space because they are not a casual substitute for every shopper. Accessories are listed separately from cannabis product categories, which keeps the menu cleaner.\n\nCigarettes are also split into their own category on the site. If you are comparing cheap cigarettes or native cigarettes, check the live cigarettes page directly instead of relying on a passing mention in a cannabis article. Category pages are useful because they keep different errands from stepping on each other.\n\n## Store Details Before The Trip\n\nEarthRoot Cannabis is listed at 5120 Dundas St W, Etobicoke, ON M9A 1C2. The listed phone number is (647) 382-5122, and the site lists the store as open 24 hours. For a Etobicoke weed store check, those details are the anchor. After that, the menu categories are the working map: flower tiers for cannabis flower, item categories for formats, and the store page for address and contact details.\n\nIf one exact product matters, call the listed phone number or check the live page before you leave. If the goal is just to browse, start broad, narrow the lane, and let the current menu do the last bit. Use the live store pages for the current information before visiting.\n\n## FAQ\n\n### What menu category should I start with?\nStart with the category that matches the product type: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes.\n\n### Does this guide list current inventory?\nNo. It explains how to use the current menu pages without claiming live stock.\n\n### Where should local shoppers confirm store details?\nUse the EarthRoot Cannabis store page for address, phone, listed hours, and visit details.\n\n### Is delivery confirmed here?\nNo. If the site shows delivery options, use the current delivery page or contact the store for current details.",
+    "faq": "",
+    "relatedLinks": [
+      {
+        "title": "Pre-rolls",
+        "url": "/items/prerolls",
+        "description": "Jump straight to pre-rolls when convenience is the shopping lane."
+      },
+      {
+        "title": "Edibles",
+        "url": "/items/edibles",
+        "description": "Use the edibles page for gummies, chocolates, drinks, and other listed edible formats."
+      },
+      {
+        "title": "THC vapes",
+        "url": "/items/vapes",
+        "description": "Browse the THC vape category and confirm current options before visiting."
+      },
+      {
+        "title": "Concentrates",
+        "url": "/items/concentrates",
+        "description": "Check concentrates separately so they do not get lost inside the full menu."
+      },
+      {
+        "title": "EarthRoot Cannabis store page",
+        "url": "/weed-dispensary-etobicoke",
+        "description": "Check the Etobicoke store page for address, phone, hours, and visit details."
+      },
+      {
+        "title": "EarthRoot Cannabis blog",
+        "url": "/blog",
+        "description": "Browse the store guide archive and future menu notes."
+      }
+    ],
+    "editorialRemark": {
+      "label": "Another House Writer Adds",
+      "authorName": "Ellis Root",
+      "authorHandle": "@EllisEarthRoot",
+      "authorRole": "House Writer",
+      "body": "The category split is doing more work than people notice. A shopper looking for pre-rolls, edibles, THC vapes, or cigarettes should not have to dig through flower lanes first. A little structure makes the menu easier to use, especially when the flower tiers start to blur together."
+    },
+  }
 ];
-export function getStaticPost(slug: string) {
+
+export function getStaticPost(slug: string): StaticBlogPost | undefined {
   return STATIC_POSTS.find((post) => post.slug === slug);
 }
+
+export function getBlogRedirect(slug: string): string | undefined {
+  return BLOG_REDIRECTS[slug];
+}
+
