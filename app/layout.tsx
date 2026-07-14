@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "vapes",
     "pre-rolls",
     "native cigarettes Etobicoke",
-    "weed store Mississauga",
+    "weed store Islington",
   ],
   openGraph: {
     type: "website",
@@ -39,15 +39,18 @@ export const metadata: Metadata = {
         url: "https://earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "EarthRoot Cannabis — Premium Cannabis Dispensary Etobicoke",
+        alt: "EarthRoot Cannabis — Etobicoke Cannabis Dispensary Etobicoke",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "24 Hour Etobicoke Dispensary | EarthRoot Cannabis",
-    description: "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
-    images: ["https://earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg"],
+    description:
+      "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    images: [
+      "https://earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
+    ],
   },
   robots: {
     index: true,
@@ -68,14 +71,15 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── JSON-LD Structured Data ── */
+/* JSON-LD Structured Data */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
   "@id": "https://earthrootcannabis.ca",
   name: "EarthRoot Cannabis",
-  description: "Cannabis dispensary at 5120 Dundas St W in Etobicoke, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
+  description:
+    "Cannabis dispensary at 5120 Dundas St W in Etobicoke, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://earthrootcannabis.ca",
   telephone: "+16473825122",
   image: "https://earthrootcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
@@ -96,7 +100,15 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
       opens: "00:00",
       closes: "23:59",
     },
@@ -129,7 +141,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0C3KNH3SK"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-S0C3KNH3SK"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -137,7 +152,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-S0C3KNH3SK');
-            `
+            `,
           }}
         />
       </head>
