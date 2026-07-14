@@ -8,19 +8,14 @@ export default function Footer() {
         <div className={styles.grid}>
           {/* Column 1 — Store Description */}
           <div className={styles.col}>
-            <div className={styles.brand}>
-              EARTHROOT CANNABIS
-            </div>
+            <div className={styles.brand}>EARTHROOT CANNABIS</div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 5120 Dundas St W, Etobicoke. Visit
-              EarthRoot Cannabis For Premium Flower, Edibles, Vapes &amp; More.
-              Open 24 Hours.
+              Your Local Cannabis Dispensary At 5120 Dundas St W, Etobicoke.
+              Visit EarthRoot Cannabis For Premium Flower, Edibles, Vapes &amp;
+              More. Open 24 Hours.
             </p>
             <div className={styles.buttons}>
-              <a
-                href="tel:+16473825122"
-                className={styles.btnPrimary}
-              >
+              <a href="tel:+16473825122" className={styles.btnPrimary}>
                 Call Now
               </a>
             </div>
@@ -37,7 +32,11 @@ export default function Footer() {
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Phone:</span>
-              <span><a href="tel:+16473825122" style={{color: "inherit"}}>(647) 382-5122</a></span>
+              <span>
+                <a href="tel:+16473825122" style={{ color: "inherit" }}>
+                  (647) 382-5122
+                </a>
+              </span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>
@@ -61,11 +60,21 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
-              <Link href="/info/york-weed-dispensary">Etobicoke Dispensary</Link>
-              <Link href="/info/cheap-weed-york">Cheap Weed Etobicoke</Link>
-              <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
-              <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
-              <Link href="/weed-dispensary-etobicoke/">EarthRoot Cannabis Weed Dispensary in Etobicoke</Link>
+              <Link href="/info/etobicoke-weed-dispensary">
+                Etobicoke Dispensary
+              </Link>
+              <Link href="/info/cheap-weed-etobicoke">
+                Cheap Weed Etobicoke
+              </Link>
+              <Link href="/info/native-cigarettes-etobicoke">
+                Native Cigarettes Islington
+              </Link>
+              <Link href="/info/weed-store-near-dundas-st-w-islington-etobicoke">
+                Weed Store Near Islington
+              </Link>
+              <Link href="/weed-dispensary-etobicoke/">
+                EarthRoot Cannabis Weed Dispensary in Etobicoke
+              </Link>
               <Link href="/contact">Contact Us</Link>
             </nav>
           </div>
