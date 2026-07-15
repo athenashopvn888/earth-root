@@ -1,7 +1,7 @@
 // Auto-generated Google Business Profile Local SEO Location Configuration
 export const gbpLocation = {
   storeName: "EarthRoot Cannabis",
-  domain: "earthrootcannabis.ca",
+  domain: "www.earthrootcannabis.ca",
   city: "Etobicoke",
   province: "ON",
   country: "CA",
@@ -32,7 +32,7 @@ export const gbpLocation = {
   seoTitle: "EarthRoot Cannabis | Weed Dispensary in Etobicoke",
   metaDescription: "EarthRoot Cannabis is a local weed dispensary in Etobicoke offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
   localLandmarks: ["Dundas St W", "Islington", "Six Points"],
-  introVariant: "EarthRoot Cannabis is your welcoming neighborhood weed dispensary in Etobicoke, located at 5120 Dundas St W near Dundas St W / Islington / Etobicoke. We carry a massive selection of weed, cannabis flower, pre-rolls, edibles, THC vapes, concentrates, and smoking accessories for adults 19+. Conveniently located near Islington, our cannabis store and weed shop is designed to make finding the perfect strain easy and accessible.",
+  introVariant: "EarthRoot Cannabis is a neighborhood weed dispensary in Etobicoke, located at 5120 Dundas St W near Islington. Adults 19+ can browse cannabis flower, pre-rolls, edibles, THC vapes, concentrates, and smoking accessories. Visit the store page and menu categories for current details.",
   neighborhoodDescription: "Located in the vibrant Dundas St W / Islington / Etobicoke district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
   parkingNote: "Street parking and local parking spaces are available nearby",
   transitNote: "Easily accessible via TTC bus and subway routes from nearby Kipling and Islington stations.",

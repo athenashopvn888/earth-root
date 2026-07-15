@@ -76,7 +76,7 @@ export const SEO_PAGES: SeoPageData[] = [
         a: "Start with Budget and AA, then compare current product name, format, weight, posted price, and item details.",
       },
       {
-        q: "Does this page guarantee current availability?",
+        q: "Does this page guarantee current menu options?",
         a: "No. Use this page as a shopping guide and confirm the current menu before visiting.",
       },
     ],
@@ -110,7 +110,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         q: "Can cigarette selection change?",
-        a: "Yes. Brand names, carton notes, and availability can change, so use the current menu or staff for live details.",
+        a: "Yes. Brand names and carton notes can change, so use the current menu or ask staff for current details.",
       },
     ],
   },
@@ -139,7 +139,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       {
         q: "Is this page focused on Islington?",
-        a: "Yes. This page is focused on EarthRoot Cannabis around Dundas St W and Islington, not unrelated city copy.",
+        a: "Yes. This page focuses on EarthRoot Cannabis around Dundas St W and Islington.",
       },
       {
         q: "What is the best next step?",
@@ -158,11 +158,11 @@ export const SEO_PAGES: SeoPageData[] = [
     sections: [
       {
         heading: "A Local Near-Me Result",
-        body: "Near-me searches should land on a page connected to EarthRoot Cannabis, Etobicoke, and the local Dundas St W and Islington area.",
+        body: "EarthRoot Cannabis serves adults around Etobicoke, Dundas St W, and Islington with store details and menu-category links.",
       },
       {
-        heading: "Use The Menu For Live Details",
-        body: "This page explains the shopping path. The current menu and staff remain the source for live products, prices, and availability.",
+        heading: "Use The Menu For Current Details",
+        body: "Use the current menu or ask staff when product names, prices, or other details matter for the visit.",
       },
       {
         heading: "Keep The Route Simple",
@@ -172,7 +172,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       {
         q: "Is this page focused on Islington?",
-        a: "Yes. This page is focused on EarthRoot Cannabis around Dundas St W and Islington, not unrelated city copy.",
+        a: "Yes. This page focuses on EarthRoot Cannabis around Dundas St W and Islington.",
       },
       {
         q: "What is the best next step?",

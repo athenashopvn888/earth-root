@@ -32,7 +32,7 @@ export async function generateMetadata({
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at EarthRoot Cannabis.`,
     alternates: {
-      canonical: `https://earthrootcannabis.ca/items/${catSlug}`,
+      canonical: `https://www.earthrootcannabis.ca/items/${catSlug}`,
     },
   };
 }

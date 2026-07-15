@@ -135,7 +135,7 @@ function ItemCard({ title, accent, items, hiIdx, preset }: {
 /* -- TICKER -- */
 const TICKER_SLIDES = [
   "🔥 EarthRoot Cannabis — 5120 Dundas St W, Etobicoke",
-  "200+ Strains In Stock",
+  "Browse Flower Tiers",
   "Open 24 Hours",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",

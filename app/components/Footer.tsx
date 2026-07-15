@@ -83,7 +83,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p>
             © {new Date().getFullYear()} EarthRoot Cannabis. Must be 19+ to
-            enter. Please consume responsibly.
+            enter.
           </p>
         </div>
       </div>
