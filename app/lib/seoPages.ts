@@ -30,7 +30,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "What To Check Before Visiting",
-        body: "Confirm the current menu, directions, contact options, and listed hours. For current products, prices, or availability, use the menu or ask staff before leaving.",
+        body: "Confirm the current menu, directions, contact options, and listed hours. For current product names, prices, and package details, use the menu or ask staff before leaving.",
       },
     ],
     faqs: [
