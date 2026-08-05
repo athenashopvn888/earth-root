@@ -81,7 +81,7 @@ const jsonLd = {
   description:
     "Cannabis dispensary at 5120 Dundas St W in Etobicoke, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
   url: "https://www.earthrootcannabis.ca",
-  telephone: "+16473825122",
+  telephone: "+14375234850",
   image: "https://www.earthrootcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
