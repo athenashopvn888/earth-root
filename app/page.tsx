@@ -113,7 +113,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is EarthRoot Cannabis located?",
-    a: "We are located at 5120 Dundas St W, Etobicoke, ON M9A 1C2. Visit us in person or call us at (647) 382-5122. Free evening street parking is available.",
+    a: "We are located at 5120 Dundas St W, Etobicoke, ON M9A 1C2. Visit us in person or call us at +1 (437) 523-4850. Free evening street parking is available.",
   },
   {
     q: "What is the cheapest weed at EarthRoot Cannabis?",

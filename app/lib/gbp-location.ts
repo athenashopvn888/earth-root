@@ -9,8 +9,8 @@ export const gbpLocation = {
   address: "5120 Dundas St W, Etobicoke, ON M9A 1C2",
   streetAddress: "5120 Dundas St W",
   postalCode: "M9A 1C2",
-  phone: "(647) 382-5122",
-  phoneIntl: "+16473825122",
+  phone: "+1 (437) 523-4850",
+  phoneIntl: "+14375234850",
   neighborhood: "Dundas St W / Islington / Etobicoke",
   nearbyAreas: ["Dundas St W", "Islington", "Six Points", "Kipling", "Bloor West", "Etobicoke Centre", "The Kingsway", "TTC"],
   products: [

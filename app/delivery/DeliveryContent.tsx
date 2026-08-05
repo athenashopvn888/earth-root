@@ -116,7 +116,7 @@ export default function DeliveryContent() {
           <p className={styles.ctaText}>
             Can&apos;t wait? Visit us in-store at{" "}
             <strong>5120 Dundas St W, Etobicoke</strong> — open{" "}
-            <strong>24 hours</strong>. Call <strong>(647) 382-5122</strong>.
+            <strong>24 hours</strong>. Call <strong>+1 (437) 523-4850</strong>.
           </p>
         </div>
       </div>
