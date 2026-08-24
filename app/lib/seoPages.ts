@@ -5,6 +5,8 @@ export interface SeoPageData {
   h1: string;
   icon: string;
   heroTagline: string;
+  heroProducts?: readonly { name: string; image: string }[];
+  heroDisclosure?: string;
   banner?: string;
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
@@ -89,6 +91,15 @@ export const SEO_PAGES: SeoPageData[] = [
     h1: "EarthRoot Cannabis Native Cigarettes Guide",
     icon: "*",
     heroTagline: "Cigarette category notes for local shoppers",
+    heroProducts: [
+      { name: "BB Lights", image: "/products/1001-BB-LIGHTS-CARTONS.webp" },
+      { name: "BB Full", image: "/products/1003-BB-FULL-CARTON.webp" },
+      { name: "Canadian Lights", image: "/products/1005-CANADIAN-LIGHTS.webp" },
+      { name: "Canadian Full", image: "/products/1006-CANADIAN-FULL.webp" },
+      { name: "Canadian Classics Silver", image: "/products/1015-CANADIAN-CLASSICS-SILVER.webp" },
+      { name: "Canadian Menthol", image: "/products/1013-CANADIAN-MENTHOL.webp" },
+    ],
+    heroDisclosure: "Brand preview only. Selection varies by store; check the current cigarette menu before visiting.",
     sections: [
       {
         heading: "Use The Cigarette Category First",
