@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!page) return {};
 
   return {
-    title: page.title,
+    title: page.absoluteTitle ? { absolute: page.title } : page.title,
     description: page.metaDescription,
     alternates: {
       canonical: `https://www.earthrootcannabis.ca/info/${slug}`,
@@ -61,27 +61,29 @@ export default async function SeoLandingPage({
 
       {/* Hero */}
       {page.heroProducts ? (
-        <section className={styles.productHero}>
+        <section className={`${styles.productHero} ${page.heroTheme === "nicotine" ? styles.nicotineProductHero : ""}`} data-publication-status="approved">
           <div className={styles.productHeroInner}>
             <div className={styles.productHeroCopy}>
-              <span className={styles.productHeroKicker}>EarthRoot Cannabis · Dundas St W &amp; Islington</span>
+              <span className={styles.productHeroKicker}>{page.heroEyebrow ?? "EarthRoot Cannabis · Dundas St W & Islington"}</span>
               <h1>{page.h1}</h1>
-              <p>{page.heroTagline}</p>
+              <p>{page.heroIntro ?? page.heroTagline}</p>
               <div className={styles.productHeroActions}>
-                <Link href="/items/cigarettes" className={styles.productHeroPrimary}>Check the cigarette menu</Link>
-                <Link href="/items/cigarettes" className={styles.productHeroSecondary}>See the current selection</Link>
+                <Link href={page.heroMenuHref ?? "/items/cigarettes"} className={styles.productHeroPrimary}>{page.heroPrimaryLabel ?? "Check the cigarette menu"}</Link>
+                <Link href={page.heroSecondaryHref ?? page.heroMenuHref ?? "/items/cigarettes"} className={styles.productHeroSecondary}>{page.heroSecondaryLabel ?? "See the current selection"}</Link>
               </div>
+              {page.identityStrip && <p className={styles.productHeroIdentity}>{page.identityStrip}</p>}
             </div>
 
             <div className={styles.productPreviewStage} aria-label={`${page.h1} brand preview`}>
               {page.heroProducts.map((product, index) => (
-                <Link key={product.name} href="/items/cigarettes" className={styles.productPreviewCard}>
+                <Link key={product.name} href={page.heroMenuHref ?? "/items/cigarettes"} className={styles.productPreviewCard}>
                   <Image
                     src={product.image}
                     alt={`${product.name} brand preview`}
                     width={800}
                     height={800}
                     priority={index === 0}
+                    unoptimized={product.image.startsWith("https://")}
                     sizes="(max-width: 720px) 42vw, (max-width: 980px) 46vw, 220px"
                   />
                   <span>{product.name}</span>
@@ -104,6 +106,7 @@ export default async function SeoLandingPage({
       {/* Content Sections */}
       <section className={styles.content}>
         <div className={styles.container}>
+          {page.featuredHeading && page.featuredIntro && <div className={styles.featuredIntro} id="featured-vapes"><h2>{page.featuredHeading}</h2><p>{page.featuredIntro}</p></div>}
           {page.sections.map((s, i) => (
             <div key={i} className={styles.section}>
               <h2 className={styles.sectionTitle}>{s.heading}</h2>
@@ -154,6 +157,7 @@ export default async function SeoLandingPage({
               ))}
             </div>
           )}
+          {page.warning && <p className={styles.nicotineWarning}>{page.warning}</p>}
         </div>
       </section>
 
