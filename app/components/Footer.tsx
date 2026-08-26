@@ -69,6 +69,9 @@ export default function Footer() {
               <Link href="/info/native-cigarettes-etobicoke">
                 Native Cigarettes Islington
               </Link>
+              <Link href="/info/nicotine-vapes-etobicoke">
+                Nicotine Vapes Etobicoke
+              </Link>
               <Link href="/info/weed-store-near-dundas-st-w-islington-etobicoke">
                 Weed Store Near Islington
               </Link>

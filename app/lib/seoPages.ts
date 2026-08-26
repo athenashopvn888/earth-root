@@ -1,12 +1,24 @@
 export interface SeoPageData {
   slug: string;
   title: string;
+  absoluteTitle?: boolean;
   metaDescription: string;
   h1: string;
   icon: string;
   heroTagline: string;
-  heroProducts?: readonly { name: string; image: string }[];
+  heroProducts?: readonly { name: string; image: string; sourceSlug?: string }[];
   heroDisclosure?: string;
+  heroTheme?: "cigarettes" | "nicotine";
+  heroEyebrow?: string;
+  heroIntro?: string;
+  heroMenuHref?: string;
+  heroPrimaryLabel?: string;
+  heroSecondaryLabel?: string;
+  heroSecondaryHref?: string;
+  identityStrip?: string;
+  featuredHeading?: string;
+  featuredIntro?: string;
+  warning?: string;
   banner?: string;
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
@@ -190,6 +202,46 @@ export const SEO_PAGES: SeoPageData[] = [
         a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
       },
     ],
+  },
+  {
+    slug: "nicotine-vapes-etobicoke",
+    title: "Nicotine Vapes in Etobicoke | EarthRoot Cannabis",
+    absoluteTitle: true,
+    metaDescription: "Adults 19+: review six verified nicotine vape product pages from EarthRoot Cannabis in Etobicoke, then check /items/vapes for the current selection. Nicotine is addictive.",
+    h1: "Nicotine Vapes at EarthRoot Cannabis in Etobicoke",
+    icon: "NV",
+    heroTagline: "Adults 19+ · Nicotine is addictive.",
+    heroTheme: "nicotine",
+    heroEyebrow: "EARTHROOT CANNABIS • ETOBICOKE • ADULTS 19+",
+    heroIntro: "Searching for nicotine vapes near me in Etobicoke? This EarthRoot Cannabis guide features six verified VAPE PENS product pages. Compare the supported product names below, then use /items/vapes for the current nicotine category. Product details can change. Nicotine is addictive.",
+    heroProducts: [
+      { name: "Geek Promax 5% — 30K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/GEEK-PROMAX.jpg", sourceSlug: "geek-promax-5-30k-puffs" },
+      { name: "Geek Universe — 25K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/geek_universe_pulse_x_25k.webp", sourceSlug: "geek-universe-25k-puffs" },
+      { name: "NEXA PIX — 30K Puffs — Many Flavors", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/nexa_showcase_600x600.webp", sourceSlug: "nexa-pix-30k-puffs-many-flavors" },
+      { name: "OVNS 10000 5% — 10K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1081OVNS10000.jpg", sourceSlug: "ovns-10000-5-10k-puffs" },
+      { name: "OVNS Disposable 5% — 8 mL — Many Flavors", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/OVNS500x500HQ.webp", sourceSlug: "ovns-disposable-5-8ml-many-flavors" },
+      { name: "OVNS Pioneer 5% — 22K Puffs", image: "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/OVNS_PIONEER_5_22K_PUFFS.webp", sourceSlug: "ovns-pioneer-5-22k-puffs" },
+    ],
+    heroDisclosure: "Featured cards are verified starting points, not guarantees of current stock, price or availability.",
+    heroMenuHref: "/items/vapes",
+    heroPrimaryLabel: "Browse Nicotine Vapes",
+    heroSecondaryLabel: "Compare the Six Featured Items",
+    heroSecondaryHref: "#featured-vapes",
+    identityStrip: "EarthRoot Cannabis | Etobicoke | Adults 19+ | Nicotine is addictive.",
+    featuredHeading: "Six Verified EarthRoot Vape Cards",
+    featuredIntro: "This shortlist contains verified Geek, NEXA and OVNS VAPE PENS product pages. Use each card for its supported display name, then rely on /items/vapes for the current EarthRoot Cannabis category listing.",
+    sections: [
+      { heading: "Read Each Product Format Carefully", body: "One verified listing explicitly identifies an OVNS disposable. Keep that format attached only to its own product and do not relabel another featured item unless its current page verifies the same format." },
+      { heading: "Puff Counts Identify Listings", body: "Several verified names include puff counts. Use those numbers to distinguish the listings, not as guarantees of duration, performance or superiority." },
+      { heading: "Keep Nicotine and Cannabis Vape Routes Separate", body: "This adult-only EarthRoot Cannabis guide uses VAPE PENS products under /items/vapes. THC and cannabis vape products under /items/vape-disposables are excluded." },
+      { heading: "Review the Current Etobicoke Category", body: "Before choosing, open /items/vapes and the individual product page for current supported details. This guide does not claim prices, stock, guaranteed availability, hours, an address, or delivery service." },
+    ],
+    faqs: [
+      { q: "Where should I check EarthRoot Cannabis’s current nicotine selection?", a: "Use /items/vapes. The six featured cards are verified starting points while the current category listing controls selection information." },
+      { q: "Is a disposable nicotine vape represented?", a: "Yes. The verified set includes OVNS Disposable 5% — 8 mL — Many Flavors. Check its current product page for updated details." },
+      { q: "Does this page include cannabis vapes?", a: "No. It covers nicotine products from the VAPE PENS category for adults 19+. THC and cannabis vape products under /items/vape-disposables are excluded." },
+    ],
+    warning: "Adults 19+. Nicotine is addictive.",
   },
 ];
 
