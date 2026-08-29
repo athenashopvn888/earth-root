@@ -6,17 +6,22 @@ export interface ResourceCard {
 
 export interface ResourceSection {
   heading: string;
-  body: string;
+  body: string | string[];
   bullets?: string[];
 }
 
 export interface ResourcePage {
   slug: string;
+  kind?: "article";
   title: string;
   seoTitle: string;
   description: string;
   eyebrow: string;
   intro: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
   cards: ResourceCard[];
   sections: ResourceSection[];
 }
@@ -56,6 +61,11 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         title: "Native Smokes",
         href: "/resources/native-smokes",
         text: "Brand names and carton notes for the cigarette menu where listed.",
+      },
+      {
+        title: "Cannabis Near Etobicoke: A Practical Local Guide",
+        href: "/resources/local-guides/cannabis-near-etobicoke-comparison-guide",
+        text: "Learn how to compare local cannabis search results, store information, menus and helpful resources when researching dispensaries in Etobicoke.",
       },
     ],
     sections: [
@@ -393,6 +403,106 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         heading: "Use The Cigarette Category",
         body: "Open the cigarette category before the trip. It is the cleanest public path for current Native smokes information at this store.",
+      },
+    ],
+  },
+  {
+    slug: "local-guides/cannabis-near-etobicoke-comparison-guide",
+    kind: "article",
+    title: "Looking for Cannabis Near Etobicoke? Start With These Checks",
+    seoTitle: "Cannabis Near Etobicoke: A Practical Local Dispensary Guide",
+    description:
+      "Searching for cannabis near me in Etobicoke? Learn how to compare local dispensary information, menus, FAQs and store details before deciding where to visit.",
+    eyebrow: "Etobicoke Cannabis Guide",
+    intro:
+      "Searching for cannabis near me or weed near me in Etobicoke can bring up local store pages, menus, product results and informational guides. Those pages do not all serve the same purpose. A better way to compare local options is to confirm that you are looking at the right store information, use the current website to understand how the menu is organized, and rely on helpful local resources rather than a single search result.",
+    image: {
+      src: "/banners/welcome_banner.webp",
+      alt: "EarthRoot Cannabis in Etobicoke",
+    },
+    cards: [
+      {
+        title: "EarthRoot Cannabis in Etobicoke",
+        href: "/weed-dispensary-etobicoke/",
+        text: "View EarthRoot Cannabis store information for Etobicoke and use the primary local page as the starting point for location-specific details.",
+      },
+      {
+        title: "EarthRoot Resource Centre",
+        href: "/resources/",
+        text: "Browse EarthRoot guides and educational resources created to help adult shoppers understand the website and common cannabis topics.",
+      },
+      {
+        title: "How to Use the Online Menu",
+        href: "/resources/menu-guide",
+        text: "Learn how to navigate menu information and understand how products and categories are organized on the EarthRoot website.",
+      },
+      {
+        title: "Frequently Asked Questions",
+        href: "/faq/",
+        text: "Find answers to common questions about using the EarthRoot website and planning your next step.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Start With the Primary Etobicoke Store Page",
+        body: [
+          "When a search for cannabis near me in Etobicoke produces several different results, begin by confirming which page represents the local store. Search engines can surface a homepage, a product page, an article or another internal page depending on the exact wording of the search. For broad local intent, the primary Etobicoke page is the clearest place to establish store context before exploring the rest of the website.",
+          "The goal is not simply to choose the first result. It is to make sure the information you are reading belongs to the location and purpose you intended to research.",
+        ],
+      },
+      {
+        heading: "Use the Menu to Explore, Not an Old Search Snippet",
+        body: [
+          "A Google result can provide a useful entry point, but it may show only a small piece of a website. Once you reach the store site, the menu and supporting guides can give you a clearer view of how information is organized.",
+          "When comparing a weed dispensary near me result, useful website signals include:",
+          "Because websites and menus can change, an older search snippet should not be treated as a substitute for checking the current site.",
+        ],
+        bullets: [
+          "clear product and category names;",
+          "working navigation between menu sections;",
+          "product pages that open correctly;",
+          "understandable supporting information;",
+          "consistent store and location context across the site.",
+        ],
+      },
+      {
+        heading: "Understand Why Different Searches Lead to Different Pages",
+        body: [
+          "A broad local search and a specific product search do not have the same intent.",
+          "Someone searching for a cannabis dispensary in Etobicoke is usually trying to understand the local store and whether it is relevant to their needs. Someone making a narrower search may be looking for information about one category, one product or one question.",
+          "That is why a well-organized website can have several strong pages without forcing every page to target the same keywords. The local page can own the primary Etobicoke store intent, while guides, FAQs and other resources support narrower questions.",
+          "This article is designed to support that local journey rather than replace the main Etobicoke page.",
+        ],
+      },
+      {
+        heading: "Use Helpful Guides When You Need More Context",
+        body: [
+          "Not every question belongs on a store landing page.",
+          "Sometimes a shopper wants to understand how a menu works, how website categories are organized or where to find an answer before visiting another section of the site. Educational resources and FAQs are useful for those questions because they can provide context without turning every page into another local sales page.",
+          "If you begin with a weed near me in Etobicoke search and then need more information, moving between the local page, resource centre, menu guide and FAQ can give you a more complete picture than relying on one isolated result.",
+        ],
+      },
+      {
+        heading: "Keep Local Information and Specific Product Searches Separate",
+        body: [
+          "Search engines may sometimes surface an individual product page because it closely matches a very specific query. That does not mean the same product page should also become the site's main local-information page.",
+          "Keeping those purposes separate helps protect useful search ownership:",
+          "This structure also makes the website easier for people to navigate because each page has a clear reason to exist.",
+        ],
+        bullets: [
+          "local pages answer broad location intent;",
+          "product pages answer specific product intent;",
+          "educational pages explain broader questions;",
+          "FAQs handle common practical questions.",
+        ],
+      },
+      {
+        heading: "Make “Cannabis Near Me” Searches More Useful",
+        body: [
+          "A cannabis near me search is a useful starting point, but proximity alone does not tell you whether the information on a result is clear, current or relevant to the question you have.",
+          "After Google identifies nearby options, take a moment to compare the actual websites. Confirm the local store context, review the site's navigation, use the menu for current browsing and look for supporting guides when you need more explanation.",
+          "For someone researching cannabis in Etobicoke, that approach can make local search much more useful than judging a store from a map result or headline alone.",
+        ],
       },
     ],
   },
