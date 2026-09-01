@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import { allFlowers } from "./lib/products";
 import Papa from "papaparse";
+import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -329,6 +330,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <WeedDiscoveryModule />
 
       {/* ── FEATURED PRODUCTS ── */}
       <section className={styles.featuredSection}>

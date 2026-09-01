@@ -1,0 +1,55 @@
+export type WeedDiscoveryLink = { label: string; description: string; href: string };
+export type WeedFaq = { question: string; answer: string };
+
+export const weedOwner = {
+  storeName: "EARTHROOT CANNABIS",
+  domain: "www.earthrootcannabis.ca",
+  ownerPath: "/weed-dispensary-etobicoke/",
+  city: "Etobicoke",
+  streetAddress: "5120 Dundas St W",
+  postalCode: "M9A 1C2",
+  phoneDisplay: "+1 437-523-4850",
+  phoneIntl: "+14375234850",
+  hoursLabel: "Open 24 Hours · 7 Days a Week",
+  openingHours: "Mo-Su 00:00-23:59",
+  seoTitle: "Weed Dispensary in Etobicoke | EARTHROOT CANNABIS",
+  metaDescription: "EARTHROOT CANNABIS is open 24 hours at 5120 Dundas St W in Etobicoke. Adults 19+ can explore cannabis, flower, value and pre-roll guides.",
+  h1: "EARTHROOT CANNABIS — Weed Dispensary in Etobicoke",
+  introTitle: "Weed and Cannabis on Dundas Street West",
+  intro: [
+    "EARTHROOT CANNABIS is located at 5120 Dundas St W in Etobicoke and is open 24 hours a day, seven days a week.",
+    "Adults 19+ can begin with flower information, compare broader cannabis choices, learn more about value-focused shopping, or focus specifically on pre-rolls.",
+    "If you already know what kind of cannabis information you want, the guides below give you a clear place to begin. For one specific item, call +1 437-523-4850 before making a special trip.",
+  ],
+  findTitle: "Find Your Weed at EARTHROOT CANNABIS",
+  discoveryLinks: [
+    { label: "Flower Guide", description: "Explore flower-focused information before deciding where to start.", href: "/resources/flower-guide" },
+    { label: "Menu Guide", description: "Take a broader look at cannabis choices and formats.", href: "/resources/menu-guide" },
+    { label: "Value Guide", description: "Explore value-oriented shopping information without relying on a current price or promotion.", href: "/resources/value-guide" },
+    { label: "Pre-Roll Guide", description: "Focus specifically on the pre-roll format.", href: "/resources/pre-roll-guide" },
+    { label: "Cannabis Resources", description: "Explore more cannabis information from EARTHROOT CANNABIS.", href: "/resources" },
+  ] satisfies WeedDiscoveryLink[],
+  guides: [
+    { label: "Menu Guide", description: "A broader look at cannabis choices and formats.", href: "/resources/menu-guide" },
+    { label: "Flower Guide", description: "Flower-focused information for adults 19+.", href: "/resources/flower-guide" },
+    { label: "Value Guide", description: "Value-oriented guidance without current price or promotion claims.", href: "/resources/value-guide" },
+    { label: "Pre-Roll Guide", description: "Information focused specifically on the pre-roll format.", href: "/resources/pre-roll-guide" },
+  ] satisfies WeedDiscoveryLink[],
+  faq: [
+    { question: "Where is EARTHROOT CANNABIS?", answer: "EARTHROOT CANNABIS is located at 5120 Dundas St W, Etobicoke, ON M9A 1C2." },
+    { question: "Is EARTHROOT CANNABIS open 24 hours?", answer: "Yes. EARTHROOT CANNABIS is open 24 hours a day, seven days a week." },
+    { question: "What cannabis information can I explore before visiting?", answer: "Adults 19+ can explore the Menu Guide, Flower Guide, Value Guide, Pre-Roll Guide and broader Cannabis Resources." },
+    { question: "What is the difference between weed and cannabis?", answer: "Weed is common everyday language. Cannabis is the broader term covering flower and other retail formats." },
+    { question: "What is the difference between bud and flower?", answer: "Bud is a common informal term for cannabis flower. Flower is the standard category term for dried cannabis flower." },
+    { question: "Where can I learn more about flower?", answer: "Start with the EARTHROOT CANNABIS Flower Guide for flower-focused information." },
+    { question: "How can I ask about a particular product before visiting?", answer: "Call EARTHROOT CANNABIS at +1 437-523-4850 before making a special trip for one specific item." },
+    { question: "Do I need to be 19+?", answer: "Yes. EARTHROOT CANNABIS is for adults 19+." },
+  ] satisfies WeedFaq[],
+  home: {
+    title: "Looking for Weed in Etobicoke?",
+    text: "EARTHROOT CANNABIS is open 24 hours at 5120 Dundas St W. Adults 19+ can explore Weed and Cannabis information, flower guidance and useful shopping resources.",
+    primaryLabel: "Explore Weed in Etobicoke",
+    secondaryLabel: "Explore the Flower Guide",
+    secondaryHref: "/resources/flower-guide",
+  },
+};
