@@ -58,9 +58,9 @@ assert(!renderedCurrency.some((value) => value.includes("31.666")), "raw 95 / 3 
 const appRoot = new URL("../app/", import.meta.url);
 const layoutSource = fs.readFileSync(new URL("layout.tsx", appRoot), "utf8");
 const stylesSource = fs.readFileSync(new URL("globals.css", appRoot), "utf8");
-const announcement = "NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE";
+const announcement = "WEED DELIVERY IS HERE — CLICK TO EXPLORE";
 assert.equal(layoutSource.split(announcement).length - 1, 1, "delivery announcement must appear exactly once in the root layout");
-assert(/className="deliveryAnnouncement"\s+href="\/delivery"/.test(layoutSource), "delivery announcement must link to /delivery");
+assert(/className="deliveryAnnouncement"\s+href="\/weed-delivery-etobicoke"/.test(layoutSource), "delivery announcement must link directly to the Weed Delivery owner");
 assert(stylesSource.includes(".deliveryAnnouncement"), "delivery announcement styles must exist");
 assert(/\.deliveryAnnouncement\s*\{[^}]*display:\s*flex;/s.test(stylesSource), "delivery announcement must render as a visible flex strip");
 assert(/--delivery-announcement-height:\s*42px;/.test(stylesSource), "delivery announcement height must have one shared 42px variable");
@@ -99,3 +99,4 @@ assert(!source.includes("__DELIVERY_"), "delivery phone placeholders must not sh
 assert(smsMatch[2].replace(/\D/g, "") === smsMatch[1].replace(/\D/g, ""), "visible delivery digits must match the SMS href");
 
 console.log("Verified delivery pricing, announcement bar, and public navigation guards.");
+
