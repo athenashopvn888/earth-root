@@ -7,7 +7,7 @@ export interface TierSeoData {
 
 export const TIER_SEO: Record<string, TierSeoData> = {
   "EXOTIC": {
-    "seoTitle": "Exotic Weed & Cannabis Flower Etobicoke | EarthRoot Cannabis",
+    "seoTitle": "Exotic Weed & Cannabis Flower Etobicoke",
     "seoIntro": "Exotic Weed flower at EarthRoot Cannabis is easiest to compare as its own lane. Open the current Exotic Weed menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -39,7 +39,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "PREMIUM": {
-    "seoTitle": "Premium Weed & Cannabis Flower Etobicoke | EarthRoot Cannabis",
+    "seoTitle": "Premium Weed & Cannabis Flower Etobicoke",
     "seoIntro": "Premium Weed flower at EarthRoot Cannabis is easiest to compare as its own lane. Open the current Premium Weed menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -71,7 +71,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "AAA+": {
-    "seoTitle": "AAA+ Weed & Cannabis Flower Etobicoke | EarthRoot Cannabis",
+    "seoTitle": "AAA+ Weed & Cannabis Flower Etobicoke",
     "seoIntro": "AAA+ Weed flower at EarthRoot Cannabis is easiest to compare as its own lane. Open the current AAA+ Weed menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -103,7 +103,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "AA": {
-    "seoTitle": "AA Weed & Cannabis Flower Etobicoke | EarthRoot Cannabis",
+    "seoTitle": "AA Weed & Cannabis Flower Etobicoke",
     "seoIntro": "AA Weed flower at EarthRoot Cannabis is easiest to compare as its own lane. Open the current AA Weed menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
@@ -135,7 +135,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     ]
   },
   "BUDGET": {
-    "seoTitle": "Budget Weed & Cannabis Flower Etobicoke | EarthRoot Cannabis",
+    "seoTitle": "Budget Weed & Cannabis Flower Etobicoke",
     "seoIntro": "Budget Weed flower at EarthRoot Cannabis is easiest to compare as its own lane. Open the current Budget Weed menu, read the posted details, and ask staff when one product detail matters.",
     "sections": [
       {
