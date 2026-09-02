@@ -43,9 +43,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Pick the category first, then compare the details that matter.",
       },
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget flower tiers.",
+        title: "Weed Flower Guide",
+        href: "/resources/weed-flower-guide",
+        text: "Compare Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, and Budget Weed flower tiers.",
       },
       {
         title: "Value Guide",
@@ -95,9 +95,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "The fastest way through the menu is simple: choose the product type before you compare products. That keeps the page useful whether you want premium flower, cheap weed, pre-rolls, edibles, THC vapes, or concentrates.",
     cards: [
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget flower tiers.",
+        title: "Weed Flower Guide",
+        href: "/resources/weed-flower-guide",
+        text: "Compare Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, and Budget Weed flower tiers.",
       },
       {
         title: "Value Guide",
@@ -132,38 +132,38 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
   },
   {
-    slug: "flower-guide",
-    title: "EarthRoot Cannabis Flower Guide",
-    seoTitle: "EarthRoot Cannabis Flower Guide | Exotic, Premium, Budget",
+    slug: "weed-flower-guide",
+    title: "EarthRoot Cannabis Weed Flower Guide",
+    seoTitle: "EarthRoot Cannabis Weed Flower Guide | Exotic Weed, Premium Weed, Budget Weed",
     description:
-      "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at EarthRoot Cannabis with current menu details.",
-    eyebrow: "Flower Guide",
+      "Compare Exotic Weed, Premium Weed, Budget Weed, cheap weed, and affordable weed at EarthRoot Cannabis with current menu details.",
+    eyebrow: "Weed Flower Guide",
     intro:
-      "Flower gets easier when you compare one tier at a time. Exotic flower and premium flower sit in different lanes from AAA+, AA, and Budget, so start with the lane that matches the visit.",
+      "Weed flower gets easier when you compare one tier at a time. Exotic Weed and Premium Weed sit in different lanes from AAA+ Weed, AA Weed, and Budget Weed, so start with the lane that matches the visit.",
     cards: [
       {
-        title: "Exotic Flower",
-        href: "/exotic",
+        title: "Exotic Weed",
+        href: "/exotic-weed",
         text: "Start here when you want the higher shelf flower lane.",
       },
       {
-        title: "Premium Flower",
-        href: "/premium",
+        title: "Premium Weed",
+        href: "/premium-weed",
         text: "A strong lane for shoppers comparing quality and value.",
       },
       {
-        title: "AAA+ Flower",
-        href: "/aaa",
+        title: "AAA+ Weed",
+        href: "/aaa-weed",
         text: "A clear middle lane for flower comparison.",
       },
       {
-        title: "AA Flower",
-        href: "/aa",
+        title: "AA Weed",
+        href: "/aa-weed",
         text: "A straight value-minded flower lane.",
       },
       {
-        title: "Budget Flower",
-        href: "/budget",
+        title: "Budget Weed",
+        href: "/budget-weed",
         text: "Start here when cheap weed or affordable weed is the goal.",
       },
     ],
@@ -189,13 +189,13 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       "Good value shopping starts with the product type, the current details, and the price that fits the visit.",
     cards: [
       {
-        title: "Budget Flower",
-        href: "/budget",
+        title: "Budget Weed",
+        href: "/budget-weed",
         text: "The first stop for cheap weed and affordable weed comparisons.",
       },
       {
-        title: "AA Flower",
-        href: "/aa",
+        title: "AA Weed",
+        href: "/aa-weed",
         text: "A simple value lane for flower shoppers.",
       },
       {
@@ -264,9 +264,9 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         text: "Pick the category first, then compare the details that matter.",
       },
       {
-        title: "Flower Guide",
-        href: "/resources/flower-guide",
-        text: "Compare Exotic, Premium, AAA+, AA, and Budget flower tiers.",
+        title: "Weed Flower Guide",
+        href: "/resources/weed-flower-guide",
+        text: "Compare Exotic Weed, Premium Weed, AAA+ Weed, AA Weed, and Budget Weed flower tiers.",
       },
       {
         title: "Value Guide",
