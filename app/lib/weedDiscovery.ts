@@ -23,7 +23,7 @@ export const weedOwner = {
   ],
   findTitle: "Find Your Weed at EARTHROOT CANNABIS",
   discoveryLinks: [
-    { label: "Flower Guide", description: "Explore flower-focused information before deciding where to start.", href: "/resources/flower-guide" },
+    { label: "Weed Flower Guide", description: "Explore flower-focused information before deciding where to start.", href: "/resources/weed-flower-guide" },
     { label: "Menu Guide", description: "Take a broader look at cannabis choices and formats.", href: "/resources/menu-guide" },
     { label: "Value Guide", description: "Explore value-oriented shopping information without relying on a current price or promotion.", href: "/resources/value-guide" },
     { label: "Pre-Roll Guide", description: "Focus specifically on the pre-roll format.", href: "/resources/pre-roll-guide" },
@@ -31,7 +31,7 @@ export const weedOwner = {
   ] satisfies WeedDiscoveryLink[],
   guides: [
     { label: "Menu Guide", description: "A broader look at cannabis choices and formats.", href: "/resources/menu-guide" },
-    { label: "Flower Guide", description: "Flower-focused information for adults 19+.", href: "/resources/flower-guide" },
+    { label: "Weed Flower Guide", description: "Flower-focused information for adults 19+.", href: "/resources/weed-flower-guide" },
     { label: "Value Guide", description: "Value-oriented guidance without current price or promotion claims.", href: "/resources/value-guide" },
     { label: "Pre-Roll Guide", description: "Information focused specifically on the pre-roll format.", href: "/resources/pre-roll-guide" },
   ] satisfies WeedDiscoveryLink[],
@@ -50,6 +50,6 @@ export const weedOwner = {
     text: "EARTHROOT CANNABIS is open 24 hours at 5120 Dundas St W. Adults 19+ can explore Weed and Cannabis information, flower guidance and useful shopping resources.",
     primaryLabel: "Explore Weed in Etobicoke",
     secondaryLabel: "Explore the Flower Guide",
-    secondaryHref: "/resources/flower-guide",
+    secondaryHref: "/resources/weed-flower-guide",
   },
 };
