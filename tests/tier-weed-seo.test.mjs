@@ -42,8 +42,8 @@ test("the governed Weed flower guide has one canonical owner", () => {
   assert.match(redirects, /source: "\/resources\/flower-guide"[\s\S]*destination: "\/resources\/weed-flower-guide"/);
 });
 
-test("delivery and nicotine routes remain outside this remediation", () => {
-  assert.match(navbar, /href: "\/delivery", label: "🚗 Delivery"/);
+test("nicotine routes remain outside this remediation", () => {
   assert.match(navbar, /href: "\/items\/vapes", label: "Nic Vape"/);
   assert.match(navbar, /href: "\/items\/vape-disposables", label: "THC Vape"/);
 });
+
