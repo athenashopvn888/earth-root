@@ -19,7 +19,6 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
-  { href: "/delivery", label: "🚗 Delivery" },
     { href: "/careers/budtender", label: "Join Team", featured: true },
 
   { href: "/faq", label: "FAQ" },
@@ -61,23 +60,31 @@ export default function Navbar() {
 
       {/* Scrollable link bar */}
       <div className={styles.scrollShell}>
-        <div ref={scrollBarRef} id="store-menu-scrollbar" className={styles.scrollBar}>
-          <div className={styles.scrollInner}>
-          {ALL_LINKS.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${styles.pill} ${link.featured ? styles.pillHiring : ""} ${isActive ? styles.pillActive : ""}`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+        <div className={styles.scrollViewport}>
+          <div ref={scrollBarRef} id="store-menu-scrollbar" className={styles.scrollBar}>
+            <div className={styles.scrollInner}>
+            {ALL_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`${styles.pill} ${link.featured ? styles.pillHiring : ""} ${isActive ? styles.pillActive : ""}`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+            </div>
           </div>
+          {canAdvance && <button type="button" className={styles.scrollAdvance} aria-label="Show more navigation links" aria-controls="store-menu-scrollbar" onClick={advanceScrollBar}><span aria-hidden="true">›</span></button>}
         </div>
-        {canAdvance && <button type="button" className={styles.scrollAdvance} aria-label="Show more navigation links" aria-controls="store-menu-scrollbar" onClick={advanceScrollBar}><span aria-hidden="true">›</span></button>}
+        <Link
+          href="/weed-delivery-etobicoke"
+          className={`${styles.pill} ${styles.pinnedDelivery} ${pathname === "/weed-delivery-etobicoke" ? styles.pillActive : ""}`}
+        >
+          🚗 Weed Delivery
+        </Link>
       </div>
     </nav>
   );
