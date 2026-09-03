@@ -46,4 +46,3 @@ test("nicotine routes remain outside this remediation", () => {
   assert.match(navbar, /href: "\/items\/vapes", label: "Nic Vape"/);
   assert.match(navbar, /href: "\/items\/vape-disposables", label: "THC Vape"/);
 });
-

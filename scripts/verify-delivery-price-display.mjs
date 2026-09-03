@@ -99,4 +99,3 @@ assert(!source.includes("__DELIVERY_"), "delivery phone placeholders must not sh
 assert(smsMatch[2].replace(/\D/g, "") === smsMatch[1].replace(/\D/g, ""), "visible delivery digits must match the SMS href");
 
 console.log("Verified delivery pricing, announcement bar, and public navigation guards.");
-
