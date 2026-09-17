@@ -46,8 +46,8 @@ export const weedOwner = {
     { question: "Do I need to be 19+?", answer: "Yes. EARTHROOT CANNABIS is for adults 19+." },
   ] satisfies WeedFaq[],
   home: {
-    title: "Looking for Weed in Etobicoke?",
-    text: "EARTHROOT CANNABIS is open 24 hours at 5120 Dundas St W. Adults 19+ can explore Weed and Cannabis information, flower guidance and useful shopping resources.",
+    title: "Looking for Weed on Dundas in Etobicoke?",
+    text: "EARTHROOT CANNABIS is open 24 hours at 5120 Dundas St W near Kipling and Islington. Adults 19+ can explore Weed and Cannabis information, flower guidance and useful shopping resources.",
     primaryLabel: "Explore Weed in Etobicoke",
     secondaryLabel: "Explore the Flower Guide",
     secondaryHref: "/resources/weed-flower-guide",

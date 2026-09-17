@@ -6,7 +6,7 @@ import { weedOwner as store } from "../lib/weedDiscovery";
 
 const storeSchema = {
   "@context": "https://schema.org",
-  "@type": "Store",
+  "@type": "CannabisStore",
   "@id": `https://${store.domain}${store.ownerPath}`,
   name: store.storeName,
   url: `https://${store.domain}${store.ownerPath}`,

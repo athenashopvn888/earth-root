@@ -12,7 +12,8 @@
     "lint": "eslint",
     "test:staff-photo": "node --experimental-strip-types --experimental-specifier-resolution=node --test tests/staff-photo.test.ts",
     "test:nicotine-vapes": "node --experimental-strip-types --experimental-specifier-resolution=node --test tests/nicotine-vape-landing.test.ts",
-    "test:weed-seo": "node --test tests/weed-seo-pilot.test.mjs"
+    "test:weed-seo": "node --test tests/weed-seo-pilot.test.mjs",
+    "test:pod5-local-seo": "node --test tests/pod5-erc01-local-seo.test.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.6.1",
