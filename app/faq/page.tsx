@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
-  title: "FAQ | EarthRoot Cannabis",
-  description: "Frequently asked questions about EarthRoot Cannabis in Etobicoke, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
+  title: "FAQ | EarthRoot Cannabis on Dundas Street West",
+  description: "Hours, ID, Dundas / Kipling / Islington directions, and menu questions for EarthRoot Cannabis at 5120 Dundas St W, Etobicoke. Adults 19+.",
   alternates: {
     canonical: "https://www.earthrootcannabis.ca/faq",
   },
@@ -15,9 +15,9 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is EarthRoot Cannabis located?", a: "EarthRoot Cannabis is listed at 5120 Dundas St W, Etobicoke, ON M9A 1C2. Use the store page for directions and contact options before visiting." },
-      { q: "What are the listed hours?", a: "Open 24 Hours. Check the current store page or contact staff before visiting if timing matters." },
-      { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
+      { q: "Where is EarthRoot Cannabis located?", a: "EarthRoot Cannabis is at 5120 Dundas St W, Etobicoke, ON M9A 1C2, on Dundas Street West between Kipling Avenue and Islington Avenue. Call +1 437 523 4850. Use the homepage map or /visit for how to reach the door." },
+      { q: "What are the listed hours?", a: "Open 24 Hours, seven days a week, matching the homepage hub. Call +1 437 523 4850 if your timing is unusual." },
+      { q: "What is the best way to plan the visit?", a: "Confirm 5120 Dundas St W and the homepage hours, then open /visit if you need TTC from Kipling or Islington Station, driving from Six Points, or curb-parking notes." },
     ],
   },
   {
@@ -73,7 +73,9 @@ export default function FAQPage() {
         <div className={styles.content}>
           <h1 className={styles.pageTitle}>Frequently Asked Questions</h1>
           <p className={styles.pageSubtitle}>
-            Straight answers for shopping EarthRoot Cannabis: store page first, menu category second, staff when the current detail matters.
+            Straight answers for the Dundas and Kipling walk-in: homepage for
+            hours and the map, /visit for how to get here, menu categories for
+            planning, staff for anything that changes.
           </p>
 
           {FAQ_CATEGORIES.map((cat) => (
@@ -91,7 +93,8 @@ export default function FAQPage() {
           <div className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Still have questions?</h2>
             <p className={styles.ctaText}>
-              Call <a href="tel:+14375234850">+1 (437) 523-4850</a> or use the store page before visiting.
+              Call <a href="tel:+14375234850">+1 437 523 4850</a> or use the
+              homepage visit hub before heading to 5120 Dundas St W.
             </p>
           </div>
         </div>

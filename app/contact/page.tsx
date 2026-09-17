@@ -4,16 +4,16 @@ import Footer from "../components/Footer";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact Us — EarthRoot Cannabis | 5120 Dundas St W, Etobicoke",
+  title: "Contact EarthRoot Cannabis | 5120 Dundas St W, Etobicoke",
   description:
-    "Visit EarthRoot Cannabis at 5120 Dundas St W, Etobicoke, ON M9A 1C2. Open 24 hours, 7 days a week. Walk-ins welcome.",
+    "Visit EarthRoot Cannabis at 5120 Dundas St W, Etobicoke, ON M9A 1C2, on Dundas Street West near Kipling and Islington. Open 24 Hours. Adults 19+. Call +1 437 523 4850.",
   alternates: {
     canonical: "https://www.earthrootcannabis.ca/contact",
   },
   openGraph: {
-    title: "Contact EarthRoot Cannabis — Etobicoke Dispensary",
+    title: "Contact EarthRoot Cannabis on Dundas Street West",
     description:
-      "5120 Dundas St W, Etobicoke. Open 24 hours, 7 days a week. Premium cannabis, always fire.",
+      "5120 Dundas St W, Etobicoke, ON M9A 1C2. Open 24 Hours. Adults 19+. Phone +1 437 523 4850.",
   },
 };
 
@@ -42,7 +42,9 @@ export default function ContactPage() {
                 <br />
                 Etobicoke, ON M9A 1C2
                 <br />
-                <span className={styles.infoMuted}>Dundas St W & Kipling Ave</span>
+                <span className={styles.infoMuted}>Dundas St W &amp; Kipling Ave</span>
+                <br />
+                <a href="tel:+14375234850">+1 437 523 4850</a>
               </p>
             </div>
 
@@ -93,9 +95,9 @@ export default function ContactPage() {
               <p className={styles.infoText}>
                 No appointment needed.
                 <br />
-                Just walk in and our staff will
+                Adults 19+ with government photo ID.
                 <br />
-                help you browse the menu categories.
+                Staff can walk you through current menu categories.
               </p>
               <div className={styles.featureList}>
                 <div className={styles.featureItem}>
@@ -120,6 +122,10 @@ export default function ContactPage() {
 
           {/* Map */}
           <div className={styles.mapSection}>
+            <p>
+              Need TTC, driving, or parking notes?{" "}
+              <a href="/visit">How to reach EarthRoot Cannabis</a>
+            </p>
           </div>
         </div>
       </section>

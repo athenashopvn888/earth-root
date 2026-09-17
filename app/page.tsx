@@ -10,6 +10,7 @@ import FlowerCard from "./components/FlowerCard";
 import { allFlowers } from "./lib/products";
 import Papa from "papaparse";
 import { WeedDiscoveryModule } from "./components/WeedDiscoveryModule";
+import { HOME_FAQS, STORE } from "./lib/storeIdentity";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -103,25 +104,6 @@ const EXPLORE_CATEGORIES = [
   },
 ];
 
-/* ── Local FAQs for Jane St ── */
-const LOCAL_FAQS = [
-  {
-    q: "What are the hours for EarthRoot Cannabis?",
-    a: "EarthRoot Cannabis at 5120 Dundas St W, Etobicoke is Open 24 Hours a day, 7 days a week. Walk in anytime — no appointment needed.",
-  },
-  {
-    q: "What cannabis products do you carry?",
-    a: "We carry five tiers of premium flower: Exotic ($10-$12/g), Premium ($7-$10/g), AAA+ ($5-$6/g), AA ($4/g), and Budget ($3/g), plus a wide variety of edibles, prerolls, vapes, and concentrates.",
-  },
-  {
-    q: "Where is EarthRoot Cannabis located?",
-    a: "We are located at 5120 Dundas St W, Etobicoke, ON M9A 1C2. Visit us in person or call us at +1 (437) 523-4850. Free evening street parking is available.",
-  },
-  {
-    q: "What is the cheapest weed at EarthRoot Cannabis?",
-    a: "Our budget flower starts at just $3/g. We also offer AA daily drivers from $4/g and AAA+ heavy hitters from $5-$6/g. View our budget menu for our latest deals.",
-  },
-];
 
 interface Review {
   name: string;
@@ -231,7 +213,7 @@ export default function HomePage() {
         <div className={styles.welcomeBannerContainer}>
           <img
             src="/banners/welcome_banner.webp"
-            alt="Welcome to EarthRoot Cannabis — Premium Etobicoke Cannabis Dispensary"
+            alt="Welcome to EarthRoot Cannabis on Dundas Street West in Etobicoke"
             className={styles.welcomeBannerImg}
           />
         </div>
@@ -270,9 +252,15 @@ export default function HomePage() {
                 marginBottom: "8px",
               }}
             />
-            <h1 className={styles.brandTitle}>EARTHROOT CANNABIS</h1>
-            <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
-            <div className={styles.brandBadge}>Open 24 Hours</div>
+            <h1 className={styles.brandTitle}>
+              EarthRoot Cannabis on Dundas at Kipling
+            </h1>
+            <p className={styles.brandSub}>
+              24 Hour Etobicoke Walk-In · Islington · Six Points
+            </p>
+            <div className={styles.brandBadge}>
+              Open 24 Hours · Adults 19+ · {STORE.streetAddress}
+            </div>
           </div>
 
           {/* Bento Grid */}
@@ -304,8 +292,8 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              Pick the category that matches the visit, then compare the current
-              menu details.
+              Choose a lane for this Dundas West stop — flower, vapes, pre-rolls,
+              or the rest of the Etobicoke menu — then read the live listing.
             </p>
           </div>
 
@@ -341,8 +329,8 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              A quick look at flower options from the store menu. Open the item
-              page for current details before choosing.
+              A rotating sample from the 5120 Dundas St W flower wall. Open the
+              item page; do not treat this row as a stock or price guarantee.
             </p>
           </div>
 
@@ -360,21 +348,27 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
+            <h2 className={styles.seoPanelTitle}>
+              Walk in on Dundas Street West at Kipling
+            </h2>
             <p className={styles.seoPanelText}>
-              Start with the store page, then choose the product category that
-              fits the visit. Flower, pre-rolls, edibles, THC vapes,
-              concentrates, accessories, and cigarettes each shop differently.
+              EarthRoot Cannabis sits at {STORE.addressLine}, on the Etobicoke
+              Dundas Street West frontage between Kipling Avenue and Islington
+              Avenue. The Kingsway, Cloverdale, Humbertown, and Six Points are
+              the local handles — not a downtown Toronto hunt. Adults 19+ with
+              photo ID can walk in any hour we list as open.
             </p>
             <p className={styles.seoPanelText}>
-              If cheap weed or affordable weed is the goal, start with Budget
-              and AA flower before moving up. If premium flower or exotic flower
-              is the mood, open those lanes first and compare the current
-              details there.
+              Use this homepage as the visit hub: address, phone{" "}
+              {STORE.phoneDisplay}, 24-hour hours, and the map pin below. For
+              TTC from Kipling Station or Islington Station, curb parking notes,
+              and the last-block approach, open the{" "}
+              <Link href="/visit">how to reach EarthRoot Cannabis</Link> page.
             </p>
             <p className={styles.seoPanelText}>
-              Menus change, so use the current menu and staff for product names,
-              prices, and package details before you make the trip.
+              Menu categories live on this site so you can plan the stop. Posted
+              names and prices change; ask at the counter before you travel for
+              one item. No medical claims — adult recreational retail only.
             </p>
           </div>
         </div>
@@ -450,8 +444,8 @@ export default function HomePage() {
           >
             Frequently Asked Questions
           </h2>
-          {LOCAL_FAQS.map((faq, i) => (
-            <details key={i} className={styles.faqItem}>
+          {HOME_FAQS.map((faq) => (
+            <details key={faq.q} className={styles.faqItem}>
               <summary className={styles.faqQuestion}>{faq.q}</summary>
               <p className={styles.faqAnswer}>{faq.a}</p>
             </details>
@@ -467,10 +461,13 @@ export default function HomePage() {
               <span className={styles.storeIcon}>📍</span>
               <h3 className={styles.storeCardTitle}>Location</h3>
               <p className={styles.storeCardText}>
-                5120 Dundas St W
+                {STORE.streetAddress}
                 <br />
-                Etobicoke, ON M9A 1C2
+                {STORE.city}, {STORE.region} {STORE.postalCode}
                 <br />
+                <a href={`tel:${STORE.phoneE164}`} className={styles.storeLink}>
+                  {STORE.phoneDisplay}
+                </a>
               </p>
             </div>
             <div className={styles.storeCard}>
@@ -479,24 +476,36 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 Open 7 Days a Week
                 <br />
-                <span className={styles.storeHighlight}>Open 24 Hours</span>
+                <span className={styles.storeHighlight}>{STORE.hoursLabel}</span>
               </p>
             </div>
             <div className={styles.storeCard}>
               <span className={styles.storeIcon}>🔥</span>
               <h3 className={styles.storeCardTitle}>Walk In</h3>
               <p className={styles.storeCardText}>
-                No appointment needed
+                Adults 19+ · no appointment
                 <br />
                 <span className={styles.storeHighlight}>
-                  Dundas St W & Kipling Ave, Etobicoke
+                  {STORE.intersection}, Etobicoke
                 </span>
               </p>
             </div>
           </div>
 
-          {/* Map wrapper */}
-          <div className={styles.mapWrap}></div>
+          <p className={styles.visitHubCta}>
+            Need TTC, driving, or parking notes for this corridor?{" "}
+            <Link href="/visit">How to reach 5120 Dundas St W</Link>
+          </p>
+
+          <div className={styles.mapWrap}>
+            <iframe
+              title="Map of EarthRoot Cannabis at 5120 Dundas St W, Etobicoke"
+              src={STORE.mapEmbedUrl}
+              className={styles.mapIframe}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 

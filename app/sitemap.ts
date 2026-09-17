@@ -28,11 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     {
-      url: `${BASE}/faq`,
+      url: `${BASE}/visit`,
       lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
     {
       url: `${BASE}/weed-delivery-etobicoke`,

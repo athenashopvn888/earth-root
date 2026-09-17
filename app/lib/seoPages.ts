@@ -27,20 +27,20 @@ export interface SeoPageData {
 export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "etobicoke-weed-dispensary",
-    title: "EarthRoot Cannabis Weed Dispensary in Etobicoke",
+    title: "EarthRoot Cannabis at 5120 Dundas St W, Etobicoke",
     metaDescription:
-      "EarthRoot Cannabis is a local cannabis dispensary in Etobicoke around Dundas St W and Islington, with shopper resources for flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes.",
-    h1: "EarthRoot Cannabis Weed Dispensary in Etobicoke",
+      "EarthRoot Cannabis is the adult 19+ dispensary at 5120 Dundas St W on Dundas Street West near Kipling and Islington. Flower, pre-rolls, edibles, vapes, concentrates, accessories, and listed cigarettes — confirm the current menu in store.",
+    h1: "EarthRoot Cannabis at Dundas & Kipling in Etobicoke",
     icon: "*",
-    heroTagline: "Menu shopping around Dundas St W and Islington",
+    heroTagline: "Walk-in on Dundas Street West between Kipling and Islington",
     sections: [
       {
-        heading: "Shop EarthRoot Cannabis With A Plan",
-        body: "EarthRoot Cannabis helps adult shoppers review the menu by category. Start with the store page, then choose the section that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed.",
+        heading: "Shop the Etobicoke Dundas West menu with a plan",
+        body: "Start on this EarthRoot Cannabis page, then open the category that matches the stop at 5120 Dundas St W: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed. Posted details change — ask staff before you travel for one SKU.",
       },
       {
-        heading: "Local Notes For Dundas St W and Islington",
-        body: "If you searched for a cannabis dispensary near Islington, use this page to confirm the local store, product categories, and current menu details.",
+        heading: "Dundas, Kipling, Islington, Six Points",
+        body: "If you searched for a cannabis dispensary near Islington or Kipling, confirm 5120 Dundas St W, Etobicoke, ON M9A 1C2. The homepage holds hours and the map; /visit covers TTC and curb parking for this corridor only.",
       },
       {
         heading: "What To Check Before Visiting",
@@ -50,7 +50,7 @@ export const SEO_PAGES: SeoPageData[] = [
     faqs: [
       {
         q: "Is EarthRoot Cannabis a local cannabis dispensary?",
-        a: "Yes. EarthRoot Cannabis serves adult shoppers in Etobicoke around Dundas St W and Islington. Use the store page for directions, contact details, and listed hours.",
+        a: "Yes. EarthRoot Cannabis is the adult 19+ walk-in at 5120 Dundas St W in Etobicoke, on Dundas Street West near Kipling and Islington. Use the homepage for directions, +1 437 523 4850, and listed hours.",
       },
       {
         q: "What should I check before visiting EarthRoot Cannabis?",
@@ -139,34 +139,35 @@ export const SEO_PAGES: SeoPageData[] = [
   },
   {
     slug: "weed-store-near-dundas-st-w-islington-etobicoke",
-    title: "EarthRoot Cannabis Weed Store Near Islington",
+    title: "Weed Store Near Dundas, Kipling & Islington | EarthRoot Cannabis",
+    absoluteTitle: true,
     metaDescription:
-      "EarthRoot Cannabis local guide for adults searching for a weed store near Islington.",
-    h1: "EarthRoot Cannabis Weed Store Near Islington",
+      "Reach EarthRoot Cannabis at 5120 Dundas St W in Etobicoke from Dundas Street West, Kipling Avenue, Islington Avenue, and Six Points. Adults 19+. Open 24 Hours.",
+    h1: "Weed Store Near Dundas, Kipling, and Islington in Etobicoke",
     icon: "*",
-    heroTagline: "Local guide around Islington",
+    heroTagline: "5120 Dundas St W — between Kipling Avenue and Islington Avenue",
     sections: [
       {
-        heading: "Near Islington",
-        body: "EarthRoot Cannabis is tied to the local Dundas St W and Islington shopping area. Use this page when comparing nearby cannabis menu options and store details.",
+        heading: "The Dundas West pin, not a generic city page",
+        body: "EarthRoot Cannabis is the walk-in at 5120 Dundas St W, Etobicoke, ON M9A 1C2. If you searched a weed store near Islington or Kipling, this is the civic number to match. Phone +1 437 523 4850. Hours and the map live on the homepage; driving and TTC notes live on /visit.",
       },
       {
-        heading: "Avoid Stale City Pages",
-        body: "The page is written for this local store identity and does not reuse unrelated city copy.",
+        heading: "Corridor landmarks for the last kilometre",
+        body: "Think Dundas Street West in Etobicoke Centre: Kipling Avenue on one side, Islington Avenue on the other, Six Points as the Dundas / Bloor / Kipling junction, and The Kingsway / Cloverdale / Humbertown as the nearby neighbourhood names. Do not aim this search at a downtown Toronto address.",
       },
       {
-        heading: "Check Before You Go",
-        body: "Open the current menu, confirm directions, and use the contact details if a product or category detail matters before the visit.",
+        heading: "Before you leave the house",
+        body: "Adults 19+ need government photo ID. Menu names and posted prices change, so treat category pages as planning tools and confirm details at the counter. This guide does not invent inventory, promotions, or medical claims.",
       },
     ],
     faqs: [
       {
-        q: "Is this page focused on Islington?",
-        a: "Yes. This page focuses on EarthRoot Cannabis around Dundas St W and Islington.",
+        q: "Is EarthRoot Cannabis near Islington and Kipling?",
+        a: "Yes. 5120 Dundas St W sits on Dundas Street West in Etobicoke, between Kipling Avenue and Islington Avenue.",
       },
       {
-        q: "What is the best next step?",
-        a: "Open the current menu or store page, then confirm directions and contact details before heading over.",
+        q: "Where should I go next if I need directions?",
+        a: "Open /visit for how-to-reach notes, or the homepage for the NAP block, 24-hour hours, and map pin.",
       },
     ],
   },

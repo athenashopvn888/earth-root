@@ -2,53 +2,57 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
+import {
+  HOME_FAQS,
+  cannabisStoreJsonLd,
+  faqPageJsonLd,
+  stringifyJsonLd,
+} from "./lib/storeIdentity";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.earthrootcannabis.ca"),
   title: {
-    default: "24 Hour Etobicoke Dispensary | EarthRoot Cannabis",
+    default:
+      "EarthRoot Cannabis | 24 Hour Dispensary on Dundas & Kipling, Etobicoke",
     template: "%s | EarthRoot Cannabis",
   },
   description:
-    "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+    "Walk into EarthRoot Cannabis at 5120 Dundas St W, Etobicoke, on Dundas Street West near Kipling, Islington, and Six Points. Adults 19+. Open 24 Hours. Current menu in store — no medical claims.",
   keywords: [
-    "cannabis dispensary Etobicoke",
-    "weed store Etobicoke",
-    "exotic flower Etobicoke",
-    "premium cannabis",
     "EarthRoot Cannabis",
-    "cheap weed Etobicoke",
-    "dispensary near me",
-    "THC flower",
-    "indica sativa hybrid",
-    "edibles Etobicoke",
-    "vapes",
-    "pre-rolls",
-    "native cigarettes Etobicoke",
-    "weed store Islington",
+    "Etobicoke dispensary",
+    "Dundas and Kipling weed",
+    "Islington cannabis store",
+    "5120 Dundas St W",
+    "24 hour Etobicoke dispensary",
+    "Six Points dispensary",
+    "weed store near Kipling",
+    "Dundas Street West cannabis",
   ],
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: "https://www.earthrootcannabis.ca",
     siteName: "EarthRoot Cannabis",
-    title: "24 Hour Etobicoke Dispensary | EarthRoot Cannabis",
+    title:
+      "EarthRoot Cannabis | 24 Hour Dispensary on Dundas & Kipling, Etobicoke",
     description:
-      "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+      "Adult 19+ walk-in at 5120 Dundas St W in Etobicoke, between Kipling Avenue and Islington Avenue. Open 24 Hours.",
     images: [
       {
         url: "https://www.earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "EarthRoot Cannabis — Etobicoke Cannabis Dispensary Etobicoke",
+        alt: "EarthRoot Cannabis storefront area on Dundas Street West, Etobicoke",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "24 Hour Etobicoke Dispensary | EarthRoot Cannabis",
+    title:
+      "EarthRoot Cannabis | 24 Hour Dispensary on Dundas & Kipling, Etobicoke",
     description:
-      "EarthRoot Cannabis is an Etobicoke dispensary on Dundas St W near Islington and Six Points with flower, pre-rolls, vapes, edibles, concentrates, accessories, and adult 19+ info. Open 24 Hours.",
+      "Adult 19+ walk-in at 5120 Dundas St W in Etobicoke, between Kipling Avenue and Islington Avenue. Open 24 Hours.",
     images: [
       "https://www.earthrootcannabis.ca/wp-content/uploads/2026/04/46Oi5.jpg",
     ],
@@ -66,57 +70,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.earthrootcannabis.ca",
-  },
-  verification: {
-    // google: "your-google-verification-code",
-  },
-};
-
-/* JSON-LD Structured Data */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Store",
-  additionalType: "https://schema.org/Store",
-  "@id": "https://www.earthrootcannabis.ca",
-  name: "EarthRoot Cannabis",
-  description:
-    "Cannabis dispensary at 5120 Dundas St W in Etobicoke, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open 24 Hours.",
-  url: "https://www.earthrootcannabis.ca",
-  telephone: "+14375234850",
-  image: "https://www.earthrootcannabis.ca/wp-content/uploads/2026/04/7Clmh.jpg",
-  priceRange: "$3 - $12/g",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "5120 Dundas St W",
-    addressLocality: "Etobicoke",
-    addressRegion: "ON",
-    postalCode: "M9A 1C2",
-    addressCountry: "CA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 43.6445218,
-    longitude: -79.5331309,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  ],
-  areaServed: {
-    "@type": "City",
-    name: "Etobicoke",
   },
 };
 
@@ -140,7 +93,15 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: stringifyJsonLd(cannabisStoreJsonLd()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: stringifyJsonLd(faqPageJsonLd(HOME_FAQS)),
+          }}
         />
         <script
           async

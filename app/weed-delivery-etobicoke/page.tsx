@@ -5,9 +5,9 @@ import menu from "../delivery/delivery-menu.json";
 const canonicalUrl = "https://www.earthrootcannabis.ca/weed-delivery-etobicoke";
 
 export const metadata: Metadata = {
-  title: "Weed Delivery Etobicoke",
+  title: "Weed Delivery Etobicoke | From Dundas & Kipling",
   description:
-    "Explore Weed Delivery from EarthRoot Cannabis in Etobicoke. Browse the current delivery menu and use the ordering options shown on the page.",
+    "Etobicoke-scoped weed delivery from EarthRoot Cannabis at 5120 Dundas St W. Browse the current delivery menu. Adults 19+. This is not a city-wide Toronto delivery page.",
   alternates: { canonical: canonicalUrl },
 };
 

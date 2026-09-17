@@ -10,9 +10,9 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>EARTHROOT CANNABIS</div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 5120 Dundas St W, Etobicoke.
-              Visit EarthRoot Cannabis For Premium Flower, Edibles, Vapes &amp;
-              More. Open 24 Hours.
+              Adult 19+ walk-in at 5120 Dundas St W in Etobicoke, on Dundas
+              Street West between Kipling and Islington. Open 24 Hours. Check
+              the current menu in store — we do not post medical claims.
             </p>
             <div className={styles.buttons}>
               <a href="tel:+14375234850" className={styles.btnPrimary}>
@@ -34,7 +34,7 @@ export default function Footer() {
               <span className={styles.infoLabel}>Phone:</span>
               <span>
                 <a href="tel:+14375234850" style={{ color: "inherit" }}>
-                  +1 (437) 523-4850
+                  +1 437 523 4850
                 </a>
               </span>
             </div>
@@ -49,6 +49,7 @@ export default function Footer() {
             <h3 className={styles.colTitle}>Quick Links</h3>
             <nav className={styles.links}>
               <Link href="/">Home</Link>
+              <Link href="/visit">How to Reach Us</Link>
               <Link href="/exotic-weed">Exotic Weed</Link>
               <Link href="/premium-weed">Premium Weed</Link>
               <Link href="/aaa-weed">AAA+ Weed</Link>

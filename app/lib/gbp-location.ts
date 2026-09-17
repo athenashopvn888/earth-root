@@ -9,10 +9,10 @@ export const gbpLocation = {
   address: "5120 Dundas St W, Etobicoke, ON M9A 1C2",
   streetAddress: "5120 Dundas St W",
   postalCode: "M9A 1C2",
-  phone: "+1 (437) 523-4850",
+  phone: "+1 437 523 4850",
   phoneIntl: "+14375234850",
-  neighborhood: "Dundas St W / Islington / Etobicoke",
-  nearbyAreas: ["Dundas St W", "Islington", "Six Points", "Kipling", "Bloor West", "Etobicoke Centre", "The Kingsway", "TTC"],
+  neighborhood: "Dundas St W / Kipling / Islington",
+  nearbyAreas: ["Dundas St W", "Kipling", "Islington", "Six Points", "Etobicoke Centre", "The Kingsway", "Cloverdale", "Humbertown"],
   products: [
     "Flower",
     "Pre-rolls",
@@ -24,17 +24,18 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "",
-  mapEmbedUrl: "",
+  directionsUrl: "/visit",
+  mapEmbedUrl:
+    "https://maps.google.com/maps?q=5120+Dundas+St+W,+Etobicoke,+ON+M9A+1C2&hl=en&z=16&output=embed",
   latitude: "43.6445218",
   longitude: "-79.5331309",
   hours: ["Open 24 Hours"],
-  seoTitle: "EarthRoot Cannabis | Weed Dispensary in Etobicoke",
-  metaDescription: "EarthRoot Cannabis is a local weed dispensary in Etobicoke offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
-  localLandmarks: ["Dundas St W", "Islington", "Six Points"],
-  introVariant: "EarthRoot Cannabis is a neighborhood weed dispensary in Etobicoke, located at 5120 Dundas St W near Islington. Adults 19+ can browse cannabis flower, pre-rolls, edibles, THC vapes, concentrates, and smoking accessories. Visit the store page and menu categories for current details.",
-  neighborhoodDescription: "Located in the vibrant Dundas St W / Islington / Etobicoke district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
-  parkingNote: "Street parking and local parking spaces are available nearby",
-  transitNote: "Easily accessible via TTC bus and subway routes from nearby Kipling and Islington stations.",
-  sectionTitle: "Serving Customers Near Dundas St W and Etobicoke Centre"
+  seoTitle: "EarthRoot Cannabis | Dundas & Kipling Walk-In, Etobicoke",
+  metaDescription: "EarthRoot Cannabis is the adult 19+ walk-in at 5120 Dundas St W in Etobicoke, on Dundas Street West near Kipling, Islington, and Six Points. Open 24 Hours.",
+  localLandmarks: ["Dundas St W", "Kipling Ave", "Islington Ave", "Six Points"],
+  introVariant: "EarthRoot Cannabis is the Dundas Street West walk-in at 5120 Dundas St W in Etobicoke, between Kipling Avenue and Islington Avenue. Adults 19+ can review flower, pre-rolls, edibles, vapes, concentrates, and accessories on the current menu. Use the homepage for hours and the map; use /visit for how to reach the door.",
+  neighborhoodDescription: "5120 Dundas St W sits on the Etobicoke Centre retail strip west of Islington and beside Kipling, with Six Points as the interchange most drivers pass. The Kingsway, Cloverdale, and Humbertown are the nearby residential names on this corridor.",
+  parkingNote: "Street parking on Dundas Street West; evening curb space is often easier than midday. Read the signs on the block you stop on",
+  transitNote: "Kipling Station and Islington Station (Line 2) are the subway anchors; finish on Dundas Street West to reach 5120",
+  sectionTitle: "Etobicoke shoppers on Dundas, Kipling, and Islington"
 };
