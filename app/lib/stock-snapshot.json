@@ -1,0 +1,24 @@
+{
+  "storeCode": "ERC01",
+  "stockDate": "2026-09-18T22:45:31.000Z",
+  "skuCount": 178,
+  "flowers": 60,
+  "items": 64,
+  "tiers": {
+    "BUDGET": 7,
+    "AA": 14,
+    "AAA+": 13,
+    "PREMIUM": 14,
+    "EXOTIC": 12
+  },
+  "categories": {
+    "PREROLLS": 2,
+    "CIGARETTES": 21,
+    "CONCENTRATES": 4,
+    "VAPE DISPOSABLE": 3,
+    "ADD ONS": 9,
+    "EDIBLES": 17,
+    "VAPE PENS": 5,
+    "MAGIC & OTHERS": 3
+  }
+}

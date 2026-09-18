@@ -4,14 +4,28 @@
  *
  * This runs automatically via "prebuild" in package.json.
  * If the fetch fails, the existing JSON files are kept as fallback.
+ *
+ * Prefers ?store=ERC01&stock=1 for ONHAND metadata, then fetches the
+ * combined flowers+items payload (catalog prices + stock filter).
  */
 
 const fs = require('fs');
 const path = require('path');
 
 const APPS_SCRIPT_URL = process.env.APPS_SCRIPT_URL || '';
+const STORE_CODE = 'ERC01';
+const FETCH_TIMEOUT_MS = 120000;
 const FLOWERS_PATH = path.join(__dirname, '..', 'app', 'lib', 'flowers.json');
 const ITEMS_PATH = path.join(__dirname, '..', 'app', 'lib', 'items.json');
+const SNAPSHOT_PATH = path.join(__dirname, '..', 'app', 'lib', 'stock-snapshot.json');
+
+async function fetchJson(url) {
+  const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+  }
+  return res.json();
+}
 
 async function main() {
   if (!APPS_SCRIPT_URL) {
@@ -22,14 +36,17 @@ async function main() {
   console.log('[prebuild] Fetching live stock from Apps Script...');
 
   try {
-    const url = `${APPS_SCRIPT_URL}?store=ERC01`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
-
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    let stockMeta = null;
+    try {
+      stockMeta = await fetchJson(`${APPS_SCRIPT_URL}?store=${STORE_CODE}&stock=1`);
+      console.log(
+        `[prebuild] ONHAND ${stockMeta.storeCode || STORE_CODE} date=${stockMeta.date || 'unknown'} skus=${stockMeta.skuCount ?? Object.keys(stockMeta.stock || {}).length}`
+      );
+    } catch (err) {
+      console.warn(`[prebuild] stock=1 fetch failed: ${err.message}`);
     }
 
-    const data = await res.json();
+    const data = await fetchJson(`${APPS_SCRIPT_URL}?store=${STORE_CODE}`);
 
     if (!data.flowers || !data.items) {
       throw new Error('Invalid response: missing flowers or items');
@@ -98,7 +115,20 @@ async function main() {
     data.items.forEach(i => { cats[i.category] = (cats[i.category] || 0) + 1; });
     Object.entries(cats).sort().forEach(([c, n]) => console.log(`  ${c}: ${n}`));
 
-    console.log(`[prebuild] Stock date: ${data.stockDate || 'unknown'}`);
+    const stockDate = data.stockDate || stockMeta?.date || null;
+    const snapshot = {
+      storeCode: data.storeCode || stockMeta?.storeCode || STORE_CODE,
+      stockDate,
+      skuCount: stockMeta?.skuCount ?? null,
+      flowers: data.flowers.length,
+      items: data.items.length,
+      tiers,
+      categories: cats,
+    };
+    fs.writeFileSync(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2) + '\n', 'utf-8');
+    console.log(`[prebuild] stock-snapshot.json written`);
+
+    console.log(`[prebuild] Stock date: ${stockDate || 'unknown'}`);
     console.log('[prebuild] Done!');
 
   } catch (err) {
