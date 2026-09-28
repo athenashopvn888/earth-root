@@ -323,6 +323,25 @@ export default function HomePage() {
 
       <WeedDiscoveryModule />
 
+      <section className={styles.categoriesSection} aria-labelledby="local-guides-heading">
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle} id="local-guides-heading">EarthRoot local guides</h2>
+            <p className={styles.sectionSubtitle}>Plan a Dundas and Kipling visit, compare delivery information, or open the current adult product categories.</p>
+          </div>
+          <div className={styles.categoriesGrid}>
+            {[
+              ["Weed dispensary at Dundas & Kipling in Etobicoke","/weed-dispensary-dundas-kipling"],
+              ["Open 24 hours, 7 days","/24-hour-dundas-kipling-dispensary"],
+              ["Delivery","/weed-delivery-etobicoke"],
+              ["Native cigarettes: cartons and packs","/native-cigarettes-dundas-kipling"],
+              ["Nicotine vapes, pods and pouches","/nicotine-vape-dundas-kipling"],
+              ["How to get here: transit and parking","/visit"],
+            ].map(([label,href])=><Link key={href} href={href} className={styles.categoryCard}><div className={styles.categoryCardContent}><h3 className={styles.categoryCardName}>{label} <span className={styles.categoryCardArrow}>→</span></h3></div></Link>)}
+          </div>
+        </div>
+      </section>
+
       {/* ── FEATURED PRODUCTS ── */}
       <section className={styles.featuredSection}>
         <div className={styles.container}>
