@@ -9,6 +9,7 @@ import {
   TIER_CONFIG,
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
+import { STORE, stringifyJsonLd } from "../lib/storeIdentity";
 import styles from "./tier.module.css";
 
 /* -- Generate all tier pages at build -- */
@@ -29,7 +30,7 @@ export async function generateMetadata({
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
+    title: { absolute: `${tierInfo.config.name} & Cannabis Flower | Dundas & Kipling, Etobicoke | EarthRoot Cannabis` },
     description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at EarthRoot Cannabis.`,
     alternates: {
       canonical: `https://www.earthrootcannabis.ca/${tierSlug}`,
@@ -58,9 +59,24 @@ export default async function TierPage({
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
+  const canonicalUrl = `${STORE.url}/${tierSlug}`;
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [{
+      "@type": "CollectionPage", "@id": `${canonicalUrl}#webpage`, url: canonicalUrl,
+      name: `${config.name} & Cannabis Flower | Dundas & Kipling, Etobicoke | EarthRoot Cannabis`,
+      description: seo?.seoIntro, isPartOf: { "@id": `${STORE.url}/#website` }, about: { "@id": `${STORE.url}/#cannabis-store` },
+      breadcrumb: { "@type": "BreadcrumbList", itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: STORE.url },
+        { "@type": "ListItem", position: 2, name: config.name, item: canonicalUrl },
+      ]},
+      mainEntity: { "@type": "ItemList", numberOfItems: flowers.length, itemListElement: flowers.map((flower,index)=>({ "@type":"ListItem", position:index+1, name:flower.name, url:`${STORE.url}/flower/${flower.slug}` })) },
+    }],
+  };
 
   return (
     <main className={styles.main}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(collectionSchema) }} />
       <Navbar />
 
       {/* ── Banner Image (standalone, no overlay text) ── */}
@@ -82,7 +98,7 @@ export default async function TierPage({
             <div className={styles.heroTitleRow}>
               <span className={styles.heroIcon}>{config.icon}</span>
               <h1 className={styles.heroTitle}>
-                <span style={{ color: config.color }}>{config.name}</span>
+                <span style={{ color: config.color }}>{config.name} &amp; Cannabis Flower at Dundas &amp; Kipling in Etobicoke</span>
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>

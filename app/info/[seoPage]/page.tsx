@@ -158,6 +158,7 @@ export default async function SeoLandingPage({
             </div>
           )}
           {page.warning && <p className={styles.nicotineWarning}>{page.warning}</p>}
+          {(slug === "native-cigarettes-etobicoke" || slug === "nicotine-vapes-etobicoke") && <div className={styles.section}><h2 className={styles.sectionTitle}>Dundas and Kipling category guide</h2><p className={styles.sectionBody}>Continue to the dedicated local pillar for store details, directions, current-category access and adult ID information.</p><Link href={slug === "native-cigarettes-etobicoke" ? "/native-cigarettes-dundas-kipling" : "/nicotine-vape-dundas-kipling"} className={styles.productHeroPrimary}>Open the Dundas and Kipling guide</Link></div>}
         </div>
       </section>
 
