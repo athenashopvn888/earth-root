@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: { absolute: weedOwner.seoTitle },
   description: weedOwner.metaDescription,
   alternates: {
-    canonical: `https://${weedOwner.domain}${weedOwner.ownerPath}`,
+    canonical: `https://${weedOwner.domain}${weedOwner.ownerPath.replace(/\/$/, "")}`,
   },
   robots: {
     index: true,
