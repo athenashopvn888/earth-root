@@ -22,7 +22,7 @@ test("homepage has one bounded Weed bridge", () => {
 
 test("protected route keeps absolute title, canonical and indexability", () => {
   assert.match(route, /title: \{ absolute: weedOwner\.seoTitle \}/);
-  assert.match(route, /canonical: `https:\/\/\$\{weedOwner\.domain\}\$\{weedOwner\.ownerPath\}`/);
+  assert.match(route, /canonical: `https:\/\/\$\{weedOwner\.domain\}\$\{weedOwner\.ownerPath\.replace\(\/\\\/\$\/, ""\)\}`/);
   assert.match(route, /index: true/);
   assert.match(route, /follow: true/);
 });
