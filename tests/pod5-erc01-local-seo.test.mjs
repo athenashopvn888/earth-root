@@ -35,7 +35,8 @@ test("homepage is the visit hub with unique Dundas corridor copy", () => {
   assert.match(home, /STORE\.mapEmbedUrl/);
   assert.match(home, /href="\/visit"/);
   assert.match(home, /id="contact"/);
-  assert.match(layout, /Dundas & Kipling, Etobicoke/);
+  assert.match(layout, /Open 24 Hours in Etobicoke \| EarthRoot Cannabis/);
+  assert.match(layout, /Open 24 hours, 7 days a week/);
   assert.doesNotMatch(home, /Shop The Menu With A Plan/);
   assert.doesNotMatch(home, /Premium Cannabis Dispensary/);
   assert.doesNotMatch(
@@ -53,6 +54,8 @@ test("/visit is a Dundas-Kipling-Islington how-to-reach page", () => {
   assert.match(visit, /parking/i);
   assert.match(visit, /Adults 19\+/);
   assert.match(visit, /homepage visit hub/);
+  assert.match(visit, /<h2>Open 24\/7<\/h2>/);
+  assert.match(visit, /open 24 hours, 7 days a week/);
   assert.match(sitemap, /\/visit/);
   assert.match(footer, /href="\/visit"/);
 });

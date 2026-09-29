@@ -95,6 +95,13 @@ export default function VisitPage() {
         </section>
 
         <section>
+          <h2>Open 24/7</h2>
+          <p>
+            EarthRoot Cannabis is open 24 hours, 7 days a week at 5120 Dundas St W in Etobicoke. The same walk-in counter is open during the day, overnight, and after midnight. Adults 19+ should bring government-issued photo ID.
+          </p>
+        </section>
+
+        <section>
           <h2>Find 5120 on the Dundas strip</h2>
           <p>
             EarthRoot Cannabis faces Dundas Street West in Etobicoke Centre,

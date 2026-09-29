@@ -12,12 +12,11 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.earthrootcannabis.ca"),
   title: {
-    default:
-      "EarthRoot Cannabis | 24 Hour Dispensary on Dundas & Kipling, Etobicoke",
+    default: "Open 24 Hours in Etobicoke | EarthRoot Cannabis",
     template: "%s | EarthRoot Cannabis",
   },
   description:
-    "Walk into EarthRoot Cannabis at 5120 Dundas St W, Etobicoke, on Dundas Street West near Kipling, Islington, and Six Points. Adults 19+. Open 24 Hours. Current menu in store — no medical claims.",
+    "Open 24 hours, 7 days a week. Visit EarthRoot Cannabis at 5120 Dundas St W in Etobicoke, near Dundas, Kipling, and Islington. Adults 19+.",
   keywords: [
     "EarthRoot Cannabis",
     "Etobicoke dispensary",
