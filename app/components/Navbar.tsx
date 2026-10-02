@@ -26,6 +26,7 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/faq", label: "FAQ" },
   { href: "/visit", label: "Visit" },
   { href: "/resources", label: "Resources" },
+  { href: "/guides", label: "Guides" },
 ];
 
 export default function Navbar() {
