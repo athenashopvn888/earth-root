@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import FlowerBogoStrip from "./FlowerBogoStrip";
 
 const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/exotic-weed", label: "Exotic Weed" },
@@ -89,6 +90,7 @@ export default function Navbar() {
         </Link>
       </div>
       <CohortDeliveryActions />
+      {pathname !== "/" ? <FlowerBogoStrip /> : null}
     </nav>
   );
 }
