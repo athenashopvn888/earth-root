@@ -8,6 +8,7 @@ import {
 import { SEO_PAGES } from "./lib/seoPages";
 import { RESOURCE_PAGES } from "./resources/resourceData";
 import { GUIDE_REGISTRY } from "./lib/guideRegistry";
+import { DELIVERY_GUIDE_REGISTRY } from "./lib/deliveryGuideRegistry";
 
 const BASE = "https://www.earthrootcannabis.ca";
 
@@ -99,7 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.slug ? 0.6 : 0.7,
   }));
 
-  const guidePages: MetadataRoute.Sitemap = GUIDE_REGISTRY.map((guide) => ({
+  const guidePages: MetadataRoute.Sitemap = [...GUIDE_REGISTRY, ...DELIVERY_GUIDE_REGISTRY].map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
