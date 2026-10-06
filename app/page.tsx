@@ -219,7 +219,7 @@ export default function HomePage() {
         <div className={styles.welcomeBannerContainer}>
           <img
             src="/banners/welcome_banner.webp"
-            alt="Welcome to EarthRoot Cannabis on Dundas Street West in Etobicoke"
+            alt="Earthroot Cannabis Dispensary Weed Delivery"
             className={styles.welcomeBannerImg}
           />
         </div>
