@@ -12,7 +12,7 @@ import styles from "./tier.module.css";
 import { getTierGuideLinks } from "../lib/guideRegistry";
 import { formatAsLowAsAfterPromos, formatPerGram, isBogoDeal, type BoardDeal } from "../lib/flowerDeals";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
