@@ -46,7 +46,7 @@ test("Weed Delivery remains pinned outside the horizontally scrollable category 
 
 test("protected delivery facts and mechanics remain present", () => {
   assert.match(content, /\$60 PRODUCT MINIMUM/);
-  assert.match(content, /sms:\+14375249617/);
+  assert.doesNotMatch(content, /sms:\+1\d{10}|DELIVERY TEXT NUMBER/);
   assert.match(content, /Member Loyalty Savings/);
   assert.match(content, /<EarthRootWebChat \/>/);
   assert.match(content, /Browse the delivery menu/);
