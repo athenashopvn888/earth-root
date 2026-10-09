@@ -1,4 +1,4 @@
-import { HOME_TITLE } from "./lib/homeDelivery";
+import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 import type { Metadata } from "next";
 import "./globals.css";
 import DeliveryAnnouncement from "./components/DeliveryAnnouncement";
@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.earthrootcannabis.ca"),
   title: {
-    default: HOME_TITLE,
+    default: HOME_DOC_TITLE,
     template: "%s | EarthRoot Cannabis",
   },
   description:
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.earthrootcannabis.ca",
     siteName: "EarthRoot Cannabis",
-    title: HOME_TITLE,
+    title: HOME_DOC_TITLE,
     description:
       "Adult 19+ walk-in at 5120 Dundas St W in Etobicoke, between Kipling Avenue and Islington Avenue. Open 24 Hours.",
     images: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: HOME_TITLE,
+    title: HOME_DOC_TITLE,
     description:
       "Adult 19+ walk-in at 5120 Dundas St W in Etobicoke, between Kipling Avenue and Islington Avenue. Open 24 Hours.",
     images: [

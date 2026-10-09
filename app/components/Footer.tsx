@@ -61,6 +61,8 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/guides">Guides</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/hours">Store Hours</Link>
+              <Link href="/weed-dispensary-dundas-kipling">Dundas &amp; Kipling dispensary</Link>
               <Link href="/weed-delivery-etobicoke">Weed Delivery</Link>
               <Link href="/info/etobicoke-weed-dispensary">
                 Etobicoke Dispensary
