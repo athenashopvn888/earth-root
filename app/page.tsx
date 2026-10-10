@@ -344,6 +344,7 @@ export default function HomePage() {
               ["Delivery","/weed-delivery-etobicoke"],
               ["Native cigarettes: cartons and packs","/native-cigarettes-dundas-kipling"],
               ["Nicotine vapes, pods and pouches","/nicotine-vape-dundas-kipling"],
+              ["Current Etobicoke vape listings","/vape-shop-etobicoke"],
               ["How to get here: transit and parking","/visit"],
             ].map(([label,href])=><Link key={href} href={href} className={styles.categoryCard}><div className={styles.categoryCardContent}><h3 className={styles.categoryCardName}>{label} <span className={styles.categoryCardArrow}>→</span></h3></div></Link>)}
           </div>

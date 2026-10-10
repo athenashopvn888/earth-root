@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { STORE, stringifyJsonLd } from "../lib/storeIdentity";
 import styles from "./AuthorityLanding.module.css";
+import VapeActionPanel from "./VapeActionPanel";
 
 export type AuthorityPage = { path:string; eyebrow:string; title:string; summary:string; body:string; menuHref:string; menuLabel:string; faqs:{q:string;a:string}[] };
 
@@ -16,6 +17,7 @@ export default function AuthorityLanding({ page }: { page: AuthorityPage }) {
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:stringifyJsonLd(schema)}} />
     <Navbar />
     <section className={styles.hero}><div className={styles.wrap}><span>{page.eyebrow}</span><h1>{page.title}</h1><p>{page.summary}</p><div className={styles.actions}><Link href={page.menuHref}>{page.menuLabel}</Link><a href={STORE.mapLinkUrl}>Open Google Maps</a></div></div></section>
+    {page.path === "/nicotine-vape-dundas-kipling" && <VapeActionPanel compact />}
     <section className={styles.content}><div className={styles.wrap}>
       <article><h2>At the Dundas and Kipling counter</h2><p>{page.body}</p></article>
       <aside><h2>Plan your visit</h2><p><strong>{STORE.name}</strong><br />{STORE.addressLine}<br /><a href={`tel:${STORE.phoneE164}`}>{STORE.phoneDisplay}</a><br />Open 24 hours, seven days a week</p><p>Adults 19+ with government photo ID.</p><Link href="/visit">Transit, parking and arrival details</Link></aside>
