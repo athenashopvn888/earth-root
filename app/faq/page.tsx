@@ -13,6 +13,12 @@ export const metadata: Metadata = {
 
 const FAQ_CATEGORIES = [
   {
+    title: "Store and Delivery Prices",
+    faqs: [
+      { q: "Can I get the store price on a delivery order?", a: "No. In-store prices are for purchases made in the store. Delivery orders always use delivery prices." },
+    ],
+  },
+  {
     title: "Location and Hours",
     faqs: [
       { q: "Where is EarthRoot Cannabis located?", a: "EarthRoot Cannabis is at 5120 Dundas St W, Etobicoke, ON M9A 1C2, on Dundas Street West between Kipling Avenue and Islington Avenue. Call +1 437 523 4850. Use the homepage map or /visit for how to reach the door." },
@@ -82,7 +88,7 @@ export default function FAQPage() {
             <div key={cat.title} className={styles.category}>
               <h2 className={styles.categoryTitle}>{cat.title}</h2>
               {cat.faqs.map((faq) => (
-                <details key={faq.q} className={styles.faqItem}>
+                <details key={faq.q} id={faq.q === "Can I get the store price on a delivery order?" ? "delivery-price-rule" : undefined} className={styles.faqItem}>
                   <summary className={styles.faqQuestion}>{faq.q}</summary>
                   <p className={styles.faqAnswer}>{faq.a}</p>
                 </details>
