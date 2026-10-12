@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 import FleetAnnouncementBanner from "./components/FleetAnnouncementBanner";
+import HomeTitleBlock from "./components/HomeTitleBlock";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
@@ -225,6 +226,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
     <main className={styles.main}>
       <Navbar />
       <HomepageTopNotices />
+      <HomeTitleBlock title={HOME_TITLE} />
       <FleetAnnouncementBanner />
       {/* ── NAVBAR ── */}
 
@@ -273,7 +275,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
                 marginBottom: "8px",
               }}
             />
-            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
+            <p className={styles.brandTitle}>{HOME_TITLE}</p>
             <CohortDeliveryActions variant="hero" />
             <p className={styles.brandSub}>
               24 Hour Etobicoke Walk-In · Islington · Six Points
