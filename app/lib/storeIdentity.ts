@@ -39,6 +39,10 @@ export const DAYS_OF_WEEK = [
 /** Visible homepage FAQs — also emitted as FAQPage JSON-LD. */
 export const HOME_FAQS: { q: string; a: string }[] = [
   {
+    q: "Where's a weed dispensary near me on Dundas Street West in Etobicoke?",
+    a: "EarthRoot Cannabis is at 5120 Dundas St W in Etobicoke, between Kipling Avenue and Islington Avenue. We're open 24 hours, adults 19+ with valid photo ID.",
+  },
+  {
     q: "Where is EarthRoot Cannabis on Dundas Street West?",
     a: "EarthRoot Cannabis is at 5120 Dundas St W, Etobicoke, ON M9A 1C2, on the Dundas Street West strip between Kipling Avenue and Islington Avenue. Call +1 437 523 4850 if you need a landmark before you walk in.",
   },
