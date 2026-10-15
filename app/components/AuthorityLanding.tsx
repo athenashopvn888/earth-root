@@ -1,3 +1,4 @@
+import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -15,7 +16,7 @@ export default function AuthorityLanding({ page }: { page: AuthorityPage }) {
   ]};
   return <main className={styles.main}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:stringifyJsonLd(schema)}} />
-    <Navbar />
+    <Navbar />{page.path.includes("native-cigarettes") && <CigaretteSeasonalNotice sticky />}
     <section className={styles.hero}><div className={styles.wrap}><span>{page.eyebrow}</span><h1>{page.title}</h1><p>{page.summary}</p><div className={styles.actions}><Link href={page.menuHref}>{page.menuLabel}</Link><a href={STORE.mapLinkUrl}>Open Google Maps</a></div></div></section>
     {page.path === "/nicotine-vape-dundas-kipling" && <VapeActionPanel compact />}
     <section className={styles.content}><div className={styles.wrap}>
