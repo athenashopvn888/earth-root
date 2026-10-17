@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import GoogleReviewButton from "./GoogleReviewButton";
 import FlowerBogoStrip from "./FlowerBogoStrip";
 
 const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
@@ -43,7 +44,7 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <Link href="/" className={styles.logo} style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
           <img src="/storeFavicon.webp" alt="EarthRoot Cannabis Logo" style={{ height: "30px", width: "30px", objectFit: "contain", borderRadius: "4px" }} />
-          <span style={{
+          <span className={styles.brandName} style={{
             fontFamily: "var(--font-display)",
             fontWeight: 900,
             fontSize: "18px",
@@ -55,6 +56,7 @@ export default function Navbar() {
           </span>
         </Link>
         <div className={styles.topBarRight}>
+          <GoogleReviewButton />
           <span className={styles.open}>
             <span className={styles.dot}></span>
             Open Now
