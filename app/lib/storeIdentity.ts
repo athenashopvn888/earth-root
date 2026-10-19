@@ -74,6 +74,7 @@ export function cannabisStoreJsonLd() {
     "@type": "CannabisStore",
     "@id": `${STORE.url}/#cannabis-store`,
     name: "Earthroot Cannabis Dispensary Weed Delivery",
+    sameAs: ["https://www.google.com/maps/place/?q=place_id:ChIJ144lkA43K4gR1atrtFdvu-g"],
     url: STORE.url,
     image: STORE.image,
     telephone: STORE.phoneE164,
