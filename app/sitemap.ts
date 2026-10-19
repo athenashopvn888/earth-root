@@ -112,6 +112,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page.slug ? 0.6 : 0.7,
   }));
 
+  const disposableVapeArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/disposable-vape-pens-battery-safety-disposal`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
   const guidePages: MetadataRoute.Sitemap = [...GUIDE_REGISTRY, ...DELIVERY_GUIDE_REGISTRY].map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
     lastModified: now,
@@ -132,6 +141,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...flowerPages,
     ...itemDetailPages,
     ...resourcePages,
+    ...disposableVapeArticle,
     ...seoPages,
   ];
 }
