@@ -1,3 +1,4 @@
+import { SHOW_CIGARETTES, cigaretteSafeContent, isCigarettePath } from "./siteConfig";
 export interface SeoPageData {
   slug: string;
   title: string;
@@ -24,7 +25,7 @@ export interface SeoPageData {
   faqs: { q: string; a: string }[];
 }
 
-export const SEO_PAGES: SeoPageData[] = [
+const SEO_PAGES_RAW: SeoPageData[] = [
   {
     slug: "etobicoke-weed-dispensary",
     title: "EarthRoot Cannabis at 5120 Dundas St W, Etobicoke",
@@ -245,6 +246,12 @@ export const SEO_PAGES: SeoPageData[] = [
     warning: "Adults 19+. Nicotine is addictive.",
   },
 ];
+
+export const SEO_PAGES = SHOW_CIGARETTES
+  ? SEO_PAGES_RAW
+  : SEO_PAGES_RAW
+      .filter((page) => !isCigarettePath(page.slug))
+      .map((page) => cigaretteSafeContent(page));
 
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
   return SEO_PAGES.find((page) => page.slug === slug);
