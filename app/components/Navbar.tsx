@@ -1,4 +1,7 @@
 "use client";
+
+import { filterCigaretteEntries } from "../lib/siteConfig";
+
 import CohortDeliveryActions from "./CohortDeliveryActions";
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -69,7 +72,7 @@ export default function Navbar() {
         <div className={styles.scrollViewport}>
           <div ref={scrollBarRef} id="store-menu-scrollbar" className={styles.scrollBar}>
             <div className={styles.scrollInner}>
-            {ALL_LINKS.map((link) => {
+            {filterCigaretteEntries(ALL_LINKS).map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link

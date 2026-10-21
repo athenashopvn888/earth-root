@@ -1,4 +1,7 @@
 "use client";
+
+import { cigaretteSafeContent } from "./lib/siteConfig";
+
 import { HOME_TITLE } from "./lib/homeDelivery";
 import CohortDeliveryActions from "./components/CohortDeliveryActions";
 import HomeDeliverySection from "./components/HomeDeliverySection";
@@ -77,7 +80,7 @@ const TIER_KEY_BY_SLUG: Record<string, string> = {
 };
 
 /* ── Explore Categories Config (New Banners) ── */
-const EXPLORE_CATEGORIES = [
+const EXPLORE_CATEGORIES = cigaretteSafeContent([
   {
     name: "Vape Pens",
     slug: "items/vapes",
@@ -120,7 +123,7 @@ const EXPLORE_CATEGORIES = [
     banner: "/banners/09_Magic_Stuff.webp",
     icon: "🍄",
   },
-];
+]);
 
 
 interface Review {
