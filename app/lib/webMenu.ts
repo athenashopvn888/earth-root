@@ -1,4 +1,5 @@
 import { allFlowers, allItems, type FlowerProduct, type ItemProduct } from "./products";
+import { filterCigaretteItems } from "./siteConfig";
 import { STORE } from "./storeIdentity";
 import { getTvData } from "./tvStock";
 
@@ -48,7 +49,7 @@ export async function getWebMenuData(): Promise<WebMenuData> {
 
     return {
       flowers: flowersResult.body,
-      items: itemsResult.body,
+      items: filterCigaretteItems(itemsResult.body),
       source: flowersResult.source,
       stockDate: flowersResult.stockDate,
     };
@@ -63,7 +64,7 @@ export async function getWebMenuData(): Promise<WebMenuData> {
 
   return {
     flowers: flowersResult.body as FlowerProduct[],
-    items: itemsResult.body as ItemProduct[],
+    items: filterCigaretteItems(itemsResult.body as ItemProduct[]),
     source: flowersResult.headers["x-tv-data-source"],
     stockDate: flowersResult.headers["x-tv-data-as-of"],
   };
