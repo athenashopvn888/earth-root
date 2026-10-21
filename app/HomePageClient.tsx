@@ -1,6 +1,6 @@
 "use client";
 
-import { cigaretteSafeContent } from "./lib/siteConfig";
+import { cigaretteSafeContent, SHOW_CIGARETTES } from "./lib/siteConfig";
 
 import { HOME_TITLE } from "./lib/homeDelivery";
 import CohortDeliveryActions from "./components/CohortDeliveryActions";
@@ -183,6 +183,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
 
           const comment = row.Comment || "";
           if (!comment || comment.length < 10) return;
+          if (!SHOW_CIGARETTES && /grabba/i.test(comment)) return;
           const name = rn || "Customer";
           const dateStr = row.CreateTime || "";
           reviewsPool.push({ name, comment, date: dateStr });
@@ -360,7 +361,7 @@ export default function HomePageClient({ initialFlowers }: { initialFlowers: Par
               ["Weed dispensary at Dundas & Kipling in Etobicoke","/weed-dispensary-dundas-kipling"],
               ["Open 24 hours, 7 days","/24-hour-dundas-kipling-dispensary"],
               ["Delivery","/weed-delivery-etobicoke"],
-              ["Native cigarettes: cartons and packs","/native-cigarettes-dundas-kipling"],
+              ...(SHOW_CIGARETTES ? [["Native cigarettes: cartons and packs","/native-cigarettes-dundas-kipling"] as [string, string]] : []),
               ["Nicotine vapes, pods and pouches","/nicotine-vape-dundas-kipling"],
               ["Current Etobicoke vape listings","/vape-shop-etobicoke"],
               ["How to get here: transit and parking","/visit"],
