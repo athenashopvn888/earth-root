@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { FULL_NAME_NAP } from "../lib/fullNameNap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { getFleetContent } from "../lib/fleetContent";
 import styles from "./contact.module.css";
 
-export const metadata: Metadata = {
+export const dynamic = "force-dynamic";
+
+const CONTACT_METADATA: Metadata = {
   title: "Contact EarthRoot Cannabis | 5120 Dundas St W, Etobicoke",
   description:
     "Visit EarthRoot Cannabis at 5120 Dundas St W, Etobicoke, ON M9A 1C2, on Dundas Street West near Kipling and Islington. Open 24 Hours. Adults 19+. Call +1 437 523 4850.",
@@ -18,7 +21,29 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  if (!fleet.active) return CONTACT_METADATA;
+  const page = fleet.pages.Contact;
+  const description = page?.metaDescription || "";
+  const title = page?.metaTitle || "";
+  const sameDescription = !description || description === CONTACT_METADATA.description;
+  const sameTitle = !title || title === CONTACT_METADATA.title;
+  if (sameDescription && sameTitle) return CONTACT_METADATA;
+  return {
+    ...CONTACT_METADATA,
+    ...(sameDescription ? {} : { description }),
+    ...(sameTitle ? {} : { title: { absolute: title } }),
+  };
+}
+
+export default async function ContactPage() {
+  const fleet = await getFleetContent();
+  const street = fleet.active ? fleet.nap.street : "5120 Dundas St W";
+  const cityLine = fleet.active ? fleet.nap.cityLine : "Etobicoke, ON M9A 1C2";
+  const intersection = fleet.active ? fleet.nap.intersection : "Dundas St W & Kipling Ave";
+  const phoneDisplay = fleet.active ? fleet.nap.phoneDisplay : "+1 437 523 4850";
+  const phoneTel = fleet.active ? fleet.nap.phoneTel : "+14375234850";
   return (
     <main className={styles.main}>
       <Navbar />
@@ -40,13 +65,13 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>📍</div>
               <h2 className={styles.infoTitle}>Location</h2>
               <p className={styles.infoText}>
-                5120 Dundas St W
+                {street}
                 <br />
-                Etobicoke, ON M9A 1C2
+                {cityLine}
                 <br />
-                <span className={styles.infoMuted}>Dundas St W &amp; Kipling Ave</span>
+                <span className={styles.infoMuted}>{intersection}</span>
                 <br />
-                <a href="tel:+14375234850">+1 437 523 4850</a>
+                <a href={`tel:${phoneTel}`}>{phoneDisplay}</a>
               </p>
             </div>
 
