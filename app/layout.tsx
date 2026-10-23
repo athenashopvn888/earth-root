@@ -1,7 +1,9 @@
-import { cigaretteSafeContent } from "./lib/siteConfig";
+import { cigaretteSafeContent, SHOW_CIGARETTES } from "./lib/siteConfig";
+import CigaretteStateProvider from "./components/CigaretteStateProvider";
 import FleetContentProvider from "./components/fleet/FleetContentProvider";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
+import { getCigaretteSnapshot, toPublicCigaretteState } from "./lib/cigaretteFeed";
 import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 import { getFleetContent } from "./lib/fleetContent";
 import type { Metadata } from "next";
@@ -96,7 +98,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const fleet = await getFleetContent();
+  const [fleet, cigaretteSnapshot] = await Promise.all([getFleetContent(), getCigaretteSnapshot()]);
+  const cigarettes = toPublicCigaretteState(cigaretteSnapshot);
   const baseStoreJsonLd = cigaretteSafeContent(cannabisStoreJsonLd());
   const storeJsonLd = fleet.active
     ? {
@@ -163,10 +166,12 @@ export default async function RootLayout({
       </head>
       <body>
         <FleetContentProvider value={{ active: fleet.active, version: fleet.version, nap: fleet.nap }}>
-          <DeliveryAnnouncement />
-          {children}
-          <FullNameNap />
-          <PinnedNavClearance />
+          <CigaretteStateProvider value={{ ...cigarettes, web: SHOW_CIGARETTES ? cigarettes.web : false }}>
+            <DeliveryAnnouncement />
+            {children}
+            <FullNameNap />
+            <PinnedNavClearance />
+          </CigaretteStateProvider>
         </FleetContentProvider>
       </body>
     </html>
