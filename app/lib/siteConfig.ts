@@ -1,5 +1,17 @@
 const cigaretteSwitch = process.env.NEXT_PUBLIC_SHOW_CIGARETTES?.trim().toLowerCase();
 export const SHOW_CIGARETTES = cigaretteSwitch === "true";
+
+function hardOffRaw(raw: string | undefined): string | undefined {
+  if (raw != null) return raw;
+  // SHOW_CIGARETTES is read at runtime. The public var is inlined at build.
+  return process.env.SHOW_CIGARETTES ?? process.env.NEXT_PUBLIC_SHOW_CIGARETTES;
+}
+
+/** Explicit false / 0 / no / off blocks the feed. An empty value is not a hard off. */
+export function cigaretteEnvHardOff(raw: string | undefined = hardOffRaw(undefined)): boolean {
+  if (raw == null) return false;
+  return /^(0|false|no|off)$/i.test(raw.trim());
+}
 export const isCigaretteCategory = (value: string | null | undefined) => ["cigarettes", "tobacco"].includes(value?.trim().toLowerCase() ?? "");
 export const isCigarettePath = (value: string | null | undefined) => { const path = value?.trim().toLowerCase() ?? ""; return path === "cigarettes" || path.startsWith("cigarettes/") || path.includes("/cigarettes") ||
     path === "tobacco" ||

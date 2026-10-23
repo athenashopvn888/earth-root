@@ -102,7 +102,13 @@ function staticDataset(staticFlowers, staticItems) {
     flowers: Array.isArray(staticFlowers) ? staticFlowers : [],
     items: Array.isArray(staticItems) ? staticItems : [],
     stockDate: "",
+    cig: null,
   };
+}
+
+function normalizeCig(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  return value;
 }
 
 function rejectLiveStock(data, staticFlowers, staticItems) {
@@ -121,14 +127,35 @@ function rejectLiveStock(data, staticFlowers, staticItems) {
   return null;
 }
 
+const CIG_STOCK_CACHE_MS = 60 * 1000;
+
 let cached = null;
 let lastGood = null;
 let inflight = null;
+let cigCached = null;
+let cigInflight = null;
 
 function resetTvStockCache() {
   cached = null;
   lastGood = null;
   inflight = null;
+  cigCached = null;
+  cigInflight = null;
+}
+
+function presentCigDataset(dataset) {
+  const source = dataset && dataset.source ? dataset.source : "static-fallback";
+  const cig = source === "live"
+    ? normalizeCig(dataset.cig)
+    : (lastGood ? normalizeCig(lastGood.cig) : null);
+  return {
+    source,
+    flowers: dataset && Array.isArray(dataset.flowers) ? dataset.flowers : [],
+    items: dataset && Array.isArray(dataset.items) ? dataset.items : [],
+    stockDate: dataset && dataset.stockDate ? dataset.stockDate : "",
+    fallbackReason: dataset && dataset.fallbackReason ? dataset.fallbackReason : "",
+    cig,
+  };
 }
 
 function selectTvPayload(dataset, type) {
@@ -159,7 +186,7 @@ async function resolveDataset(options) {
     const dataset = lastGood
       ? { ...lastGood, source: "last-good", fallbackReason: reason }
       : { ...staticDataset(options.staticFlowers, options.staticItems), fallbackReason: reason };
-    cached = { expiresAt: now + TV_STOCK_FAILURE_CACHE_MS, dataset };
+    cached = { expiresAt: now + TV_STOCK_FAILURE_CACHE_MS, fetchedAt: now, dataset };
     return dataset;
   };
 
@@ -197,8 +224,9 @@ async function resolveDataset(options) {
       flowers: data.flowers,
       items: data.items,
       stockDate: data.stockDate == null ? "" : String(data.stockDate),
+      cig: normalizeCig(data.cig),
     };
-    cached = { expiresAt: now + TV_STOCK_CACHE_MS, dataset };
+    cached = { expiresAt: now + TV_STOCK_CACHE_MS, fetchedAt: now, dataset };
     lastGood = dataset;
     return dataset;
   } catch (err) {
@@ -235,10 +263,30 @@ async function getTvData(options) {
   return selectTvPayload(dataset, options.type);
 }
 
+async function getCigaretteDataset(options) {
+  const now = options.now ?? Date.now();
+  if (cached && cached.fetchedAt != null && now - cached.fetchedAt < CIG_STOCK_CACHE_MS) {
+    return presentCigDataset(cached.dataset);
+  }
+  if (cigCached && now < cigCached.expiresAt) return cigCached.dataset;
+  if (!cigInflight) {
+    const started = now;
+    cigInflight = resolveDataset({ ...options, now: started }).then((dataset) => {
+      const safe = presentCigDataset(dataset);
+      cigCached = { expiresAt: started + CIG_STOCK_CACHE_MS, dataset: safe };
+      return safe;
+    }).finally(() => {
+      cigInflight = null;
+    });
+  }
+  return cigInflight;
+}
+
 module.exports = {
   DEFAULT_APPS_SCRIPT_URL,
   TV_STORE,
   TV_STOCK_CACHE_MS,
+  CIG_STOCK_CACHE_MS,
   TV_STOCK_FETCH_TIMEOUT_MS,
   PARTIAL_STOCK_RATIO,
   hasSalePrice,
@@ -247,5 +295,6 @@ module.exports = {
   postprocessItems,
   resolveAppsScriptUrl,
   getTvData,
+  getCigaretteDataset,
   resetTvStockCache,
 };

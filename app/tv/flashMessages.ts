@@ -1,8 +1,6 @@
-import { SHOW_CIGARETTES } from "../lib/siteConfig";
-export const CIGARETTE_FLASH_MESSAGE = SHOW_CIGARETTES ? "CIGARETTES 2 PACK $5 MIX MATCH !" : "";
+export const CIGARETTE_FLASH_MESSAGE = "CIGARETTES 2 PACK $5 MIX MATCH !";
 
 export function isCigaretteFlashWindow(now: Date = new Date()): boolean {
-  if (!SHOW_CIGARETTES) return false;
   const parts = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Toronto",
     hour: "2-digit",
@@ -12,7 +10,7 @@ export function isCigaretteFlashWindow(now: Date = new Date()): boolean {
   return hour >= 17 || hour < 8;
 }
 
-/** 08:00-17:00 America/Toronto: no cigarette or nicotine vape content on TV/TV2. */
+/** 08:00-17:00 America/Toronto: the cigarette ticker line stays off. */
 export function isNicotineQuietWindow(now: Date = new Date()): boolean {
   return !isCigaretteFlashWindow(now);
 }

@@ -2,6 +2,8 @@
 
 import { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./tv.module.css";
+import { useCigaretteState } from "../components/CigaretteStateProvider";
+import { readCigaretteTvHeader } from "../lib/cigDecision";
 import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "./flashMessages";
 import { getFlowerEffects } from "./flowerEffects";
 import { TOP_TIER_BUNDLE_LABELS } from "./bundleLabels";
@@ -691,14 +693,15 @@ const TICKER_SLIDES = [
   "ALL SALES ARE FINAL",
 ];
 
-function VerticalTicker() {
+function VerticalTicker({ showCigarettes = false }: { showCigarettes?: boolean }) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [exitIdx, setExitIdx] = useState(-1);
-  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => isCigaretteFlashWindow());
+  const [inCigaretteWindow, setInCigaretteWindow] = useState(() => isCigaretteFlashWindow());
+  const showCigaretteFlash = showCigarettes && inCigaretteWindow;
   const slides = showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE, ...TICKER_SLIDES] : TICKER_SLIDES;
 
   useEffect(() => {
-    const update = () => setShowCigaretteFlash(isCigaretteFlashWindow());
+    const update = () => setInCigaretteWindow(isCigaretteFlashWindow());
     const iv = setInterval(update, 60_000);
     return () => clearInterval(iv);
   }, []);
@@ -729,6 +732,8 @@ function VerticalTicker() {
    MAIN TV PAGE
    ============================================================ */
 export default function TVMenuPage() {
+  const seeded = useCigaretteState();
+  const [tvCig, setTvCig] = useState({ show: seeded.tv, wording: seeded.wording });
   const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
   useEffect(() => {
@@ -762,6 +767,7 @@ export default function TVMenuPage() {
       ]);
       const fData: Flower[] = fRes.ok ? await fRes.json() : [];
       const iData: Item[] = iRes.ok ? await iRes.json() : [];
+      setTvCig(iRes.ok ? readCigaretteTvHeader(iRes.headers) : { show: false, wording: seeded.wording });
       setStockUpdated(readStockUpdatedAt(fRes, fData) || readStockUpdatedAt(iRes, iData));
 
       for (const f of fData) {
@@ -804,8 +810,9 @@ export default function TVMenuPage() {
       setHighlights(hi);
       setLastUpdate(formatBoardTime(new Date()) || "");
     } catch (err) { console.warn("[TV] Load failed:", err); }
+  // TIERS is a constant list; the cigarette wording is the live input.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [seeded.wording]);
 
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
@@ -886,7 +893,7 @@ export default function TVMenuPage() {
 
         {/* GRID */}
         <div className={styles.stage}>
-          <HiringRibbon hiring={tvHiring} />
+          <HiringRibbon hiring={tvHiring} showCigarettes={tvCig.show} />
           <div className={styles.grid}>
             {/* Row 1: EXOTIC, PREMIUM, AAA+ */}
             {TIERS.slice(0,3).map(tier => (
