@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { SHOW_CIGARETTES } from "../../lib/siteConfig";
+import { getCigaretteSnapshot } from "../../lib/cigaretteFeed";
 import { getFleetContent } from "../../lib/fleetContent";
 import { contentStatusPayload } from "../../lib/fleet/status";
 
@@ -7,15 +7,14 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
- * Diagnostic only. Cigarette flags follow the existing env switch.
- * /items/cigarettes and /cigarettes stay on the next.config redirects.
+ * Diagnostic only. cig.web follows the feed webOn flag (env hard-off still wins).
+ * Website pages keep the static SHOW_CIGARETTES gate.
  */
 export async function GET() {
-  const fleet = await getFleetContent();
-  const show = SHOW_CIGARETTES;
+  const [fleet, cig] = await Promise.all([getFleetContent(), getCigaretteSnapshot()]);
   return NextResponse.json(contentStatusPayload(fleet, {
-    web: show,
-    tv: show,
-    guides: show,
+    web: cig.web.show,
+    tv: cig.tv.show,
+    guides: cig.guides.show,
   }), { headers: { "Cache-Control": "no-store" } });
 }

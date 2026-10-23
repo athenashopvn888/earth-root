@@ -40,7 +40,9 @@ import itemsJson from "./items.json";
 import type { BoardDeal } from "./flowerDeals";
 
 export const allFlowers: FlowerProduct[] = flowersJson as FlowerProduct[];
-export const allItems: ItemProduct[] = filterCigaretteItems(itemsJson as ItemProduct[]);
+/** Full shelf, including cigarettes. TV uses this. Website menus keep allItems. */
+export const catalogItems: ItemProduct[] = itemsJson as ItemProduct[];
+export const allItems: ItemProduct[] = filterCigaretteItems(catalogItems);
 
 /* ── Live stock fetch from Apps Script ── */
 // Shared fleet menu feed (no Gmail on requests). Read ONLY from MENU_FEED_URL; the legacy
