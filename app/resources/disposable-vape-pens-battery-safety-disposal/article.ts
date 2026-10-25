@@ -80,7 +80,7 @@ Without a car, the options are a **Community Environment Day** or a free **Toxic
 
 ## Visiting EARTHROOT CANNABIS
 
-EARTHROOT CANNABIS is at 5120 Dundas St W in Etobicoke. Islington and Kipling stations are both under a kilometre away. Everything else about the trip is on our [visit page](/visit), and more about the shop is on our [weed dispensary in Etobicoke](/weed-dispensary-etobicoke) page. Can't make it in? See how our [weed delivery in Etobicoke](/delivery) works. Shoppers must be 19 or older and are asked to bring government-issued photo ID.
+EARTHROOT CANNABIS is at 5120 Dundas St W in Etobicoke. Islington and Kipling stations are both under a kilometre away. Everything else about the trip is on our [visit page](/visit), and more about the shop is on our [weed dispensary in Etobicoke](/weed-dispensary-etobicoke) page. Can't make it in? See how our [weed delivery in Etobicoke](/weed-delivery-etobicoke) works. Shoppers must be 19 or older and are asked to bring government-issued photo ID.
 
 
 Checked against: Toronto's lithium-ion battery safety page, its household hazardous waste, e-waste and depot-location pages; Ontario's provincial page on cannabis laws; and, on Justice Canada's site, the Cannabis Act definition of an accessory plus section 132.12 of the Cannabis Regulations.
