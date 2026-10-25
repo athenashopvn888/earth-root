@@ -16,7 +16,7 @@ export const ARTICLE_MD = `
 *Last checked: September 30, 2026*
 A disposable vape pen looks like a simple thing: use it, then throw it away. The "throw it away" part is where people go wrong. Every one of these devices has a lithium-ion battery inside, and the City of Toronto treats those batteries as household hazardous waste. The audience here is adults, 19 and up. It covers what these devices are, how to keep the battery safe at home, and how to dispose of one without putting it in a bin.
 
-It doesn't cover strength, flavours or which product to choose. Staff can walk you through the current menu in store.
+It doesn't cover strength, flavours or which product to choose. Staff can walk you through the current menu in store, or you can browse our [disposable vapes in Etobicoke](/items/vape-disposables) online first.
 
 ## Part 1: What a disposable actually is
 
@@ -80,7 +80,7 @@ Without a car, the options are a **Community Environment Day** or a free **Toxic
 
 ## Visiting EARTHROOT CANNABIS
 
-EARTHROOT CANNABIS is at 5120 Dundas St W in Etobicoke. Islington and Kipling stations are both under a kilometre away. Everything else about the trip is on our [visit page](/visit). Shoppers must be 19 or older and are asked to bring government-issued photo ID.
+EARTHROOT CANNABIS is at 5120 Dundas St W in Etobicoke. Islington and Kipling stations are both under a kilometre away. Everything else about the trip is on our [visit page](/visit), and more about the shop is on our [weed dispensary in Etobicoke](/weed-dispensary-etobicoke) page. Can't make it in? See how our [weed delivery in Etobicoke](/delivery) works. Shoppers must be 19 or older and are asked to bring government-issued photo ID.
 
 
 Checked against: Toronto's lithium-ion battery safety page, its household hazardous waste, e-waste and depot-location pages; Ontario's provincial page on cannabis laws; and, on Justice Canada's site, the Cannabis Act definition of an accessory plus section 132.12 of the Cannabis Regulations.
