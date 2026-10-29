@@ -126,6 +126,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  const handTrimmedArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/hand-trimmed-vs-machine-trimmed-weed`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
   const guidePages: MetadataRoute.Sitemap = [...GUIDE_REGISTRY, ...DELIVERY_GUIDE_REGISTRY].map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
     lastModified: now,
@@ -163,6 +172,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...itemDetailPages,
     ...resourcePages,
     ...disposableVapeArticle,
+    ...handTrimmedArticle,
     ...seoPages,
     ...fleetArticlePages,
   ]);
