@@ -110,7 +110,7 @@ However it was trimmed, store it the same way: in its original sealed, labelled 
 
 Hand-trimmed vs machine-trimmed weed comes down to scissors or blades, irregular or uniform, slow or fast. The trim affects how a bud looks and how much it was handled. It doesn't replace reading the label. Check the shape, check the frost, check the packaging date, and decide for yourself.
 
-Heading over? Our [Etobicoke weed dispensary page](/weed-dispensary-etobicoke) covers the neighbourhood. EARTHROOT CANNABIS is for adults 19 and over. Bring government-issued photo ID.
+Heading over? Our [Etobicoke weed dispensary page](/weed-dispensary-etobicoke) covers the neighbourhood. Coming from Islington? See our [dispensary near Islington](/dispensary-islington) page. EARTHROOT CANNABIS is for adults 19 and over. Bring government-issued photo ID.
 `;
 
 export type ArticleBlock =

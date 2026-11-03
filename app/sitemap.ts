@@ -34,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${BASE}/weed-dispensary-dundas-kipling`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/24-hour-dundas-kipling-dispensary`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/dispensary-islington`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/native-cigarettes-dundas-kipling`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/nicotine-vape-dundas-kipling`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/vape-shop-etobicoke`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
