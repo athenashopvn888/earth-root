@@ -1,0 +1,64 @@
+.prose {
+  display: grid;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.prose h2 {
+  margin: 8px 0 0;
+  color: var(--text-primary);
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 22px;
+}
+
+.prose li {
+  margin: 7px 0;
+}
+
+.prose a {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.prose strong {
+  color: var(--text-primary);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border-subtle);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  color: var(--text-primary);
+  font-weight: 800;
+  background: var(--bg-secondary);
+}

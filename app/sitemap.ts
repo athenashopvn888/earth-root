@@ -135,6 +135,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  const oneHitterArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/what-is-a-one-hitter`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
   const guidePages: MetadataRoute.Sitemap = [...GUIDE_REGISTRY, ...DELIVERY_GUIDE_REGISTRY].map((guide) => ({
     url: `${BASE}/guides/${guide.slug}`,
     lastModified: now,
@@ -173,6 +182,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...resourcePages,
     ...disposableVapeArticle,
     ...handTrimmedArticle,
+    ...oneHitterArticle,
     ...seoPages,
     ...fleetArticlePages,
   ]);
