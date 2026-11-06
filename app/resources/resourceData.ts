@@ -428,6 +428,11 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
         text: "View EarthRoot Cannabis store information for Etobicoke and use the primary local page as the starting point for location-specific details.",
       },
       {
+        title: "Dispensary Near Islington",
+        href: "/dispensary-islington",
+        text: "Coming from Islington Village or Islington station? See the route, hours and flower tiers at 5120 Dundas St W.",
+      },
+      {
         title: "EarthRoot Resource Centre",
         href: "/resources/",
         text: "Browse EarthRoot guides and educational resources created to help adult shoppers understand the website and common cannabis topics.",

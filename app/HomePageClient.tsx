@@ -362,6 +362,7 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
             {[
               ["Weed dispensary at Dundas & Kipling in Etobicoke","/weed-dispensary-dundas-kipling"],
               ["Open 24 hours, 7 days","/24-hour-dundas-kipling-dispensary"],
+              ["Dispensary near Islington","/dispensary-islington"],
               ["Delivery","/weed-delivery-etobicoke"],
               ...(SHOW_CIGARETTES ? [["Native cigarettes: cartons and packs","/native-cigarettes-dundas-kipling"] as [string, string]] : []),
               ["Nicotine vapes, pods and pouches","/nicotine-vape-dundas-kipling"],

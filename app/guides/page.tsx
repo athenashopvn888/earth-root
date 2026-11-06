@@ -35,7 +35,7 @@ export default function GuidesPage() {
       <div className={styles.groupHeading}><h2>{group.label}</h2><span>{group.guides.length} guides</span></div>
       <div className={styles.grid}>{group.guides.map((guide) => <Link className={styles.card} href={`/guides/${guide.slug}`} key={guide.slug}><span>{group.label}</span><h3>{guide.name}</h3><p>Read the {guide.name} guide</p></Link>)}</div>
     </section>)}</section>
-    <section className={styles.nextSteps}><div><p className={styles.kicker}>Keep Exploring</p><h2>More EARTHROOT CANNABIS resources</h2><p>Visit Resources for broader explainers or check the store page before your visit.</p></div><div className={styles.actions}><Link href="/resources">Resources</Link><Link href="/visit">Plan a Visit</Link></div></section>
+    <section className={styles.nextSteps}><div><p className={styles.kicker}>Keep Exploring</p><h2>More EARTHROOT CANNABIS resources</h2><p>Visit Resources for broader explainers or check the store page before your visit.</p></div><div className={styles.actions}><Link href="/resources">Resources</Link><Link href="/visit">Plan a Visit</Link><Link href="/dispensary-islington">Near Islington</Link><Link href="/weed-delivery-etobicoke">Etobicoke Delivery</Link></div></section>
     <Footer />
   </main>;
 }
