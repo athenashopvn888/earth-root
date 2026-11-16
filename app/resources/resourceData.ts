@@ -24,6 +24,7 @@ export interface ResourcePage {
     alt: string;
   };
   cards: ResourceCard[];
+  latestArticles?: ResourceCard[];
   sections: ResourceSection[];
 }
 
@@ -67,6 +68,23 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
         title: "Cannabis Near Etobicoke: A Practical Local Guide",
         href: "/resources/local-guides/cannabis-near-etobicoke-comparison-guide",
         text: "Learn how to compare local cannabis search results, store information, menus and helpful resources when researching dispensaries in Etobicoke.",
+      },
+    ],
+    latestArticles: [
+      {
+        title: "What Is a One-Hitter? A Calm Guide to the Smallest Pipe",
+        href: "/resources/what-is-a-one-hitter",
+        text: "It's slimmer than a marker, it fits in a pocket and it holds a pinch of flower.",
+      },
+      {
+        title: "Hand-Trimmed vs Machine-Trimmed Weed: What the Trim Tells You",
+        href: "/resources/hand-trimmed-vs-machine-trimmed-weed",
+        text: "How that haircut happens, by scissors or by machine, is the whole hand-trimmed vs machine-trimmed weed debate.",
+      },
+      {
+        title: "Disposable vape pens: keeping the battery safe, and getting rid of it properly in Toronto",
+        href: "/resources/disposable-vape-pens-battery-safety-disposal",
+        text: "A disposable vape pen looks like a simple thing: use it, then throw it away.",
       },
     ],
     sections: [
@@ -166,6 +184,11 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
         title: "Budget Weed",
         href: "/budget-weed",
         text: "Start here when cheap weed or affordable weed is the goal.",
+      },
+      {
+        title: "What Is a One-Hitter? A Calm Guide to the Smallest Pipe",
+        href: "/resources/what-is-a-one-hitter",
+        text: "It's slimmer than a marker, it fits in a pocket and it holds a pinch of flower.",
       },
     ],
     sections: [

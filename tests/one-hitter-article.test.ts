@@ -92,7 +92,8 @@ test("sitemap gains this URL and existing resource routes stay put", () => {
   assert.match(sitemap, /disposable-vape-pens-battery-safety-disposal/);
   assert.match(sitemap, /hand-trimmed-vs-machine-trimmed-weed/);
   assert.match(sitemap, /RESOURCE_PAGES\.map/);
-  assert.equal(resourceData.includes("what-is-a-one-hitter"), false);
+  assert.match(resourceData, /href: "\/resources\/what-is-a-one-hitter"/);
+  assert.equal(resourceData.includes('slug: "what-is-a-one-hitter"'), false);
   assert.doesNotMatch(nextConfig, /source:\s*"\/resources"(?![a-z0-9/-])/);
   assert.doesNotMatch(nextConfig, /source:\s*"\/resources\/:path\*"/);
   assert.doesNotMatch(nextConfig, /what-is-a-one-hitter/);

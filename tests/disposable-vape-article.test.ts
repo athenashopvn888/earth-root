@@ -53,8 +53,9 @@ test("page metadata is a self-canonical indexable Article", () => {
   assert.equal(page.includes("3.5"), false);
 });
 
-test("sitemap gains one entry and existing resource data is untouched", () => {
+test("sitemap gains one entry and the resources hub links this article", () => {
   assert.equal(sitemap.split(CANONICAL_PATH).length - 1, 1);
   assert.match(sitemap, /RESOURCE_PAGES\.map/);
-  assert.equal(resourceData.includes("disposable-vape-pens-battery-safety-disposal"), false);
+  assert.match(resourceData, /href: "\/resources\/disposable-vape-pens-battery-safety-disposal"/);
+  assert.equal(resourceData.includes('slug: "disposable-vape-pens-battery-safety-disposal"'), false);
 });
