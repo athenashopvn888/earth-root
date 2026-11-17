@@ -26,5 +26,7 @@ export const HOME_DELIVERY_FAQS = [
   { q: "Is the delivery information limited to Etobicoke?", a: "This homepage describes the Etobicoke delivery context only. The current delivery page confirms whether a specific address can be served." },
 ] as const;
 
-// Document <title> only (exact Google name | area). H1 keeps HOME_TITLE.
+// Inherited root <title> default and og/twitter title. Routes that do not set their own still render this.
 export const HOME_DOC_TITLE = "Earthroot Cannabis Dispensary Weed Delivery | Etobicoke";
+// Document <title> for / only. Set with title.absolute so the root "%s | EarthRoot Cannabis" template is not appended.
+export const HOME_PAGE_TITLE = "Earthroot Cannabis Dispensary near me | Weed Delivery | Etobicoke";
