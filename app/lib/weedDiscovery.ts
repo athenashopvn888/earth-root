@@ -12,7 +12,7 @@ export const weedOwner = {
   phoneIntl: "+14375234850",
   hoursLabel: "Open 24 Hours · 7 Days a Week",
   openingHours: "Mo-Su 00:00-23:59",
-  seoTitle: "Weed Dispensary in Etobicoke | EARTHROOT CANNABIS",
+  seoTitle: "Weed Dispensary near me in Etobicoke | EARTHROOT CANNABIS",
   metaDescription: "EARTHROOT CANNABIS is open 24 hours at 5120 Dundas St W in Etobicoke. Adults 19+ can explore cannabis, flower, value and pre-roll guides.",
   h1: "EARTHROOT CANNABIS — Weed Dispensary in Etobicoke",
   introTitle: "Weed and Cannabis on Dundas Street West",
