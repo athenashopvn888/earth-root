@@ -330,7 +330,7 @@ export default function HomePageClient({ initialFlowers, contentBanners }: { ini
           </div>
 
           <div className={styles.categoriesGrid}>
-            {EXPLORE_CATEGORIES.map((cat) => (
+            {EXPLORE_CATEGORIES.filter((category) => showCigarettes || category.slug !== "items/cigarettes").map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}
