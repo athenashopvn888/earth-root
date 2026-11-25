@@ -1,3 +1,4 @@
+import { getCigaretteSnapshot, toPublicCigaretteState, reconcileSurfaceItems } from "../../lib/cigaretteFeed";
 import CigaretteSeasonalNotice from "../../components/CigaretteSeasonalNotice";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -51,12 +52,13 @@ export default async function ItemsCategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category: catSlug } = await params;
+  const { web: showCigarettes } = toPublicCigaretteState(await getCigaretteSnapshot());
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) notFound();
 
   /* Pre-Rolls also shows accessories (ADD ONS) */
   const { items: menuItems } = await getWebMenuData();
-  let items = menuItems.filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
+  let items = reconcileSurfaceItems(menuItems, [], showCigarettes).filter((item) => item.category.toUpperCase() === catInfo.key.toUpperCase());
   if (catInfo.key === "PREROLLS") {
     const accessories = menuItems.filter((item) => item.category.toUpperCase() === "ADD ONS");
     const existingIds = new Set(items.map(i => i.sku));
@@ -69,11 +71,11 @@ export default async function ItemsCategoryPage({
   return (
     <main className={styles.main}>
       <Navbar />
-      {catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
+      {showCigarettes && catSlug === "cigarettes" && <CigaretteSeasonalNotice sticky />}
 
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
-        {config.banner ? (
+        {config.banner && (catSlug !== "cigarettes" || showCigarettes) ? (
           <img
             src={config.banner}
             alt={catSlug === "cigarettes" ? cigaretteCategoryImage.alt : config.name}
@@ -92,7 +94,7 @@ export default async function ItemsCategoryPage({
       </section>
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <CategoryCoreBanners kind="vapes" />}
-      {catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
+      {showCigarettes && catSlug === "cigarettes" && <CategoryCoreBanners kind="cigarettes" />}
 
       {(catSlug === "vapes" || catSlug === "vape-disposables") && <VapeActionPanel compact />}
 
